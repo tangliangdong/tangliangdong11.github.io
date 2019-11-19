@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhizhi.tangliangdong.me/"/>
-  <updated>2019-11-18T06:40:01.573Z</updated>
+  <updated>2019-11-19T06:54:08.495Z</updated>
   <id>http://zhizhi.tangliangdong.me/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jenkins执行脚本权限不足</title>
+    <link href="http://zhizhi.tangliangdong.me/2019/11/19/2019-11-19-jenkins-user-permissions/"/>
+    <id>http://zhizhi.tangliangdong.me/2019/11/19/2019-11-19-jenkins-user-permissions/</id>
+    <published>2019-11-19T06:31:20.000Z</published>
+    <updated>2019-11-19T06:54:08.495Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p> jenkins默认用户为jenkins , 普通用户执行shell脚本,会缺失某些权限 </p></blockquote><a id="more"></a><h3 id="打开Jenkins的配置文件"><a href="#打开Jenkins的配置文件" class="headerlink" title="打开Jenkins的配置文件"></a>打开Jenkins的配置文件</h3><p>将Jenkins的执行用户修改为 <code>root</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/jenkins</span><br></pre></td></tr></table></figure><h3 id="修改jenkins用户为root，"><a href="#修改jenkins用户为root，" class="headerlink" title="修改jenkins用户为root，"></a>修改jenkins用户为<code>root</code>，</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JENKINS_USER=<span class="string">"root"</span></span><br></pre></td></tr></table></figure><h3 id="修改Jenkins相关文件夹用户权限"><a href="#修改Jenkins相关文件夹用户权限" class="headerlink" title="修改Jenkins相关文件夹用户权限"></a>修改Jenkins相关文件夹用户权限</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chown -R root:root /var/lib/jenkins</span><br><span class="line">chown -R root:root /var/cache/jenkins</span><br><span class="line">chown -R root:root /var/<span class="built_in">log</span>/jenkins</span><br></pre></td></tr></table></figure><h3 id="重启Jenkins"><a href="#重启Jenkins" class="headerlink" title="重启Jenkins"></a>重启Jenkins</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service jenkins restart</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">systemctl restart jenkins</span><br></pre></td></tr></table></figure><h3 id="查看Jenkins进程所属用户"><a href="#查看Jenkins进程所属用户" class="headerlink" title="查看Jenkins进程所属用户"></a>查看Jenkins进程所属用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep jenkins</span><br></pre></td></tr></table></figure><p>若是显示进程的用户是root，则表示修改成功。</p><p><img src="1.png" alt="ps -ef | grep jenkins"></p><p>转载自 <a href="https://www.blog.lijinghua.club/article/jenkins_权限不足" target="_blank" rel="noopener">Jenkins执行脚本报权限不足错误</a></p>]]></content>
+    
+    <summary type="html">
+    
+      jenkins项目构建时执行的shell总会遇到权限不足的问题
+    
+    </summary>
+    
+      <category term="Learn" scheme="http://zhizhi.tangliangdong.me/categories/Learn/"/>
+    
+    
+      <category term="jenkins" scheme="http://zhizhi.tangliangdong.me/tags/jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title>tomcat8登陆用户配置</title>
@@ -518,33 +540,6 @@
       <category term="java" scheme="http://zhizhi.tangliangdong.me/tags/java/"/>
     
       <category term="websocket" scheme="http://zhizhi.tangliangdong.me/tags/websocket/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linxu上的mysql只能sudo登陆</title>
-    <link href="http://zhizhi.tangliangdong.me/2019/08/08/2019-8-8-linux%E4%B8%8A%E7%9A%84mysql%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98/"/>
-    <id>http://zhizhi.tangliangdong.me/2019/08/08/2019-8-8-linux上的mysql使用问题/</id>
-    <published>2019-08-08T06:30:00.000Z</published>
-    <updated>2019-11-18T03:38:34.414Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Ubuntu上的数据库修改密码"><a href="#Ubuntu上的数据库修改密码" class="headerlink" title="Ubuntu上的数据库修改密码"></a>Ubuntu上的数据库修改密码</h3><p>Ubuntu上的数据库安装好之后没有提示输入密码，自然后来 <code>mysql -uroot -p</code>不知道是什么密码，均是报错</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1045 (28000): Access denied <span class="keyword">for</span> user <span class="string">'root'</span>@<span class="string">'localhost'</span> (using password: YES)</span><br></pre></td></tr></table></figure><p>需要打开一个文件 <code>/etc/mysql/debian.cnf</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/mysql/debian.cnf</span><br></pre></td></tr></table></figure><p><img src="mysql4.png" alt></p><p>将终端里登陆用的用户名root换成文件里的 <strong><em>debian-sys-maint</em></strong> 和 <strong><em>password</em></strong>值 进行数据库的登陆操作，</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u debian-sys-maint -p</span><br></pre></td></tr></table></figure><p>这时再输入对应的密码就可以顺利登陆了，然后就要修改root的密码，不然用这个密码可太麻烦了。</p><p>系统所使用的是5.7版本的mysql，password字段已经被删除，取而代之的是authentication_string字段，所以要更改密码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; update mysql.user set authentication_string=password(&apos;password&apos;) where user=&apos;root&apos;and Host = &apos;localhost&apos;;</span><br></pre></td></tr></table></figure><p>若是出现下图则代表修改成功，之后只需要重启mysql就可以登陆了。</p><p><img src="mysql5.png" alt></p><hr><h3 id="Ubuntu-上的mysql只能sudo登陆"><a href="#Ubuntu-上的mysql只能sudo登陆" class="headerlink" title="Ubuntu 上的mysql只能sudo登陆"></a>Ubuntu 上的mysql只能sudo登陆</h3><p><img src="mysql1.png" alt="linxu上的mysql只能sudo登陆"></p><p>Ubuntu上安装好的mysql 5.7，无法用 <code>mysql -uroot -p</code> 进行登陆，只能通过<code>sudo mysql -uroot -p</code></p><h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p><strong>修改MySQL配置文件，添加一句skip-grant-tables，重启即可无需密码登录</strong></p><h4 id="旧版mysql"><a href="#旧版mysql" class="headerlink" title="旧版mysql"></a>旧版mysql</h4><p>在Ubuntu，默认安装配置文件全路径 /etc/mysql/my.cnf</p><h4 id="新版MySQL"><a href="#新版MySQL" class="headerlink" title="新版MySQL"></a>新版MySQL</h4><p>对于5.7.23等高版本，配置文件路径和命令已经改变</p><p>此时的 <code>/etc/mysql/my.cnf</code> 文件已经是一个软链接，里面只有指向链接的语句。</p><p><img src="mysql2.png" alt="新版MySQL"></p><p>真正的配置文件是 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure><p><img src="mysql3.png" alt></p><p>在图中的位置添加 <code>skip-grant-tables</code>，之后重启mysql</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysql</span><br></pre></td></tr></table></figure><hr><h3 id="解决mysql无法远程连接的问题"><a href="#解决mysql无法远程连接的问题" class="headerlink" title="解决mysql无法远程连接的问题"></a>解决mysql无法远程连接的问题</h3><h4 id="创建远程登陆用户"><a href="#创建远程登陆用户" class="headerlink" title="创建远程登陆用户"></a>创建远程登陆用户</h4><p>Ubuntu上的mysql在默认情况下不支持用户通过非本机连接上数据库服务器，因此先要在mysql.user中创建可以远程连接的用户。</p><ol><li>先登陆数据库</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure><ol start="2"><li>选择数据库</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br></pre></td></tr></table></figure><ol start="3"><li>创建远程登陆用户</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos; WITH GRANT OPTION;</span><br></pre></td></tr></table></figure><ul><li>root ：用户名</li><li>%：任何ip都可登陆</li><li>123456：密码</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure><ol start="4"><li>重启mysql</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysql</span><br><span class="line">service mysqld restart // 皆可</span><br></pre></td></tr></table></figure><h4 id="修改mysql配置文件"><a href="#修改mysql配置文件" class="headerlink" title="修改mysql配置文件"></a>修改mysql配置文件</h4><p>修改 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code></p><p>将里面的</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bind-address = 127.0.0.1 #注释掉</span><br></pre></td></tr></table></figure><p>然后重启mysql，</p><p>就可以远程访问mysql了。</p><hr><h3 id="如何删除mysql"><a href="#如何删除mysql" class="headerlink" title="如何删除mysql"></a>如何删除mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge mysql-server-5.7</span><br><span class="line">sudo apt-get remove mysql-server</span><br><span class="line">sudo apt-get autoremove mysql-server</span><br><span class="line">sudo apt-get remove mysql-common</span><br></pre></td></tr></table></figure><p><strong>之后需要清理残余数据</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -l |grep ^rc|awk <span class="string">'&#123;print $2&#125;'</span> |sudo xargs dpkg -P</span><br></pre></td></tr></table></figure><p>摘录自:point_right::point_right::point_right:<a href="https://blog.csdn.net/sinat_21302587/article/details/76870457" target="_blank" rel="noopener">ubuntu安装mysql 时未提示输入密码</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Ubuntu上的数据库修改密码&quot;&gt;&lt;a href=&quot;#Ubuntu上的数据库修改密码&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu上的数据库修改密码&quot;&gt;&lt;/a&gt;Ubuntu上的数据库修改密码&lt;/h3&gt;&lt;p&gt;Ubuntu上的数据库安装好之后没有
-      
-    
-    </summary>
-    
-      <category term="learn" scheme="http://zhizhi.tangliangdong.me/categories/learn/"/>
-    
-    
-      <category term="mysql" scheme="http://zhizhi.tangliangdong.me/tags/mysql/"/>
-    
-      <category term="linux" scheme="http://zhizhi.tangliangdong.me/tags/linux/"/>
     
   </entry>
   
