@@ -1,92 +1,27 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="你的指尖拥有改变世界的力量"><title>svg path 使用 | XiaoTang' Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/6.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">svg path 使用</h1><a id="logo" href="/.">XiaoTang' Blog</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">svg path 使用</h1><div class="post-meta">Sep 20, 2017<span> | </span><span class="category"><a href="/categories/Learn/">Learn</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a data-disqus-identifier="2017/09/20/2017-9-20-svg/" href="/2017/09/20/2017-9-20-svg/#disqus_thread" class="disqus-comment-count"></a><div class="clear"><div id="toc" class="toc-article"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#path-命令"><span class="toc-number">1.</span> <span class="toc-text">path 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#命令基本规律"><span class="toc-number">1.1.</span> <span class="toc-text">命令基本规律</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#移动和直线命令"><span class="toc-number">1.2.</span> <span class="toc-text">移动和直线命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#弧线命令"><span class="toc-number">1.3.</span> <span class="toc-text">弧线命令</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#图解"><span class="toc-number">1.3.1.</span> <span class="toc-text">图解</span></a></li></ol></li></ol></li></ol></div></div><div class="post-content"><h4 id="path-命令"><a href="#path-命令" class="headerlink" title="path 命令"></a>path 命令</h4><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>M/m (x,y)+</td>
-<td>移动当前位置</td>
-</tr>
-<tr>
-<td>L/l (x,y)+</td>
-<td>从当前位置绘制线段到指定位置</td>
-</tr>
-<tr>
-<td>H/h (x)+</td>
-<td>从当前位置绘制⽔水平线到达指定的 x 坐标</td>
-</tr>
-<tr>
-<td>V/v (x)+</td>
-<td>从当前位置绘制竖直线到达指定的 y 坐标</td>
-</tr>
-<tr>
-<td>Z/z</td>
-<td>闭合当前路径</td>
-</tr>
-<tr>
-<td>C/c (x1,y1,x2,y2,x,y)+</td>
-<td>从当前位置绘制三次⻉贝塞尔曲线到指定位置</td>
-</tr>
-<tr>
-<td>S/s (x2,y2,x,y)+</td>
-<td>从当前位置光滑绘制三次⻉贝塞尔曲线到指定位置</td>
-</tr>
-<tr>
-<td>Q/q (x1,y1,x,y)+</td>
-<td>从当前位置绘制⼆二次⻉贝塞尔曲线到指定位置</td>
-</tr>
-<tr>
-<td>T/t (x,y)+</td>
-<td>从当前位置光滑绘制⼆二次⻉贝塞尔曲线到指定位置</td>
-</tr>
-<tr>
-<td>A/a (rx,ry,xr,laf,sf,x,y)</td>
-<td>从当前位置绘制弧线到指定位置</td>
-</tr>
-</tbody>
-</table>
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="你的指尖拥有改变世界的力量"><title>jenkins持续集成docker部署 | XiaoTang' Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/6.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">jenkins持续集成docker部署</h1><a id="logo" href="/.">XiaoTang' Blog</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">jenkins持续集成docker部署</h1><div class="post-meta">Nov 20, 2019<span> | </span><span class="category"><a href="/categories/Learn/">Learn</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a data-disqus-identifier="2019/11/20/2019-11-20-jenkins-docker-deploy/" href="/2019/11/20/2019-11-20-jenkins-docker-deploy/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>每次都手动打包springboot项目，部署war包到docker中，显然效率太低了，因此可以使用jenkins实现持续集成部署。</p>
 <a id="more"></a>
-<h5 id="命令基本规律"><a href="#命令基本规律" class="headerlink" title="命令基本规律"></a>命令基本规律</h5><ul>
-<li>区分大小写：大写表示坐标参数为绝对位置，小写则为相对位置</li>
-<li>最后的参数表示最终要到达的位置  </li>
-<li>上一个命令结束的位置就是下一个命令开始的位置</li>
-<li>命令可以重复 </li>
-</ul>
-<h5 id="移动和直线命令"><a href="#移动和直线命令" class="headerlink" title="移动和直线命令"></a>移动和直线命令</h5><ul>
-<li>M  (x,  y)+  移动画笔，后面如果有重复参数，会当做是  L  命令处理</li>
-<li>L  (x,  y)+  绘制直线到指定位置  </li>
-<li>H  (x)+  绘制水平线到指定的  x  位置 </li>
-<li>V  (y)+  绘制竖直线到指定的  y  位置</li>
-<li>m、l、h、v  使用相对位置绘制</li>
-</ul>
-<h5 id="弧线命令"><a href="#弧线命令" class="headerlink" title="弧线命令"></a>弧线命令</h5><ul>
-<li>A  (rx, ry, xr, laf, sf, x, y)  -  绘制弧线  </li>
-<li><strong>最复杂的命令</strong><ul>
-<li>rx  - （radius-x）弧线所在椭圆的 x 半轴长  </li>
-<li>ry  - （radius-y）弧线所在椭圆的 y 半轴长</li>
-<li>xr  - （xAxis-rotation）弧线所在椭圆的长轴角度（旋转弧线）</li>
-<li>laf  - （large-arc-flag）0：较短弧，1：较长弧</li>
-<li>sf  - （sweep-flag）0：从起点出发逆时针方向的弧，1：从起点出发顺时针的弧</li>
-<li>x, y  -  弧的终点位置</li>
-</ul>
-</li>
-</ul>
-<h6 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h6><p><img src="svg.png" alt="弧线命令"></p>
-<blockquote>
-<p>在已知半径的和角度的情况下，两个不同的点是可以确定两个椭圆，因此两点间的弧线就会有四条。</p>
-</blockquote>
+<p>创建一个maven项目，使用git进行源码管理，可以配置<code>webhook</code>，也可以手动构建项目</p>
+<h3 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h3><p>构建中使用Maven进行项目的打包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean package -pl corp -P dev</span><br></pre></td></tr></table></figure>
 <ul>
-<li>laf 0：较短的两条弧，1：较长的两条弧</li>
-<li>sf 0：从起点出发逆时针方向的弧，1：从起点出发顺时针的弧</li>
+<li>-pl：指定打包的子模块</li>
+<li>-P：指定打包的测试环境（<font color="red">必须是大写</font>）</li>
 </ul>
-<p><img src="svg2.png" alt="弧线命令"></p>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://zhizhi.tangliangdong.me/2017/09/20/2017-9-20-svg/" data-id="ck36qesib001y5cnwox2ium56" class="article-share-link">分享</a><div class="tags"><a href="/tags/svg/">svg</a></div><div class="post-nav"><a href="/2017/09/20/2017-9-20-react-router/" class="pre">react-router 路由</a><a href="/2017/09/17/2017-9-17-ionic3-http/" class="next">ionic3 http请求</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'tangliangdong';
-var disqus_identifier = '2017/09/20/2017-9-20-svg/';
-var disqus_title = 'svg path 使用';
-var disqus_url = 'http://zhizhi.tangliangdong.me/2017/09/20/2017-9-20-svg/';
+<p><img src="1.png" alt="jenkins 项目配置"></p>
+<h3 id="Post-Steps"><a href="#Post-Steps" class="headerlink" title="Post Steps"></a><strong>Post Steps</strong></h3><p>选择执行shell命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建挂载的目录</span></span><br><span class="line">mkdir -p /mnt/service/intelligentization/corp/</span><br><span class="line"><span class="comment"># 清空挂载目录</span></span><br><span class="line">rm -rf /mnt/service/intelligentization/corp/*</span><br><span class="line"><span class="comment"># 将jenkins项目打包的项目war包拷贝到docker的挂载目录</span></span><br><span class="line">cp ./corp/target/ROOT.war /mnt/service/intelligentization/corp/</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment"># 防止因为代码出错，导致命令执行中断。停止容器</span></span><br><span class="line">	<span class="comment"># try</span></span><br><span class="line">	docker stop intelligentization-corp</span><br><span class="line">	docker rm intelligentization-corp</span><br><span class="line">&#125; || &#123;</span><br><span class="line">	<span class="comment"># catch</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"失败"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 docker 容器，并指定挂载目录和映射端口</span></span><br><span class="line">docker run -itd --privileged=<span class="literal">true</span> -v /mnt/service/intelligentization/corp/:/usr/<span class="built_in">local</span>/tomcat/webapps/ -p 9998:8080 --name intelligentization-corp tomcat:8</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --privileged=<span class="literal">true</span> -v /mnt/service/intelligentization/corp/:/usr/<span class="built_in">local</span>/tomcat/webapps/ -p 9998:8080 --name intelligentization-corp tomcat:8</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-v /mnt/service/intelligentization/corp/:/usr/local/tomcat/webapps/</code> 前一个是挂载的本机的目录，后一个是docker容器的目录，docker会将挂载目录的内容拷贝到docker对应的目录，而且tomcat会热部署，一旦挂载的war包发生变动，tomcat就会自动重新部署</li>
+<li><code>-p 9998:8080</code> 前一个9998是映射的本机端口，一个8080是docker容器的端口</li>
+</ul>
+<h3 id="简化部署"><a href="#简化部署" class="headerlink" title="简化部署"></a>简化部署</h3><p>​    因为要部署的war包并不在docker容器中，而是通过挂载的形式，那每次构建之后新建的docker容器其实是一样的，所以在第一次新建容器之后，其实并不需要每次都去重新构建一次容器，只需要更新docker挂载目录的内容即可。</p>
+<p>​    因此，之前执行的shell命令可以简化一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建挂载的目录</span></span><br><span class="line">mkdir -p /mnt/service/intelligentization/corp/</span><br><span class="line"><span class="comment"># 清空挂载目录</span></span><br><span class="line">rm -rf /mnt/service/intelligentization/corp/*</span><br><span class="line"><span class="comment"># 将jenkins项目打包的项目war包拷贝到docker的挂载目录</span></span><br><span class="line">cp ./corp/target/ROOT.war /mnt/service/intelligentization/corp/</span><br></pre></td></tr></table></figure>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://zhizhi.tangliangdong.me/2019/11/20/2019-11-20-jenkins-docker-deploy/" data-id="ck36qesjs003a5cnw7558de1z" class="article-share-link">分享</a><div class="tags"><a href="/tags/docker/">docker</a><a href="/tags/jenkins/">jenkins</a></div><div class="post-nav"><a href="/2019/11/19/2019-11-19-jenkins-user-permissions/" class="next">jenkins执行脚本权限不足</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'tangliangdong';
+var disqus_identifier = '2019/11/20/2019-11-20-jenkins-docker-deploy/';
+var disqus_title = 'jenkins持续集成docker部署';
+var disqus_url = 'http://zhizhi.tangliangdong.me/2019/11/20/2019-11-20-jenkins-docker-deploy/';
 $('.btn_click_load').click(function() {
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
