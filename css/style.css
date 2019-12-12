@@ -950,9 +950,10 @@ figure.highlight,
       overflow-y: hidden; }
   figure.highlight .line,
   .codeblock .line {
+    line-height: 1.5em;
+    font-family: "Consolas", "Monaco", "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
     height: 1.3em;
-    font-size: 16px;
-    font-family: "Consolas", "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif; }
+    font-size: 16px; }
 
 .gist .line,
 .gist .line-number {
