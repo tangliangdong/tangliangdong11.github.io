@@ -1,31 +1,1747 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="你的指尖拥有改变世界的力量"><title>XiaoTang' Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/6.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">XiaoTang' Blog</h1><a id="logo" href="/.">XiaoTang' Blog</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2017/08/05/2017-07-11-ajax-cross-domain/">ajax跨域请求</a></h1><div class="post-meta">2017年08月05日</div><a data-disqus-identifier="2017/08/05/2017-07-11-ajax-cross-domain/" href="/2017/08/05/2017-07-11-ajax-cross-domain/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>早些时候就听学长说关于跨域的事，虽然一直没遇到过这类问题，但是对跨域却是早有耳闻。</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://zhizhi.tangliangdong.me').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="你的指尖拥有改变世界的力量">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XiaoTang&#39; Blog">
+<meta property="og:url" content="http://zhizhi.tangliangdong.me/page/5/index.html">
+<meta property="og:site_name" content="XiaoTang&#39; Blog">
+<meta property="og:description" content="你的指尖拥有改变世界的力量">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XiaoTang&#39; Blog">
+<meta name="twitter:description" content="你的指尖拥有改变世界的力量">
+
+<link rel="canonical" href="http://zhizhi.tangliangdong.me/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>XiaoTang' Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XiaoTang' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/08/05/2017-07-11-ajax-cross-domain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/08/05/2017-07-11-ajax-cross-domain/" class="post-title-link" itemprop="url">ajax跨域请求</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年08月05日 23:00:00" itemprop="dateCreated datePublished" datetime="2017-08-05T23:00:00+08:00">2017年08月05日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>早些时候就听学长说关于跨域的事，虽然一直没遇到过这类问题，但是对跨域却是早有耳闻。</p>
 <p>跨域问题的出现是因为浏览器同源政策。</p>
 <ul>
 <li>协议相同</li>
 <li>域名相同</li>
 <li>端口相同</li>
-</ul></div><p class="readmore"><a href="/2017/08/05/2017-07-11-ajax-cross-domain/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/08/05/2017-8-3-fetch-cross-domain/">fetch spring前后端解决跨域问题</a></h1><div class="post-meta">2017年08月05日</div><a data-disqus-identifier="2017/08/05/2017-8-3-fetch-cross-domain/" href="/2017/08/05/2017-8-3-fetch-cross-domain/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>初次学习的react的表单提交，选择用新的技术 fetch 来实现异步表单提交。</p>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/08/05/2017-07-11-ajax-cross-domain/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/08/05/2017-8-3-fetch-cross-domain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/08/05/2017-8-3-fetch-cross-domain/" class="post-title-link" itemprop="url">fetch spring前后端解决跨域问题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年08月05日 20:49:55" itemprop="dateCreated datePublished" datetime="2017-08-05T20:49:55+08:00">2017年08月05日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>初次学习的react的表单提交，选择用新的技术 fetch 来实现异步表单提交。</p>
 <p>fetch在旧版本的浏览器上兼容性不佳，特别是IE系的浏览器。但是现在有第三方插件可以很好的提升浏览器的兼容性。</p>
-<p>因为浏览器的同源政策，这里也同样遇到了跨域的问题，之前是通过jsonp来解决的，这次通过设置服务器的CORS（跨域资源共享）来解决跨域问题。</p></div><p class="readmore"><a href="/2017/08/05/2017-8-3-fetch-cross-domain/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/07/17/2017-7-17-sass/">sass学习小记</a></h1><div class="post-meta">2017年07月17日</div><a data-disqus-identifier="2017/07/17/2017-7-17-sass/" href="/2017/07/17/2017-7-17-sass/#disqus_thread" class="disqus-comment-count"></a><div class="post-content">sass存在两种后缀的文件，一种是早些的.sass，是以缩进和换行来区分代码块，另一种是.scss，是后来的sass版本出现的新的语法，和css的写法很类似，用{}来包含代码块。我们甚至可以直接把后缀.css的文件直接转成.scss也能使用。</div><p class="readmore"><a href="/2017/07/17/2017-7-17-sass/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/07/16/2017-07-16-webpack-learn/">webpack 3.3.0 学习小记</a></h1><div class="post-meta">2017年07月16日</div><a data-disqus-identifier="2017/07/16/2017-07-16-webpack-learn/" href="/2017/07/16/2017-07-16-webpack-learn/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>暑假打算借着留校的机会 学下react，在学react之前，想学下webpack，之后有空可以再细看gulp这类打包工具。初学，记一篇博文，也算巩固下所学。</p>
-<hr></div><p class="readmore"><a href="/2017/07/16/2017-07-16-webpack-learn/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/07/12/2017-7-12-phonegap/">phonegap 使用方法</a></h1><div class="post-meta">2017年07月12日</div><a data-disqus-identifier="2017/07/12/2017-7-12-phonegap/" href="/2017/07/12/2017-7-12-phonegap/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><blockquote>
+<p>因为浏览器的同源政策，这里也同样遇到了跨域的问题，之前是通过jsonp来解决的，这次通过设置服务器的CORS（跨域资源共享）来解决跨域问题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/08/05/2017-8-3-fetch-cross-domain/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/07/17/2017-7-17-sass/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/17/2017-7-17-sass/" class="post-title-link" itemprop="url">sass学习小记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年07月17日 18:45:40" itemprop="dateCreated datePublished" datetime="2017-07-17T18:45:40+08:00">2017年07月17日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          sass存在两种后缀的文件，一种是早些的.sass，是以缩进和换行来区分代码块，另一种是.scss，是后来的sass版本出现的新的语法，和css的写法很类似，用{}来包含代码块。我们甚至可以直接把后缀.css的文件直接转成.scss也能使用。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/17/2017-7-17-sass/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/07/16/2017-07-16-webpack-learn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/16/2017-07-16-webpack-learn/" class="post-title-link" itemprop="url">webpack 3.3.0 学习小记</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年07月16日 20:43:33" itemprop="dateCreated datePublished" datetime="2017-07-16T20:43:33+08:00">2017年07月16日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>暑假打算借着留校的机会 学下react，在学react之前，想学下webpack，之后有空可以再细看gulp这类打包工具。初学，记一篇博文，也算巩固下所学。</p>
+<hr>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/16/2017-07-16-webpack-learn/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/07/12/2017-7-12-phonegap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/12/2017-7-12-phonegap/" class="post-title-link" itemprop="url">phonegap 使用方法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年07月12日 11:49:13" itemprop="dateCreated datePublished" datetime="2017-07-12T11:49:13+08:00">2017年07月12日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
 <p>提醒广大的Mac党，如果执行命令的时候 遇到问题，在每个命令的最前面加上 <code>sudo</code>，以管理员权限运行可以解决很多因权限不够产生的问题。</p>
-</blockquote></div><p class="readmore"><a href="/2017/07/12/2017-7-12-phonegap/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/07/12/2017-7-12-websocket/">websocket 使用</a></h1><div class="post-meta">2017年07月12日</div><a data-disqus-identifier="2017/07/12/2017-7-12-websocket/" href="/2017/07/12/2017-7-12-websocket/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>websocket 是服务器和客户端能够双向通信的协议。而且是支持跨域的。</p></div><p class="readmore"><a href="/2017/07/12/2017-7-12-websocket/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/05/23/2017-05-24-php-CodeIgniter/">php CodeIgniter框架</a></h1><div class="post-meta">2017年05月23日</div><a data-disqus-identifier="2017/05/23/2017-05-24-php-CodeIgniter/" href="/2017/05/23/2017-05-24-php-CodeIgniter/#disqus_thread" class="disqus-comment-count"></a><div class="post-content">这个框架具有mvc的思想，而且方法的url映射的方式很想java spring mvc。</div><p class="readmore"><a href="/2017/05/23/2017-05-24-php-CodeIgniter/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/05/22/2017-05-23-html-pdf/">flying saucer 导出pdf</a></h1><div class="post-meta">2017年05月22日</div><a data-disqus-identifier="2017/05/22/2017-05-23-html-pdf/" href="/2017/05/22/2017-05-23-html-pdf/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="制作html模板"><a href="#制作html模板" class="headerlink" title="制作html模板"></a>制作html模板</h3><p>引入flying-saucer-pdf jar包，maven工程直接添加如下代码即可。若不是，则去下载对应版本的jar包。</p></div><p class="readmore"><a href="/2017/05/22/2017-05-23-html-pdf/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/05/22/2017-05-23-java-report-word/">java通过freemarker导出doc</a></h1><div class="post-meta">2017年05月22日</div><a data-disqus-identifier="2017/05/22/2017-05-23-java-report-word/" href="/2017/05/22/2017-05-23-java-report-word/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="制作word模板"><a href="#制作word模板" class="headerlink" title="制作word模板"></a>制作word模板</h3><p>用 <em>word</em>制作 <strong>.doc</strong>后缀的 <em>word</em>，也可以用 <strong>.docx</strong>后缀的 <em>word</em>，但是在导出 <strong>xml</strong>的时候需要导出为2003版本的 <strong>xml</strong>格式，切记不要导出为07年以后的 <strong>xml</strong>。</p>
-<p>后缀为 <strong>.doc</strong>的 <em>word</em>只能通过03年的 <strong>xml</strong>文件生成，而 <strong>.docx</strong>的word只能通过07年以后的 <strong>xml</strong>生成。</p></div><p class="readmore"><a href="/2017/05/22/2017-05-23-java-report-word/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/04/16/2017-04-16-jekyll-github-page/">jekyll github page</a></h1><div class="post-meta">2017年04月16日</div><a data-disqus-identifier="2017/04/16/2017-04-16-jekyll-github-page/" href="/2017/04/16/2017-04-16-jekyll-github-page/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><blockquote>
-<p>部分摘录自 阮一峰👉👉👉<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="noopener">搭建一个免费的，无限流量的Blog—-github Pages和Jekyll入门</a></p></blockquote></div><p class="readmore"><a href="/2017/04/16/2017-04-16-jekyll-github-page/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/04/08/2017-04-09-betahouse-new-live/">betahouse 第一次迎新分享会</a></h1><div class="post-meta">2017年04月08日</div><a data-disqus-identifier="2017/04/08/2017-04-09-betahouse-new-live/" href="/2017/04/08/2017-04-09-betahouse-new-live/#disqus_thread" class="disqus-comment-count"></a><div class="post-content">This is our new life</div><p class="readmore"><a href="/2017/04/08/2017-04-09-betahouse-new-live/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/04/03/2017-04-04-java-poi-excel/">java poi操作Excel</a></h1><div class="post-meta">2017年04月03日</div><a data-disqus-identifier="2017/04/03/2017-04-04-java-poi-excel/" href="/2017/04/03/2017-04-04-java-poi-excel/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>poi 需要用到的jar包：</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/12/2017-7-12-phonegap/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/07/12/2017-7-12-websocket/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/12/2017-7-12-websocket/" class="post-title-link" itemprop="url">websocket 使用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年07月12日 10:11:09" itemprop="dateCreated datePublished" datetime="2017-07-12T10:11:09+08:00">2017年07月12日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>websocket 是服务器和客户端能够双向通信的协议。而且是支持跨域的。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/07/12/2017-7-12-websocket/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/05/23/2017-05-24-php-CodeIgniter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/05/23/2017-05-24-php-CodeIgniter/" class="post-title-link" itemprop="url">php CodeIgniter框架</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年05月23日 22:00:00" itemprop="dateCreated datePublished" datetime="2017-05-23T22:00:00+08:00">2017年05月23日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          这个框架具有mvc的思想，而且方法的url映射的方式很想java spring mvc。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/05/23/2017-05-24-php-CodeIgniter/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/05/22/2017-05-23-html-pdf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/05/22/2017-05-23-html-pdf/" class="post-title-link" itemprop="url">flying saucer 导出pdf</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年05月22日 21:00:00" itemprop="dateCreated datePublished" datetime="2017-05-22T21:00:00+08:00">2017年05月22日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="制作html模板"><a href="#制作html模板" class="headerlink" title="制作html模板"></a>制作html模板</h3><p>引入flying-saucer-pdf jar包，maven工程直接添加如下代码即可。若不是，则去下载对应版本的jar包。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.xhtmlrenderer<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>flying-saucer-pdf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>9.0.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="添加页眉页脚页码"><a href="#添加页眉页脚页码" class="headerlink" title="添加页眉页脚页码"></a>添加页眉页脚页码</h4><p>通过 @page 来添加页眉页脚页码，设置每页的长宽。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">page</span> &#123;</span><br><span class="line">    &lt;!-- 每页pdf的长宽，单位为英寸，这里采用的是A4纸的长宽， --&gt;</span><br><span class="line">    <span class="selector-tag">size</span>: 8<span class="selector-class">.27in</span> 11<span class="selector-class">.69in</span>;</span><br><span class="line"></span><br><span class="line">    &lt;!<span class="selector-tag">--</span> 页脚的中间位置 <span class="selector-tag">--</span>&gt;</span><br><span class="line">    @<span class="keyword">bottom</span>-<span class="keyword">center</span>&#123;  </span><br><span class="line">      <span class="selector-tag">content</span>: <span class="selector-tag">counter</span>(<span class="selector-tag">page</span>);</span><br><span class="line">      <span class="selector-tag">font-family</span>: <span class="selector-tag">SimSun</span>;</span><br><span class="line">      <span class="selector-tag">font-size</span>: 16<span class="selector-tag">px</span>;</span><br><span class="line">      <span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    &lt;!<span class="selector-tag">--</span> 页脚的右侧 <span class="selector-tag">--</span>&gt;</span><br><span class="line">    @<span class="keyword">bottom</span>-<span class="keyword">right</span>&#123;</span><br><span class="line">        &lt;!<span class="selector-tag">--</span> 计算页码 <span class="selector-tag">--</span>&gt;</span><br><span class="line">        <span class="selector-tag">content</span>: <span class="selector-tag">counter</span>(<span class="selector-tag">page</span>);</span><br><span class="line">        <span class="selector-tag">font-family</span>: <span class="selector-tag">SimSun</span>;</span><br><span class="line">        <span class="selector-tag">font-size</span>: 9<span class="selector-tag">px</span>;</span><br><span class="line">        <span class="selector-tag">color</span>: <span class="selector-id">#333</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    &lt;!<span class="selector-tag">--</span> 页眉的左侧 <span class="selector-tag">--</span>&gt;</span><br><span class="line">    @<span class="keyword">top</span>-<span class="keyword">left</span> &#123;</span><br><span class="line">      <span class="selector-tag">font-size</span>: 14<span class="selector-tag">px</span>;</span><br><span class="line">      content: "$&#123;info&#125;$&#123;reportName&#125;";</span><br><span class="line">      font-family:'Arial Unicode MS';</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    &lt;!<span class="selector-tag">--</span> 页眉的右侧 <span class="selector-tag">--</span>&gt;</span><br><span class="line">    @<span class="keyword">top</span>-<span class="keyword">right</span> &#123;</span><br><span class="line">      content: "$&#123;header&#125;";</span><br><span class="line">      font-family:'Arial Unicode MS';</span><br><span class="line">      <span class="selector-tag">font-size</span>: 14<span class="selector-tag">px</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>html结构</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.page</span>&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">page-break-before</span><span class="selector-pseudo">:always</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">width</span>: 7<span class="selector-class">.7in</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">height</span>: 10<span class="selector-class">.8in</span>;</span></span><br><span class="line"><span class="undefined">    padding: 20px 0 0 0;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"font-family:'Arial Unicode MS'"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page"</span>&gt;</span></span><br><span class="line">        第一页</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page"</span>&gt;</span></span><br><span class="line">        第二页</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page"</span>&gt;</span></span><br><span class="line">        第三页</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>因为需要严格控制每页的内容，在每页的DOM容器上添加css属性 <code>page-break-before:always;</code> 强制分页。再控制每个容器的长宽略小于page的长宽。</p>
+<h4 id="把html模板导出为pdf"><a href="#把html模板导出为pdf" class="headerlink" title="把html模板导出为pdf"></a>把html模板导出为pdf</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将数据填入html，然后生成新的html字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> template  指定的html模板名称</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> dataMap  需要填入模板的数据</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span>  新的html字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">htmlGenerate</span><span class="params">(String template, Map&lt;String,Object&gt; variables)</span> <span class="keyword">throws</span> Exception</span>&#123;     </span><br><span class="line">    Configuration config = <span class="keyword">new</span> Configuration(Configuration.VERSION_2_3_23);</span><br><span class="line">    config.setDefaultEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">    config.setClassForTemplateLoading(ReportService.class, <span class="string">"../template"</span>);</span><br><span class="line">    Template t = config.getTemplate(template);</span><br><span class="line">    StringWriter stringWriter = <span class="keyword">new</span> StringWriter();</span><br><span class="line">    BufferedWriter writer = <span class="keyword">new</span> BufferedWriter(stringWriter);</span><br><span class="line">    t.process(variables, writer);</span><br><span class="line">    String htmlStr = stringWriter.toString();</span><br><span class="line">    writer.flush();</span><br><span class="line">    writer.close();</span><br><span class="line">    <span class="keyword">return</span> htmlStr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 生成pdf</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> htmlStr  生成的html字符串</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> out  输出流</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> font  需要引入的文件地址</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">pdfGenerate</span><span class="params">(String htmlStr, OutputStream out,String font)</span> <span class="keyword">throws</span> Exception </span>&#123;     </span><br><span class="line">    DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();</span><br><span class="line">    Document doc = builder.parse(<span class="keyword">new</span> ByteArrayInputStream(htmlStr.getBytes()));</span><br><span class="line">    ITextRenderer renderer = <span class="keyword">new</span> ITextRenderer();</span><br><span class="line">    ITextFontResolver fontResolver = renderer.getFontResolver();</span><br><span class="line">    <span class="comment">// 设置显示中文字</span></span><br><span class="line">    fontResolver.addFont(font, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);</span><br><span class="line">    renderer.setDocument(doc, <span class="keyword">null</span>);</span><br><span class="line">    <span class="comment">// 获取配置文件里保存文件的路径，然后设置图片的相对路径</span></span><br><span class="line">    renderer.getSharedContext().setBaseURL(<span class="string">"file:/"</span>+UploadUtils.getConfig(<span class="string">"FILE_REPOSITORY"</span>)+<span class="string">"/"</span>);</span><br><span class="line">    renderer.layout();</span><br><span class="line">    renderer.createPDF(out);</span><br><span class="line">    out.close();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 导出pdf。直接调用这个方法就行了。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> saveDir  pdf保存的目录</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> dataMap  html模板需要的数据</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> font  中文字库的地址</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">reportPDF</span><span class="params">(String saveDir, Map&lt;String,Object&gt; dataMap, String font)</span></span>&#123;</span><br><span class="line">    String fileAddress = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        fileAddress = saveDir + java.io.File.separator + <span class="string">"betahouse.pdf"</span>;</span><br><span class="line">        String htmlStr = htmlGenerate(<span class="string">"pdf_template.html"</span>, dataMap);</span><br><span class="line">        OutputStream out = <span class="keyword">new</span> FileOutputStream(fileAddress);</span><br><span class="line">        pdfGenerate(htmlStr, out, font);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fileAddress;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="添加中文支持"><a href="#添加中文支持" class="headerlink" title="添加中文支持"></a>添加中文支持</h4><p>下载 <strong>Arial Unicode MS(ARIALUNI.TTF)</strong>，然后添加到项目的静态文件夹下，</p>
+<p><img src="1.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取字体的绝对路径</span></span><br><span class="line">String font = request.getSession().getServletContext().getRealPath(<span class="string">"/"</span>)</span><br><span class="line">        +File.separator+<span class="string">"static"</span>+File.separator+<span class="string">"fonts"</span>+File.separator</span><br><span class="line">        +<span class="string">"ARIALUNI.TTF"</span>;</span><br></pre></td></tr></table></figure>
+<p>这里的话已经在<code>pdfGenerate()</code>方法里写好了，如下代码 可以添加中文支持</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String font = request.getSession().getServletContext().getRealPath(<span class="string">"/"</span>)</span><br><span class="line">        +File.separator+<span class="string">"static"</span>+File.separator+<span class="string">"fonts"</span>+File.separator</span><br><span class="line">        +<span class="string">"ARIALUNI.TTF"</span>;</span><br><span class="line">ITextRenderer renderer = <span class="keyword">new</span> ITextRenderer();</span><br><span class="line">ITextFontResolver fontResolver = renderer.getFontResolver();</span><br><span class="line">fontResolver.addFont(font, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);</span><br><span class="line">renderer.setDocument(doc, <span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h4><blockquote>
+<p>这里有个bug，我调了很久才发现，查了很多博客才发现，</p>
+</blockquote>
+<p>想要将html中的图片导出到pdf中，<code>&lt;img src=&quot;&quot; alt=&quot;&quot; /&gt;</code> 标签的图片路径需要图片的相对路径，而且需要在后台预先设置好，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ITextRenderer renderer = <span class="keyword">new</span> ITextRenderer();</span><br><span class="line">renderer.setDocument(doc, <span class="keyword">null</span>);</span><br><span class="line"><span class="comment">// UploadUtils.getConfig() 是项目里一个读取配置文件的方法</span></span><br><span class="line">renderer.getSharedContext().setBaseURL(<span class="string">"file:/"</span>+UploadUtils.getConfig(<span class="string">"FILE_REPOSITORY"</span>)+<span class="string">"/"</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>设置图片相对路径时，最前面必须加上”file:/“，然后再加上 图片目录的路径。</p>
+</blockquote>
+<p>这里有个很坑的地方，之前写网页的时候，写图片路径时用的都是<code>\</code>反斜杠，因此我用的也是<code>\</code>，而且通过程序从本地读出来的文件路径也都是用反斜杠的，后来试了很多次后，发现这里写文件路径时的路径分隔符都必须是<code>/</code>正斜杠，只能用 <code>replaceAll()</code>函数把路径里面的反斜杠全部替换成正斜杠，然后导出就有图片了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url2 = url2.replaceAll(<span class="string">"\\\\"</span>, <span class="string">"/"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- coverImgUrl变量里存的是相对路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"$&#123;imgUrl&#125;"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">width</span>=<span class="string">"700px"</span> <span class="attr">class</span>=<span class="string">"cover-img"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="一些常用的-freemarker-语法"><a href="#一些常用的-freemarker-语法" class="headerlink" title="一些常用的 freemarker 语法"></a>一些常用的 freemarker 语法</h3><p>请看<a href="http://zhizhi.tangliangdong.me/2017/05/22/java-report-word/">java通过freemarker导出doc</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/05/22/2017-05-23-java-report-word/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/05/22/2017-05-23-java-report-word/" class="post-title-link" itemprop="url">java通过freemarker导出doc</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年05月22日 13:00:00" itemprop="dateCreated datePublished" datetime="2017-05-22T13:00:00+08:00">2017年05月22日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="制作word模板"><a href="#制作word模板" class="headerlink" title="制作word模板"></a>制作word模板</h3><p>用 <em>word</em>制作 <strong>.doc</strong>后缀的 <em>word</em>，也可以用 <strong>.docx</strong>后缀的 <em>word</em>，但是在导出 <strong>xml</strong>的时候需要导出为2003版本的 <strong>xml</strong>格式，切记不要导出为07年以后的 <strong>xml</strong>。</p>
+<p>后缀为 <strong>.doc</strong>的 <em>word</em>只能通过03年的 <strong>xml</strong>文件生成，而 <strong>.docx</strong>的word只能通过07年以后的 <strong>xml</strong>生成。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/05/22/2017-05-23-java-report-word/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/04/16/2017-04-16-jekyll-github-page/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/04/16/2017-04-16-jekyll-github-page/" class="post-title-link" itemprop="url">jekyll github page</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年04月16日 22:50:00" itemprop="dateCreated datePublished" datetime="2017-04-16T22:50:00+08:00">2017年04月16日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>部分摘录自 阮一峰👉👉👉<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="noopener">搭建一个免费的，无限流量的Blog—-github Pages和Jekyll入门</a></p>
+</blockquote>
+<h3 id="首先提一下Github托管静态博客的优点"><a href="#首先提一下Github托管静态博客的优点" class="headerlink" title="首先提一下Github托管静态博客的优点"></a>首先提一下Github托管静态博客的优点</h3><ol>
+<li>首先免费是最重要的，域名不用自己买，甚至连服务器都不用买。</li>
+<li>其次，相比较市面上的一些博客那些千篇一律的主题，满屏的广告，由自己搭建的博客可以很好的避免这些问题。</li>
+<li>在自己保留控制权的情况下，让别人来管理服务器，自己只要专注写博客就行。</li>
+<li>享受git的版本管理功能，不用担心文章遗失。相比较wordpress保存在数据库，数据更不易丢失。</li>
+<li>你只要用自己喜欢的编辑器写文章就可以了，其他事情一概不用操心，都由github处理。</li>
+</ol>
+<hr>
+<blockquote>
+<p>相比较wordpress,就我个人的使用体验来说。。。。。</p>
+</blockquote>
+<p>好吧，其实我建好wordpress 就发过两次文章，这两次还是发的相同的一篇，因为服务器被我搞爆炸了，数据库又没备份，然后只能重新开始写。</p>
+<p>后来我就再也没动力写过，鼓捣麻烦，还怕炸了，万一没备份，又是一把辛酸泪。</p>
+<p>又来知道betahouse学长再用的都是github托管的静态博客，知道了原来博客也是可以保存在本地，只要commit一下，再push到远程仓库，就能将很快更新博客。让github托管我的博客，就不怕什么时候突然就炸了，而且代码在本地都有，根本不怕丢。</p>
+<p>而且每次推送到github上都会在github上有记录</p>
+<p><img src="9.png" alt></p>
+<p>像盖房子一样，是不是很有成就感。</p>
+<hr>
+<p>github Pages可以被认为是用户编写的、托管在github上的静态网页。</p>
+<p>由github提供模板，允许站内生成网页，但也允许用户自己编写网页，然后上传。有意思的是，这种上传并不是单纯的上传，而是会经过Jekyll程序的再处理。</p>
+<p><strong>Jekyll</strong>（发音/‘dʒiːk əl/，”杰克尔”）是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，所以实际上可以用来编写整个网站。</p>
+<p>你先在本地编写符合Jekyll规范的网站源码，然后上传到github，由github生成并托管整个网站。</p>
+<h3 id="如何搭建静态博客"><a href="#如何搭建静态博客" class="headerlink" title="如何搭建静态博客"></a>如何搭建静态博客</h3><h4 id="先在github上新建一个仓库"><a href="#先在github上新建一个仓库" class="headerlink" title="先在github上新建一个仓库"></a>先在github上新建一个仓库</h4><p><img src="1.png" alt="新建博客的仓库"></p>
+<p>该仓库的名称要遵守github pages的命名规范,假如你的博客用户名是tangliangdong,那么你的仓库就要命名成 <code>tangliangdong.github.io</code>，而且如若你的博客没绑定域名，则默认就是这个域名<code>tangliangdong.github.io</code>，其实也还不错。</p>
+<h4 id="clone到本地仓库、或者本地连接到远程仓库"><a href="#clone到本地仓库、或者本地连接到远程仓库" class="headerlink" title="clone到本地仓库、或者本地连接到远程仓库"></a>clone到本地仓库、或者本地连接到远程仓库</h4><h5 id="clone到本地仓库"><a href="#clone到本地仓库" class="headerlink" title="clone到本地仓库"></a>clone到本地仓库</h5><p><img src="3.png" alt="clone到本地"></p>
+<p>先在本地创建一个文件夹当做博客的根目录，命令行cd到博客的根目录 <code>git init</code> 初始化仓库。然后就可以克隆远程的仓库到本地。</p>
+<p><img src="4.png" alt="clone到本地"></p>
+<h5 id="或者本地连接到远程仓库"><a href="#或者本地连接到远程仓库" class="headerlink" title="或者本地连接到远程仓库"></a>或者本地连接到远程仓库</h5><p>命令行cd到博客的根目录,<code>git remote</code> 显示本地仓库连接的所有远程仓库。通过 <code>git remote add [remote-name] [url]</code> 添加github远程仓库。<strong>remote-name</strong> 是你给远程仓库取的名字，以后拉取和推送就用这个别名。</p>
+<p><img src="5.png" alt></p>
+<p> <code>git fetch [remote-name]</code>可以从远程仓库<br>拉取最新的提交。</p>
+<h4 id="在本地安装jekyll"><a href="#在本地安装jekyll" class="headerlink" title="在本地安装jekyll"></a>在本地安装jekyll</h4><blockquote>
+<p>如果是 Mac OS系统 建议在命令前加上 <code>sudo</code> 然后输入管理员密码，以管理员的身份运行指令，不然可能会出现因权限不足，而导致安装失败的情况。</p>
+</blockquote>
+<p>写完博客 你可能需要先看一下呈现的效果，必要的时候可能还要改下css，因为页面都是通过jekyll来生成的，不可能每次修改都提交下，然后再访问博客域名去看效果。</p>
+<p>那么还有种办法，就是本地搭建jekyll环境，想看效果的时候 命令行cd到博客的根目录启动 <code>jekyll serve</code> 一下，再访问 <em>localhost:4000</em>，就在本地看到自己的博客。</p>
+<p><img src="2.png" alt="我的博客"></p>
+<p>接下来让我们来搭建下 <em>jekyll</em> 环境</p>
+<ul>
+<li>基于 Ruby</li>
+<li>DevKit</li>
+<li>使用Markdown书写文章</li>
+</ul>
+<p>需要先安装 Ruby <a href="http://rubyinstaller.org/downloads" target="_blank" rel="noopener">下载页面</a></p>
+<blockquote>
+<p>Mac 自带了Ruby，直接通过命令 <code>ruby -v</code> 查看ruby是否安装成功。</p>
+</blockquote>
+<p>在安装好rubyinstaller后可以通过命令ruby -v检测是否安装成功。</p>
+<p>在以上完成rubyinstaller和DevKit后，就能使用 <code>gem install jekyll</code> 安装jekyll</p>
+<p>输入 <code>jekyll -v</code> 查看jekyll 是否安装成功。</p>
+<p>如果有问题也可以参考 <a href="http://www.jianshu.com/p/58f19083138f" target="_blank" rel="noopener">配置jekyll安装环境与部署博客网站</a></p>
+<p>如果自己会编写静态博客，可以自己来写，<code>jekyll new blogname</code> 来新建一个干净的博客。</p>
+<p><img width="200px" src="great.png"></p>
+<p>我的博客 就是把别人的博客主题clone过来，自己稍微修饰下，就直接上线了，这也是很方便的方式，不需要太多的精力，就能拥有自己的博客。</p>
+<p><a href="https://github.com/huxpro/huxpro.github.io/" target="_blank" rel="noopener">我clone的博客主题</a></p>
+<h4 id="看看博客的目录结构"><a href="#看看博客的目录结构" class="headerlink" title="看看博客的目录结构"></a>看看博客的目录结构</h4><p><img src="6.png" alt></p>
+<ol>
+<li><strong>_config.yml</strong> 整个博客的核心配置文件，保存配置数据。很多配置选项都可以直接在命令行中进行设置，</li>
+<li><strong>_includes</strong> 你可以加载这些包含部分到你的布局或者文章中以方便重用，比如页面的头部、底部和导航，是可以重用的</li>
+<li><strong>_layouts</strong>（布局）是包裹在文章外部的模板。</li>
+<li><strong>_posts</strong> 这里放的就是你的文章了。文件格式很重要，</li>
+<li><strong>_site</strong> 一旦 Jekyll 完成转换，就会将生成的页面放在这里（默认）。最好将这个目录放进你的 .gitignore 文件中。会把css和img文件夹都放进去</li>
+<li><strong>404.html</strong> 找不到路径时显示的页面</li>
+<li><strong>about.html</strong> 个人介绍页面</li>
+<li><strong>CNAME</strong> 为你的博客绑定自有域名的文件，只要在里面输入你要绑定的域名就行了。</li>
+<li><strong>css</strong> 博客所有的css样式文件</li>
+<li><strong>feed.xml</strong></li>
+<li><strong>fonts</strong> 博客的字体</li>
+<li><strong>Gruntfile.js</strong> </li>
+<li><strong>img</strong> 博客的图片</li>
+<li><strong>index.html</strong></li>
+<li><strong>js</strong></li>
+<li><strong>less</strong></li>
+<li><strong>LICENSE</strong></li>
+<li><strong>package.json</strong> 需要的包</li>
+<li><strong>README.md</strong> 项目的英文介绍</li>
+<li><strong>README.zh.md</strong> 项目的中文介绍</li>
+</ol>
+<p>基本都不需要动，只需要最开始改改<code>_config_yml</code>，把需要的图片放到 <code>img</code> 里面，然后在 <code>_posts</code> 文件夹里写文章就行了。</p>
+<h4 id="书写博客的规范"><a href="#书写博客的规范" class="headerlink" title="书写博客的规范"></a>书写博客的规范</h4><hr>
+<p>博客的头部申明</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout:     post</span><br><span class="line">title:      "你好betahouse"              # 博客的标题</span><br><span class="line">subtitle:   "我来啦"                      # 博客的标题</span><br><span class="line">date:       2016-07-10 16:00:00          # 博客的发布时间</span><br><span class="line">author:     "Tang"                       # 此博客的作者</span><br><span class="line">header-img: "img/post-bg-js-module.jpg"  # 此博客的封面图片</span><br><span class="line">catalog:    true                         # 是否显示右侧的页面导航</span><br><span class="line">tags:                                    # 此博客的标签</span><br><span class="line">    - betahouse</span><br><span class="line">    - 记事</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>下面就可以开始你的博客了。</p>
+<p>因为写博客需要用markdown语法，所以需要先掌握下markdown基本的语法，其实很简单，</p>
+<blockquote>
+<p>Markdown 的目标是实现「易读易写」。可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。</p>
+<p>Markdown 语法的目标是：成为一种适用于网络的书写语言。Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想不是要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种发布的格式，Markdown 是一种书写的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围。</p>
+</blockquote>
+<p>可以去学习下  <a href="http://www.jianshu.com/p/q81RER" target="_blank" rel="noopener">献给写作者的 Markdown 新手指南</a> ，看完基本够用了</p>
+<p>如果还想学，戳这里 👉👉👉 <a href="http://wowubuntu.com/markdown/" target="_blank" rel="noopener">Markdown 语法说明 (简体中文版)</a></p>
+<hr>
+<p>有个注意点 因为最后显示的页面都是在 <code>_site</code> 文件夹里面，引用图片的时候有个路径的问题。</p>
+<p><img src="8.png" alt></p>
+<p>需要写成这样，才能正确获取到图片。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](../../../../img/8.png)</span><br></pre></td></tr></table></figure>
+<h4 id="上传博客"><a href="#上传博客" class="headerlink" title="上传博客"></a>上传博客</h4><p>打开命令行,cd 到博客的根目录，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>origin 是你给远程仓库起的名字，master 代表的是远程仓库的一个分支。</p>
+<h3 id="jekyll博客主题"><a href="#jekyll博客主题" class="headerlink" title="jekyll博客主题"></a>jekyll博客主题</h3><blockquote>
+<p>分享一些 我之前搜来的博客主题。</p>
+</blockquote>
+<ul>
+<li><a href="http://www.zhanxin.info/themes.html" target="_blank" rel="noopener">掌心</a></li>
+<li><a href="http://yongyuan.name/blog/collect-jekyll-theme.html" target="_blank" rel="noopener">Jekyll主题收藏</a></li>
+<li><a href="https://taylantatli.github.io/Moon/posts/" target="_blank" rel="noopener">All Posts</a></li>
+<li><a href="http://mazhuang.org/" target="_blank" rel="noopener">码志</a></li>
+</ul>
+<hr>
+<p>俗话说 好记性不如烂笔（jiàn）头（pán）。</p>
+<p>写博客 不仅可以很好地整理自己的思路，还能很好的记录下来，自己以后忘记的话，还能随时翻看。</p>
+<p><img width="200px" src="jiayou.png"></p>
+<p>祝大家都能拥有属于自己的博客。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/04/08/2017-04-09-betahouse-new-live/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/04/08/2017-04-09-betahouse-new-live/" class="post-title-link" itemprop="url">betahouse 第一次迎新分享会</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年04月08日 23:50:00" itemprop="dateCreated datePublished" datetime="2017-04-08T23:50:00+08:00">2017年04月08日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小记/" itemprop="url" rel="index">
+                    <span itemprop="name">小记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          This is our new life
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/04/08/2017-04-09-betahouse-new-live/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/04/03/2017-04-04-java-poi-excel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/04/03/2017-04-04-java-poi-excel/" class="post-title-link" itemprop="url">java poi操作Excel</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年04月03日 23:50:00" itemprop="dateCreated datePublished" datetime="2017-04-03T23:50:00+08:00">2017年04月03日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>poi 需要用到的jar包：</p>
 <ul>
 <li>poi-3.9.jar</li>
 <li>poi-ooxml-3.9.jar</li>
-<li>poi-ooxml-schemas-3.9.jar</li></ul></div><p class="readmore"><a href="/2017/04/03/2017-04-04-java-poi-excel/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/03/29/2017-03-30-feeling/">回望Betahouse</a></h1><div class="post-meta">2017年03月29日</div><a data-disqus-identifier="2017/03/29/2017-03-30-feeling/" href="/2017/03/29/2017-03-30-feeling/#disqus_thread" class="disqus-comment-count"></a><div class="post-content">你们悄悄的走了，正如你们悄悄的来<p style="text-align: right;">—— Hello Betahouse</p></div><p class="readmore"><a href="/2017/03/29/2017-03-30-feeling/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/03/28/2017-03-29-java-calendar/">Calendar用法</a></h1><div class="post-meta">2017年03月28日</div><a data-disqus-identifier="2017/03/28/2017-03-29-java-calendar/" href="/2017/03/28/2017-03-29-java-calendar/#disqus_thread" class="disqus-comment-count"></a><div class="post-content">运用calendar加减日期<br>可以很方便的避免 因每月日期以及闰年日期不同的而产生的逻辑运算<br></div><p class="readmore"><a href="/2017/03/28/2017-03-29-java-calendar/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/03/26/2017-03-27-inline-block/">display: inline-block的小问题</a></h1><div class="post-meta">2017年03月26日</div><a data-disqus-identifier="2017/03/26/2017-03-27-inline-block/" href="/2017/03/26/2017-03-27-inline-block/#disqus_thread" class="disqus-comment-count"></a><div class="post-content">同行inline-block相互影响</div><p class="readmore"><a href="/2017/03/26/2017-03-27-inline-block/">阅读全文</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/page/4/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">下一页</a></nav><script id="dsq-count-scr" src="//tangliangdong.disqus.com/count.js" async></script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Learn/">Learn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/feeling/">feeling</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/learn/">learn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/另一半/">另一半</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/小记/">小记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/备忘录/" style="font-size: 15px;">备忘录</a> <a href="/tags/sublime/" style="font-size: 15px;">sublime</a> <a href="/tags/插件/" style="font-size: 15px;">插件</a> <a href="/tags/maven/" style="font-size: 15px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a> <a href="/tags/配置/" style="font-size: 15px;">配置</a> <a href="/tags/browsersync/" style="font-size: 15px;">browsersync</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/gulp/" style="font-size: 15px;">gulp</a> <a href="/tags/http-server/" style="font-size: 15px;">http-server</a> <a href="/tags/响应式/" style="font-size: 15px;">响应式</a> <a href="/tags/ionic/" style="font-size: 15px;">ionic</a> <a href="/tags/端口/" style="font-size: 15px;">端口</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/generator/" style="font-size: 15px;">generator</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/easyui/" style="font-size: 15px;">easyui</a> <a href="/tags/url/" style="font-size: 15px;">url</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/json/" style="font-size: 15px;">json</a> <a href="/tags/Filter/" style="font-size: 15px;">Filter</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/PDO/" style="font-size: 15px;">PDO</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/baidu-map/" style="font-size: 15px;">baidu-map</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/Calendar/" style="font-size: 15px;">Calendar</a> <a href="/tags/betahouse/" style="font-size: 15px;">betahouse</a> <a href="/tags/Excel/" style="font-size: 15px;">Excel</a> <a href="/tags/jekyll/" style="font-size: 15px;">jekyll</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/flying-saucer/" style="font-size: 15px;">flying saucer</a> <a href="/tags/pdf/" style="font-size: 15px;">pdf</a> <a href="/tags/word/" style="font-size: 15px;">word</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/CodeIgniter/" style="font-size: 15px;">CodeIgniter</a> <a href="/tags/跨域/" style="font-size: 15px;">跨域</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/https/" style="font-size: 15px;">https</a> <a href="/tags/laravel/" style="font-size: 15px;">laravel</a> <a href="/tags/服务器/" style="font-size: 15px;">服务器</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a> <a href="/tags/flask/" style="font-size: 15px;">flask</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/centos7/" style="font-size: 15px;">centos7</a> <a href="/tags/python3/" style="font-size: 15px;">python3</a> <a href="/tags/考研/" style="font-size: 15px;">考研</a> <a href="/tags/phonegap/" style="font-size: 15px;">phonegap</a> <a href="/tags/websocket/" style="font-size: 15px;">websocket</a> <a href="/tags/sass/" style="font-size: 15px;">sass</a> <a href="/tags/fetch/" style="font-size: 15px;">fetch</a> <a href="/tags/aop/" style="font-size: 15px;">aop</a> <a href="/tags/ionic3/" style="font-size: 15px;">ionic3</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/svg/" style="font-size: 15px;">svg</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/router/" style="font-size: 15px;">router</a> <a href="/tags/css-loader/" style="font-size: 15px;">css-loader</a> <a href="/tags/antd/" style="font-size: 15px;">antd</a> <a href="/tags/Tabs/" style="font-size: 15px;">Tabs</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/redis/" style="font-size: 15px;">redis</a> <a href="/tags/树莓派/" style="font-size: 15px;">树莓派</a> <a href="/tags/openjdk/" style="font-size: 15px;">openjdk</a> <a href="/tags/快捷键/" style="font-size: 15px;">快捷键</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a> <a href="/tags/电车难题/" style="font-size: 15px;">电车难题</a> <a href="/tags/美国/" style="font-size: 15px;">美国</a> <a href="/tags/法律/" style="font-size: 15px;">法律</a> <a href="/tags/IDEA/" style="font-size: 15px;">IDEA</a> <a href="/tags/xpath/" style="font-size: 15px;">xpath</a> <a href="/tags/Raspbian/" style="font-size: 15px;">Raspbian</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/email/" style="font-size: 15px;">email</a> <a href="/tags/webhook/" style="font-size: 15px;">webhook</a> <a href="/tags/tomcat8/" style="font-size: 15px;">tomcat8</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/springcloud/" style="font-size: 15px;">springcloud</a> <a href="/tags/feign/" style="font-size: 15px;">feign</a> <a href="/tags/restTemplate/" style="font-size: 15px;">restTemplate</a> <a href="/tags/Gateway/" style="font-size: 15px;">Gateway</a> <a href="/tags/Spring-Cloud/" style="font-size: 15px;">Spring Cloud</a> <a href="/tags/Nacos/" style="font-size: 15px;">Nacos</a> <a href="/tags/atomikos/" style="font-size: 15px;">atomikos</a> <a href="/tags/小婷婷/" style="font-size: 15px;">小婷婷</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/navicat/" style="font-size: 15px;">navicat</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/26/2019-12-27-springcloud-nacos-gateway-dynamic-config/">Spring Cloud Gateway和Nacos实现动态路由</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/26/2019-12-26-springcloud-gateway/">springcloud 配置gateway网关</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/18/2019-12-18-github-contributions/">Github的Contributions没有增加的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/2019-12-17-springcloud-feignclient/">服务消费者Feign访问springcloud服务提供者</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/2019-12-17-springcloud-restTemplate/">spring restTemplate调用提供者方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/2019-12-12-springcloud-config/">springboot 2.x springcloud Eureka 注册</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/2019-12-9-springboot-atomikos/">springboot分布式事务atomikos</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/2019-11-21-java8-features/">java8 stream流</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/2019-11-20-jenkins-docker-deploy/">jenkins持续集成docker部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/2019-11-19-jenkins-user-permissions/">jenkins执行脚本权限不足</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//tangliangdong.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 大佬博客</i></div><ul></ul><a href="http://zhoushidong.cc/" title="Clark's Blog" target="_blank">Clark's Blog</a><ul></ul><a href="https://coink.wang/" title="Coink丨Do Boom!" target="_blank">Coink丨Do Boom!</a><ul></ul><a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">XiaoTang' Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-   search_path = 'search.xml';
-}
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?a76973d251488473df77d002243aea2f";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-  })();
-</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body></html>
+<li>poi-ooxml-schemas-3.9.jar</li>
+<li>poi-scratchpad-3.9.jar</li>
+<li>xmlbeans.jar</li>
+<li>dom4j.jar</li>
+<li>commons-lang3-3.5.jar</li>
+</ul>
+<h3 id="读取Excel"><a href="#读取Excel" class="headerlink" title="读取Excel"></a>读取Excel</h3><h4 id="通过文件路径直接读取Excel"><a href="#通过文件路径直接读取Excel" class="headerlink" title="通过文件路径直接读取Excel"></a>通过文件路径直接读取Excel</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 因为2007年后的Excel格式都是 .xlsx，因此相关的类名前都是 XSSF，类似 XSSFWorkbook</span></span><br><span class="line"><span class="comment">// 而2007年前的是 .xls，相关类名前缀都是 HSSF，类似 HSSFWorkbook</span></span><br><span class="line">File file = <span class="keyword">new</span> File(<span class="string">"C:/Users/18072/Workspaces/数据.xlsx"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建流  </span></span><br><span class="line">InputStream input = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Workbook,一个Excel只有一个Workbook</span></span><br><span class="line">Workbook wb = <span class="keyword">null</span>;  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建sheet，一个Excel有多个sheet（工作表）</span></span><br><span class="line">Sheet sheet = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用读取的文件流来生成Workbook对象，以便我们访问里面的内容</span></span><br><span class="line">wb = <span class="keyword">new</span> XSSFWorkbook(input);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"><span class="comment">// 循环sheet工作表来获取里面的内容</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sheetNumbers; i++) &#123;</span><br><span class="line">    sheet = wb.getSheetAt(i);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 循环sheet里每行的内容</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> rowNum = <span class="number">0</span>; rowNum &lt; sheet.getLastRowNum(); rowNum++) &#123;</span><br><span class="line">        Row row = sheet.getRow(rowNum);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 循环一行里面每个单元格的内容</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> cellNum = <span class="number">0</span>; cellNum &lt; row.getLastCellNum(); cellNum++) &#123;</span><br><span class="line">            Cell cell = row.getCell(cellNum);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将每个单元格的内容存储到ArrayList中，方便以后读取</span></span><br><span class="line">            list.add(cell.getCell(cellNum).toString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>读取单元格内容的方式有多种：</p>
+<ul>
+<li>cell.getStringCellValue() 获取单元格内的字符串，</li>
+<li>cell.getNumericCellValue() 获取单元格内的数字</li>
+<li>cell.toString() 将单元格内的变成字符串后并返回</li>
+</ul>
+<blockquote>
+<p>第一次尝试着用了第一种，结果在单元格内是纯数字的情况下，报错了，无法获取，<br>第二种则是在单元格内是字符串的情况下报错了，<br>只有第三种是都适用的，我也默认使用这一种。</p>
+</blockquote>
+<h4 id="通过-input-type-39-file-39-的形式上传Excel文件"><a href="#通过-input-type-39-file-39-的形式上传Excel文件" class="headerlink" title="通过 input[type=&#39;file&#39;] 的形式上传Excel文件"></a>通过 <code>input[type=&#39;file&#39;]</code> 的形式上传Excel文件</h4><p>如果不知道怎么在spring MVC的Controller层获取文件的请戳 <a href="https://tangliangdong.github.io/2017/03/10/photo-upload/" target="_blank" rel="noopener">spring图片上传</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用的是spring MVC框架</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"post"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">post</span><span class="params">(HttpServletRequest req,HttpServletResponse res,</span></span></span><br><span class="line"><span class="function"><span class="params">    @RequestParam(<span class="string">"data"</span>)</span> MultipartFile exceldata) <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!exceldata.isEmpty())&#123;</span><br><span class="line">        <span class="comment">// 创建流，MultipartFile也有获取字节数组byte[]和inputStream对象的方法</span></span><br><span class="line">        InputStream input = exceldata.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 用读取的文件流来生成Workbook对象，以便我们访问里面的内容</span></span><br><span class="line">        Workbook wb = <span class="keyword">new</span> XSSFWorkbook(input);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 后面都一样</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="生成新的Excel文件"><a href="#生成新的Excel文件" class="headerlink" title="生成新的Excel文件"></a>生成新的Excel文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 循环生成三个Excel文件</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> excelIndex = <span class="number">0</span> ; excelIndex &lt; <span class="number">3</span> ; excelIndex++ )&#123;</span><br><span class="line">    Workbook newWb = <span class="keyword">new</span> XSSFWorkbook();</span><br><span class="line"></span><br><span class="line">    Sheet sheet1 = newWb.createSheet(<span class="string">"封面"</span>);</span><br><span class="line">    Sheet sheet2 = newWb.createSheet(<span class="string">"问题分析页"</span>);</span><br><span class="line">    Sheet sheet3 = newWb.createSheet(<span class="string">"问题清单页"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 循环行</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">5</span> ; i++ )&#123;</span><br><span class="line">        Row row = sheet1.createRow(i);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 循环行内单元格</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; <span class="number">6</span> ; j++ )&#123;</span><br><span class="line">            Cell cell = row.createCell(j);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 往单元格内 写入内容</span></span><br><span class="line">            cell.setCellValue(<span class="string">"Betahouse, better again"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    String filePath = <span class="string">"C:"</span>+java.io.File.separator;</span><br><span class="line">    <span class="comment">// 输出Excel，设置输出Excel的文件名和文件路径</span></span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(filePath+excelIndex+<span class="string">".xlsx"</span>);  </span><br><span class="line">    newWb.write(out);</span><br><span class="line">    out.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>关于 行、单元格的创建、读取、修改有非常需要关注的几点：</strong></p>
+</blockquote>
+<ul>
+<li>在我们需要获取某Row对象时，如果之前没有<code>createRow(行号)</code>创建过改行，则需要先<code>sheet.createRow(行号)</code>，<code>不能先用getRow(行号)</code>。不然会报 <code>NullPointExpection</code> 。</li>
+<li>相反，若之前已经创建过Row对象，则我们必须用<code>getRow()</code>来获取Row对象，不然后一个<code>createRow(行号)</code>会覆盖所有之前在该行设置的属性以及内容</li>
+<li><code>Cell</code>【单元格】和<code>Row</code>【行】类似。同一个单元格只能<code>createCell(列号)</code> 一次，而且必须在所有<code>getCell(列号)</code>之前，</li>
+<li>同样获取<code>Cell</code>时，必须首先保证获取<code>Row</code>没错，不然也会出现报错或者覆盖的情况。</li>
+<li><strong><em>这个坑需要格外注意！！！</em></strong></li>
+</ul>
+<h3 id="修改Excel的样式（字体、背景色、合并单元格、单元格宽高）"><a href="#修改Excel的样式（字体、背景色、合并单元格、单元格宽高）" class="headerlink" title="修改Excel的样式（字体、背景色、合并单元格、单元格宽高）"></a>修改Excel的样式（字体、背景色、合并单元格、单元格宽高）</h3><h4 id="修改字体"><a href="#修改字体" class="headerlink" title="修改字体"></a>修改字体</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建单元格的属性对象CellStyle</span></span><br><span class="line"><span class="comment">// 注意需要用将要设置的单元格所在workbook来创建CellStyle对象</span></span><br><span class="line">CellStyle cellH1 = newWb.createCellStyle();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Font对象</span></span><br><span class="line">Font fontH1 = newWb.createFont();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置字体的大小，对应的就是Excel中的字体数值</span></span><br><span class="line">fontH1.setFontHeightInPoints((<span class="keyword">short</span>)<span class="number">22</span>);</span><br><span class="line"><span class="comment">// fontH1.setFontHeight((short)(256*10));</span></span><br><span class="line"><span class="comment">// 使用这个不太方便，数值在乘上256之后才是代表几个字符的大小。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置字体类型</span></span><br><span class="line">fontH1.setFontName(<span class="string">"微软雅黑"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置粗体</span></span><br><span class="line">fontH1.setBoldweight(XSSFFont.BOLDWEIGHT_BOLD);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将字体的样式添加到单元格样式上，</span></span><br><span class="line">cellH1.setFont(fontH1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将单元格的样式应用到指定单元格。</span></span><br><span class="line">sheet1.getRow(<span class="number">0</span>).getCell(<span class="number">0</span>).setCellStyle(cellH1);</span><br></pre></td></tr></table></figure>
+<h4 id="设置背景色"><a href="#设置背景色" class="headerlink" title="设置背景色"></a>设置背景色</h4><blockquote>
+<p>通过<code>IndexedColors</code>来获取颜色，再通过<code>.getIndex()</code>来获取short类型的数据</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建单元格的属性对象CellStyle</span></span><br><span class="line">CellStyle cBackgound = newWb.createCellStyle();</span><br><span class="line"></span><br><span class="line"><span class="comment">//　设置背景色</span></span><br><span class="line">cBackgound.setFillForegroundColor(IndexedColors.SKY_BLUE.getIndex());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置填充方式</span></span><br><span class="line">cBackgound.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置边框</span></span><br><span class="line">cBackgound.setBorderLeft((<span class="keyword">short</span>)XSSFCellStyle.BORDER_THIN);</span><br><span class="line">cBackgound.setBorderRight((<span class="keyword">short</span>)XSSFCellStyle.BORDER_THIN);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置边框颜色</span></span><br><span class="line">cBackgound.setBottomBorderColor(IndexedColors.BLACK.getIndex());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将单元格的样式应用到指定单元格。</span></span><br><span class="line">sheet1.getRow(<span class="number">0</span>).getCell(<span class="number">0</span>).setCellStyle(cBackgound);</span><br></pre></td></tr></table></figure>
+<h4 id="设置合并单元格"><a href="#设置合并单元格" class="headerlink" title="设置合并单元格"></a>设置合并单元格</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置 合并单元格 </span></span><br><span class="line"><span class="comment">// 合并第一行的第一个到第五个单元格</span></span><br><span class="line">CellRangeAddress region = <span class="keyword">new</span> CellRangeAddress(</span><br><span class="line">    <span class="number">0</span>, <span class="comment">// first row</span></span><br><span class="line">    <span class="number">0</span>, <span class="comment">// last row</span></span><br><span class="line">    <span class="number">0</span>, <span class="comment">// first column</span></span><br><span class="line">    <span class="number">4</span>  <span class="comment">// last column</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">// 设置sheet1 合并单元格</span></span><br><span class="line">sheet1.addMergedRegion(region);</span><br></pre></td></tr></table></figure>
+<h4 id="设置单元格宽、行高"><a href="#设置单元格宽、行高" class="headerlink" title="设置单元格宽、行高"></a>设置单元格宽、行高</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置默认的 单元格宽 和 行高</span></span><br><span class="line">sheet1.setDefaultColumnWidth(<span class="number">20</span>);</span><br><span class="line">sheet1.setDefaultRowHeight((<span class="keyword">short</span>)<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">Row r = sheet1.createRow(<span class="number">1</span>);</span><br><span class="line">Cell c = r.createCell(<span class="number">1</span>);</span><br><span class="line">c.setCellValue(<span class="string">"Hello Betahouse!"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置成6个字符的高度</span></span><br><span class="line">r.setHeight((<span class="keyword">short</span>)(<span class="number">256</span>*<span class="number">6</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置成10个字符的宽度</span></span><br><span class="line">sheet3.setColumnWidth(<span class="number">0</span>, (<span class="keyword">short</span>)(<span class="number">256</span>*<span class="number">10</span>)));</span><br></pre></td></tr></table></figure>
+<h4 id="设置居中"><a href="#设置居中" class="headerlink" title="设置居中"></a>设置居中</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">XSSFCellStyle cCenter=(XSSFCellStyle) newWb.createCellStyle();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置自动换行</span></span><br><span class="line">cCenter.setWrapText(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置竖向居中</span></span><br><span class="line">cCenter.setVerticalAlignment(CellStyle.VERTICAL_CENTER);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置水平居中</span></span><br><span class="line">cCenter.setAlignment(CellStyle.ALIGN_CENTER);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将单元格的样式应用到指定单元格。</span></span><br><span class="line">sheet1.getRow(<span class="number">0</span>).getCell(<span class="number">0</span>).setCellStyle(cCenter);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查阅java文档可以有很全面的认识</p>
+</blockquote>
+<blockquote>
+<p>下次分享如何将Excel的图片插入到另一个Excel中。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/03/29/2017-03-30-feeling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/29/2017-03-30-feeling/" class="post-title-link" itemprop="url">回望Betahouse</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年03月29日 23:00:00" itemprop="dateCreated datePublished" datetime="2017-03-29T23:00:00+08:00">2017年03月29日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小记/" itemprop="url" rel="index">
+                    <span itemprop="name">小记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          你们悄悄的走了，正如你们悄悄的来<p style='text-align: right;'>—— Hello Betahouse</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/03/29/2017-03-30-feeling/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/03/28/2017-03-29-java-calendar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/28/2017-03-29-java-calendar/" class="post-title-link" itemprop="url">Calendar用法</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年03月28日 20:00:00" itemprop="dateCreated datePublished" datetime="2017-03-28T20:00:00+08:00">2017年03月28日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          运用calendar加减日期<br>可以很方便的避免 因每月日期以及闰年日期不同的而产生的逻辑运算<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/03/28/2017-03-29-java-calendar/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/03/26/2017-03-27-inline-block/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/03/26/2017-03-27-inline-block/" class="post-title-link" itemprop="url">display: inline-block的小问题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年03月26日 20:00:00" itemprop="dateCreated datePublished" datetime="2017-03-26T20:00:00+08:00">2017年03月26日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          同行inline-block相互影响
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/03/26/2017-03-27-inline-block/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XiaoTang</p>
+  <div class="site-description" itemprop="description">你的指尖拥有改变世界的力量</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XiaoTang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
+</html>

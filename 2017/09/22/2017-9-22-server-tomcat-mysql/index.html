@@ -1,4 +1,234 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="你的指尖拥有改变世界的力量"><title>centos7服务器 配置Tomcat和mysql | XiaoTang' Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/6.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">centos7服务器 配置Tomcat和mysql</h1><a id="logo" href="/.">XiaoTang' Blog</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">centos7服务器 配置Tomcat和mysql</h1><div class="post-meta">Sep 22, 2017<span> | </span><span class="category"><a href="/categories/Learn/">Learn</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a data-disqus-identifier="2017/09/22/2017-9-22-server-tomcat-mysql/" href="/2017/09/22/2017-9-22-server-tomcat-mysql/#disqus_thread" class="disqus-comment-count"></a><div class="clear"><div id="toc" class="toc-article"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言："><span class="toc-number">1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#centos7-安装、配置mysql数据库"><span class="toc-number">2.</span> <span class="toc-text">centos7 安装、配置mysql数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#centos7-安装、配置-Tomcat"><span class="toc-number">3.</span> <span class="toc-text">centos7 安装、配置 Tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装JDK"><span class="toc-number">3.1.</span> <span class="toc-text">安装JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装Tomcat"><span class="toc-number">3.2.</span> <span class="toc-text">安装Tomcat</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="post-content"><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><blockquote>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://zhizhi.tangliangdong.me').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="前言：  搜索有关配置服务器的信息时 一定要指明服务器系统的类别（Window,Centos,Ubuntu）， 还要指明系统的版本号（Centos6,Centos7），不同的版本的系统之间的差别也很大。   最好搜索最近一年的，太久远的博文可能就滞后了。">
+<meta name="keywords" content="配置,服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos7服务器 配置Tomcat和mysql">
+<meta property="og:url" content="http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/index.html">
+<meta property="og:site_name" content="XiaoTang&#39; Blog">
+<meta property="og:description" content="前言：  搜索有关配置服务器的信息时 一定要指明服务器系统的类别（Window,Centos,Ubuntu）， 还要指明系统的版本号（Centos6,Centos7），不同的版本的系统之间的差别也很大。   最好搜索最近一年的，太久远的博文可能就滞后了。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/server-mysql-tomcat.png">
+<meta property="og:image" content="http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/server-mysql-tomcat2.png">
+<meta property="og:updated_time" content="2019-11-18T03:38:33.960Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="centos7服务器 配置Tomcat和mysql">
+<meta name="twitter:description" content="前言：  搜索有关配置服务器的信息时 一定要指明服务器系统的类别（Window,Centos,Ubuntu）， 还要指明系统的版本号（Centos6,Centos7），不同的版本的系统之间的差别也很大。   最好搜索最近一年的，太久远的博文可能就滞后了。">
+<meta name="twitter:image" content="http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/server-mysql-tomcat.png">
+
+<link rel="canonical" href="http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>centos7服务器 配置Tomcat和mysql | XiaoTang' Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XiaoTang' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          centos7服务器 配置Tomcat和mysql
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年09月22日 21:36:18" itemprop="dateCreated datePublished" datetime="2017-09-22T21:36:18+08:00">2017年09月22日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><blockquote>
 <ul>
 <li>搜索有关配置服务器的信息时<ul>
 <li>一定要指明服务器系统的类别（Window,Centos,Ubuntu），</li>
@@ -93,42 +323,193 @@
 <li><a href="http://blog.csdn.net/zuoshoucuoai/article/details/53610558" target="_blank" rel="noopener">Centos7 下添加Tomcat为系统服务</a></li>
 <li><a href="https://www.bbsmax.com/A/Vx5M10yg5N/" target="_blank" rel="noopener">tomcat实现多端口、多域名访问</a></li>
 </ul>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/" data-id="ck4nyllv70023ngnw3zb36e8h" class="article-share-link">分享</a><div class="tags"><a href="/tags/配置/">配置</a><a href="/tags/服务器/">服务器</a></div><div class="post-nav"><a href="/2017/10/07/2017-10-7-php-crawler/" class="pre">爬取教务网站数据</a><a href="/2017/09/22/2017-9-22-centos-configuration/" class="next">centos7配置apache，添加域名</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'tangliangdong';
-var disqus_identifier = '2017/09/22/2017-9-22-server-tomcat-mysql/';
-var disqus_title = 'centos7服务器 配置Tomcat和mysql';
-var disqus_url = 'http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/';
-$('.btn_click_load').click(function() {
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-  $('.btn_click_load').css('display','none');
-});
-$.ajax({
-  url: 'https://disqus.com/favicon.ico',
-  timeout: 3000,
-  type: 'GET',
-  success: (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    $('.btn_click_load').css('display','none');
-  })(),
-  error: function() {
-    $('.btn_click_load').css('display','block');
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/配置/" rel="tag"># 配置</a>
+              <a href="/tags/服务器/" rel="tag"># 服务器</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/09/22/2017-9-22-centos-configuration/" rel="prev" title="centos7配置apache，添加域名">
+      <i class="fa fa-chevron-left"></i> centos7配置apache，添加域名
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/10/07/2017-10-7-php-crawler/" rel="next" title="爬取教务网站数据">
+      爬取教务网站数据 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
   }
-});</script><script id="dsq-count-scr" src="//tangliangdong.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Learn/">Learn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/feeling/">feeling</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/learn/">learn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/另一半/">另一半</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/小记/">小记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/备忘录/" style="font-size: 15px;">备忘录</a> <a href="/tags/sublime/" style="font-size: 15px;">sublime</a> <a href="/tags/插件/" style="font-size: 15px;">插件</a> <a href="/tags/maven/" style="font-size: 15px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a> <a href="/tags/配置/" style="font-size: 15px;">配置</a> <a href="/tags/browsersync/" style="font-size: 15px;">browsersync</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/gulp/" style="font-size: 15px;">gulp</a> <a href="/tags/http-server/" style="font-size: 15px;">http-server</a> <a href="/tags/响应式/" style="font-size: 15px;">响应式</a> <a href="/tags/ionic/" style="font-size: 15px;">ionic</a> <a href="/tags/端口/" style="font-size: 15px;">端口</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/generator/" style="font-size: 15px;">generator</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/easyui/" style="font-size: 15px;">easyui</a> <a href="/tags/url/" style="font-size: 15px;">url</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/json/" style="font-size: 15px;">json</a> <a href="/tags/Filter/" style="font-size: 15px;">Filter</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/PDO/" style="font-size: 15px;">PDO</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/baidu-map/" style="font-size: 15px;">baidu-map</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/Calendar/" style="font-size: 15px;">Calendar</a> <a href="/tags/betahouse/" style="font-size: 15px;">betahouse</a> <a href="/tags/Excel/" style="font-size: 15px;">Excel</a> <a href="/tags/jekyll/" style="font-size: 15px;">jekyll</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/flying-saucer/" style="font-size: 15px;">flying saucer</a> <a href="/tags/pdf/" style="font-size: 15px;">pdf</a> <a href="/tags/word/" style="font-size: 15px;">word</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/CodeIgniter/" style="font-size: 15px;">CodeIgniter</a> <a href="/tags/跨域/" style="font-size: 15px;">跨域</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/https/" style="font-size: 15px;">https</a> <a href="/tags/laravel/" style="font-size: 15px;">laravel</a> <a href="/tags/服务器/" style="font-size: 15px;">服务器</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a> <a href="/tags/flask/" style="font-size: 15px;">flask</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/centos7/" style="font-size: 15px;">centos7</a> <a href="/tags/python3/" style="font-size: 15px;">python3</a> <a href="/tags/考研/" style="font-size: 15px;">考研</a> <a href="/tags/phonegap/" style="font-size: 15px;">phonegap</a> <a href="/tags/websocket/" style="font-size: 15px;">websocket</a> <a href="/tags/sass/" style="font-size: 15px;">sass</a> <a href="/tags/fetch/" style="font-size: 15px;">fetch</a> <a href="/tags/aop/" style="font-size: 15px;">aop</a> <a href="/tags/ionic3/" style="font-size: 15px;">ionic3</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/svg/" style="font-size: 15px;">svg</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/router/" style="font-size: 15px;">router</a> <a href="/tags/css-loader/" style="font-size: 15px;">css-loader</a> <a href="/tags/antd/" style="font-size: 15px;">antd</a> <a href="/tags/Tabs/" style="font-size: 15px;">Tabs</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/redis/" style="font-size: 15px;">redis</a> <a href="/tags/树莓派/" style="font-size: 15px;">树莓派</a> <a href="/tags/openjdk/" style="font-size: 15px;">openjdk</a> <a href="/tags/快捷键/" style="font-size: 15px;">快捷键</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a> <a href="/tags/电车难题/" style="font-size: 15px;">电车难题</a> <a href="/tags/美国/" style="font-size: 15px;">美国</a> <a href="/tags/法律/" style="font-size: 15px;">法律</a> <a href="/tags/IDEA/" style="font-size: 15px;">IDEA</a> <a href="/tags/xpath/" style="font-size: 15px;">xpath</a> <a href="/tags/Raspbian/" style="font-size: 15px;">Raspbian</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/email/" style="font-size: 15px;">email</a> <a href="/tags/webhook/" style="font-size: 15px;">webhook</a> <a href="/tags/tomcat8/" style="font-size: 15px;">tomcat8</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/springcloud/" style="font-size: 15px;">springcloud</a> <a href="/tags/feign/" style="font-size: 15px;">feign</a> <a href="/tags/restTemplate/" style="font-size: 15px;">restTemplate</a> <a href="/tags/Gateway/" style="font-size: 15px;">Gateway</a> <a href="/tags/Spring-Cloud/" style="font-size: 15px;">Spring Cloud</a> <a href="/tags/Nacos/" style="font-size: 15px;">Nacos</a> <a href="/tags/atomikos/" style="font-size: 15px;">atomikos</a> <a href="/tags/小婷婷/" style="font-size: 15px;">小婷婷</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/navicat/" style="font-size: 15px;">navicat</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/26/2019-12-27-springcloud-nacos-gateway-dynamic-config/">Spring Cloud Gateway和Nacos实现动态路由</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/26/2019-12-26-springcloud-gateway/">springcloud 配置gateway网关</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/18/2019-12-18-github-contributions/">Github的Contributions没有增加的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/2019-12-17-springcloud-feignclient/">服务消费者Feign访问springcloud服务提供者</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/2019-12-17-springcloud-restTemplate/">spring restTemplate调用提供者方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/2019-12-12-springcloud-config/">springboot 2.x springcloud Eureka 注册</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/2019-12-9-springboot-atomikos/">springboot分布式事务atomikos</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/2019-11-21-java8-features/">java8 stream流</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/2019-11-20-jenkins-docker-deploy/">jenkins持续集成docker部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/2019-11-19-jenkins-user-permissions/">jenkins执行脚本权限不足</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//tangliangdong.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 大佬博客</i></div><ul></ul><a href="http://zhoushidong.cc/" title="Clark's Blog" target="_blank">Clark's Blog</a><ul></ul><a href="https://coink.wang/" title="Coink丨Do Boom!" target="_blank">Coink丨Do Boom!</a><ul></ul><a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">XiaoTang' Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-   search_path = 'search.xml';
-}
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?a76973d251488473df77d002243aea2f";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-  })();
-</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body></html>
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7-安装、配置mysql数据库"><span class="nav-number">2.</span> <span class="nav-text">centos7 安装、配置mysql数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7-安装、配置-Tomcat"><span class="nav-number">3.</span> <span class="nav-text">centos7 安装、配置 Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装JDK"><span class="nav-number">3.1.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Tomcat"><span class="nav-number">3.2.</span> <span class="nav-text">安装Tomcat</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XiaoTang</p>
+  <div class="site-description" itemprop="description">你的指尖拥有改变世界的力量</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XiaoTang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
+</html>
