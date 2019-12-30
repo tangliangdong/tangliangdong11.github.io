@@ -1,11 +1,19 @@
-<html>
-<head>
-     <meta charset="UTF-8" />
-     <title>404</title>    
-</head>
-<body>
-	<style type="text/css">
-	html,
+<body translate="no" style="display: block !important;">
+<div class="content">
+<canvas class="snow" id="snow"></canvas>
+<div class="main-text">
+<h1>Aw jeez.<br>That page has gone missing.</h1><a class="home-link" href="/">Hitch a ride back home.</a>
+</div>
+<div class="ground">
+<div class="mound">
+<div class="mound_text">404</div>
+<div class="mound_spade"></div>
+</div>
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<style type="text/css">
+  html,
 body {
   height: 100%;
   min-height: 450px;
@@ -75,12 +83,12 @@ body {
 .ground:after {
   left: 50%;
   margin-left: -166.6666666667px;
-  box-shadow: -290px 310px 15px #b4bed1, -615px 585px 15px #8798b6, -860px 940px 15px #9aa9c2, -1175px 1225px 15px #adb9cd, -1475px 1525px 15px #b7c1d3, -1760px 1840px 15px #91a1bc, -2125px 2075px 15px #bac4d5, -2420px 2380px 15px #adb9cd, -2675px 2725px 15px #a4b1c8, -2985px 3015px 15px #b7c1d3, -3335px 3265px 15px #aab6cb, -3595px 3605px 15px #9aa9c2, -3875px 3925px 15px #8496b4, -4180px 4220px 15px #9aa9c2, -4525px 4475px 15px #97a6c0, -4845px 4755px 15px #97a6c0;
+  box-shadow: -290px 310px 15px #b4bed1, -630px 570px 15px #a4b1c8, -890px 910px 15px #7e90b0, -1215px 1185px 15px #aab6cb, -1545px 1455px 15px #9dabc4, -1755px 1845px 15px #91a1bc, -2105px 2095px 15px #bac4d5, -2435px 2365px 15px #a4b1c8, -2655px 2745px 15px #b7c1d3, -2960px 3040px 15px #adb9cd, -3270px 3330px 15px #91a1bc, -3595px 3605px 15px #a7b4c9, -3860px 3940px 15px #adb9cd, -4235px 4165px 15px #8798b6, -4500px 4500px 15px #8798b6, -4825px 4775px 15px #8798b6;
 }
 .ground:before {
   right: 50%;
   margin-right: -166.6666666667px;
-  box-shadow: 350px -250px 15px #94a3be, 590px -610px 15px #94a3be, 890px -910px 15px #94a3be, 1170px -1230px 15px #8798b6, 1510px -1490px 15px #8e9eba, 1770px -1830px 15px #8a9bb8, 2090px -2110px 15px #aab6cb, 2450px -2350px 15px #bac4d5, 2730px -2670px 15px #8a9bb8, 2995px -3005px 15px #a7b4c9, 3260px -3340px 15px #9aa9c2, 3645px -3555px 15px #8a9bb8, 3875px -3925px 15px #8a9bb8, 4245px -4155px 15px #a7b4c9, 4515px -4485px 15px #9dabc4, 4765px -4835px 15px #9dabc4;
+  box-shadow: 345px -255px 15px #91a1bc, 585px -615px 15px #94a3be, 865px -935px 15px #91a1bc, 1185px -1215px 15px #b7c1d3, 1505px -1495px 15px #91a1bc, 1845px -1755px 15px #a7b4c9, 2115px -2085px 15px #aab6cb, 2430px -2370px 15px #b7c1d3, 2690px -2710px 15px #9aa9c2, 2995px -3005px 15px #b0bccf, 3285px -3315px 15px #8496b4, 3605px -3595px 15px #adb9cd, 3935px -3865px 15px #a4b1c8, 4195px -4205px 15px #adb9cd, 4485px -4515px 15px #bac4d5, 4785px -4815px 15px #b4bed1;
 }
 
 .mound {
@@ -162,106 +170,93 @@ body {
   border: 10px solid #dd4040;
   border-radius: 4px 4px 20px 20px;
 }
-
 </style>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+<script id="rendered-js">
+(function () {
+  function ready(fn) {
+    if (document.readyState != 'loading') {
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
+  }
 
-<div class="content">
-  <canvas class="snow" id="snow"></canvas>
-  <div class="main-text">
-    <h1>That page has gone missing.</h1><a class="home-link" href="/">Hitch a ride back home.</a>
-  </div>
-  <div class="ground">
-    <div class="mound"> 
-      <div class="mound_text">404</div>
-      <div class="mound_spade"></div>
-    </div>
-  </div>
-</div>
+  function makeSnow(el) {
+    var ctx = el.getContext('2d');
+    var width = 0;
+    var height = 0;
+    var particles = [];
 
+    var Particle = function () {
+      this.x = this.y = this.dx = this.dy = 0;
+      this.reset();
+    };
 
+    Particle.prototype.reset = function () {
+      this.y = Math.random() * height;
+      this.x = Math.random() * width;
+      this.dx = Math.random() * 1 - 0.5;
+      this.dy = Math.random() * 0.5 + 0.5;
+    };
 
-<script type="text/javascript">
-	(function() {
-	function ready(fn) {
-		if (document.readyState != 'loading'){
-			fn();
-		} else {
-			document.addEventListener('DOMContentLoaded', fn);
-		}
-	}
-	
-	function makeSnow(el) {
-		var ctx = el.getContext('2d');
-		var width = 0;
-		var height = 0;
-		var particles = [];
-		
-		var Particle = function() {
-			this.x = this.y = this.dx = this.dy = 0;
-			this.reset();
-		}
-		
-		Particle.prototype.reset = function() {
-			this.y = Math.random() * height;
-			this.x = Math.random() * width;
-			this.dx = (Math.random() * 1) - 0.5;
-			this.dy = (Math.random() * 0.5) + 0.5;
-		}
-		
-		function createParticles(count) {
-			if (count != particles.length) {
-				particles = [];
-				for (var i = 0; i < count; i++) {
-					particles.push(new Particle());
-				}
-			}
-		}
-				
-		function onResize() {
-			width = window.innerWidth;
-			height = window.innerHeight;
-			el.width = width;
-			el.height = height;
-			
-			createParticles((width * height) / 10000);
-		}
-		
-		function updateParticles() {
-			ctx.clearRect(0, 0, width, height);
-			ctx.fillStyle = '#f6f9fa';
-			
-			particles.forEach(function(particle) {
-				particle.y += particle.dy;
-				particle.x += particle.dx;
-				
-				if (particle.y > height) {
-					particle.y = 0;
-				}
-				
-				if (particle.x > width) {
-					particle.reset();
-					particle.y = 0;
-				}
-				
-				ctx.beginPath();
-				ctx.arc(particle.x, particle.y, 5, 0, Math.PI * 2, false);
-				ctx.fill();
-			});
-			
-			window.requestAnimationFrame(updateParticles);
-		}
-		
-		onResize();
-		updateParticles();
-		
-		window.addEventListener('resize', onResize);
-	}
-	
-	ready(function() {
-		var canvas = document.getElementById('snow');
-		makeSnow(canvas);
-	});
+    function createParticles(count) {
+      if (count != particles.length) {
+        particles = [];
+        for (var i = 0; i < count; i++) {
+          particles.push(new Particle());
+        }
+      }
+    }
+
+    function onResize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      el.width = width;
+      el.height = height;
+
+      createParticles(width * height / 10000);
+    }
+
+    function updateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = '#f6f9fa';
+
+      particles.forEach(function (particle) {
+        particle.y += particle.dy;
+        particle.x += particle.dx;
+
+        if (particle.y > height) {
+          particle.y = 0;
+        }
+
+        if (particle.x > width) {
+          particle.reset();
+          particle.y = 0;
+        }
+
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, 5, 0, Math.PI * 2, false);
+        ctx.fill();
+      });
+
+      window.requestAnimationFrame(updateParticles);
+    }
+
+    onResize();
+    updateParticles();
+
+    window.addEventListener('resize', onResize);
+  }
+
+  ready(function () {
+    var canvas = document.getElementById('snow');
+    makeSnow(canvas);
+  });
 })();
-</script>
+//# sourceURL=pen.js
+    </script>
+<script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script>
+
+
 </body>
-</html>
