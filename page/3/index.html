@@ -1,34 +1,2241 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="你的指尖拥有改变世界的力量"><title>XiaoTang' Blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/6.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.2/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">XiaoTang' Blog</h1><a id="logo" href="/.">XiaoTang' Blog</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title"><a href="/2019/08/08/2019-08-08-Spring-Scheduler的使用/">Spring Scheduler的使用</a></h1><div class="post-meta">2019年08月08日</div><a data-disqus-identifier="2019/08/08/2019-08-08-Spring-Scheduler的使用/" href="/2019/08/08/2019-08-08-Spring-Scheduler的使用/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote>
-<p>Spring Scheduler里有两个概念：任务（Task）和运行任务的框架（TaskExecutor/TaskScheduler）。TaskExecutor顾名思义，是任务的执行器，允许我们异步执行多个任务。TaskScheduler是任务调度器，来运行未来的定时任务。触发器Trigger可以决定定时任务是否该运行了，最常用的触发器是CronTrigger，具体用法会在下面章节中详细介绍。Spring内置了多种类型的TaskExecutor和TaskScheduler，方便用户根据不同业务场景选择。</p></blockquote></div><p class="readmore"><a href="/2019/08/08/2019-08-08-Spring-Scheduler的使用/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2019/08/08/2019-8-8-websocket-spring/">java客户端连接websocket</a></h1><div class="post-meta">2019年08月08日</div><a data-disqus-identifier="2019/08/08/2019-8-8-websocket-spring/" href="/2019/08/08/2019-8-8-websocket-spring/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="spring-websocket-访问"><a href="#spring-websocket-访问" class="headerlink" title="spring websocket 访问"></a>spring websocket 访问</h3><h4 id="websocket类"><a href="#websocket类" class="headerlink" title="websocket类"></a>websocket类</h4></div><p class="readmore"><a href="/2019/08/08/2019-8-8-websocket-spring/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2019/07/18/2019-7-18-helloOldMe/">你好过去</a></h1><div class="post-meta">2019年07月18日</div><a data-disqus-identifier="2019/07/18/2019-7-18-helloOldMe/" href="/2019/07/18/2019-7-18-helloOldMe/#disqus_thread" class="disqus-comment-count"></a><div class="post-content">这是写给一个人的文章</div><p class="readmore"><a href="/2019/07/18/2019-7-18-helloOldMe/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/08/25/2018-8-25-summer-vacation/">暑假</a></h1><div class="post-meta">2018年08月25日</div><a data-disqus-identifier="2018/08/25/2018-8-25-summer-vacation/" href="/2018/08/25/2018-8-25-summer-vacation/#disqus_thread" class="disqus-comment-count"></a><div class="post-content">Welcome to my blog, enter password to read.</div><p class="readmore"><a href="/2018/08/25/2018-8-25-summer-vacation/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/06/15/2018-6-15-successive/">6月15日</a></h1><div class="post-meta">2018年06月15日</div><a data-disqus-identifier="2018/06/15/2018-6-15-successive/" href="/2018/06/15/2018-6-15-successive/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>6月了，距离考研初试，也只剩下不到200天了， 从我决定考研到现在也已经过了半年了，偶尔会有心情烦躁，不想看书，不能专心的时候，会想放松，会想打电动，想找人聊天。</p>
-<p>但总体还是坚持了下来，也学到了不少东西，高数从一开始的做题就懵逼，到现在有些题目一看到就能知道应该用什么方式去解。英语也开始认真的用墨墨去背，每天坚持签到，也花了50买了4400的单词量，希望自己能用完，不，应该是继续买。😜😜😜</p></div><p class="readmore"><a href="/2018/06/15/2018-6-15-successive/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2018/03/13/2018-3-12-helloGRE/">Hello Further Education</a></h1><div class="post-meta">2018年03月13日</div><a data-disqus-identifier="2018/03/13/2018-3-12-helloGRE/" href="/2018/03/13/2018-3-12-helloGRE/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>寒假过去了，新的学期开始了。</p></div><p class="readmore"><a href="/2018/03/13/2018-3-12-helloGRE/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/22/2017-11-23-further-education/">Further Education Feeling</a></h1><div class="post-meta">2017年11月22日</div><a data-disqus-identifier="2017/11/22/2017-11-23-further-education/" href="/2017/11/22/2017-11-23-further-education/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><blockquote>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://zhizhi.tangliangdong.me').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="你的指尖拥有改变世界的力量">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XiaoTang&#39; Blog">
+<meta property="og:url" content="http://zhizhi.tangliangdong.me/page/3/index.html">
+<meta property="og:site_name" content="XiaoTang&#39; Blog">
+<meta property="og:description" content="你的指尖拥有改变世界的力量">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XiaoTang&#39; Blog">
+<meta name="twitter:description" content="你的指尖拥有改变世界的力量">
+
+<link rel="canonical" href="http://zhizhi.tangliangdong.me/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>XiaoTang' Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XiaoTang' Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2019/08/08/2019-08-08-Spring-Scheduler的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/08/2019-08-08-Spring-Scheduler的使用/" class="post-title-link" itemprop="url">Spring Scheduler的使用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019年08月08日 11:30:00" itemprop="dateCreated datePublished" datetime="2019-08-08T11:30:00+08:00">2019年08月08日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:34" itemprop="dateModified" datetime="2019-11-18T11:38:34+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/learn/" itemprop="url" rel="index">
+                    <span itemprop="name">learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/08/08/2019-08-08-Spring-Scheduler的使用/" class="post-meta-item leancloud_visitors" data-flag-title="Spring Scheduler的使用" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote>
+<p>Spring Scheduler里有两个概念：任务（Task）和运行任务的框架（TaskExecutor/TaskScheduler）。TaskExecutor顾名思义，是任务的执行器，允许我们异步执行多个任务。TaskScheduler是任务调度器，来运行未来的定时任务。触发器Trigger可以决定定时任务是否该运行了，最常用的触发器是CronTrigger，具体用法会在下面章节中详细介绍。Spring内置了多种类型的TaskExecutor和TaskScheduler，方便用户根据不同业务场景选择。</p>
+</blockquote>
+<p>参考<a href="https://www.baeldung.com/spring-scheduled-tasks" target="_blank" rel="noopener">这篇短文</a>可以快速入门</p>
+<hr>
+<h4 id="Cron"><a href="#Cron" class="headerlink" title="Cron"></a>Cron</h4><p>Cron表达式由6~7项组成，中间用空格分开。从左到右依次是：<strong>秒、分、时、日、月、周几、年（可省略）</strong>。值可以是数字，也可以是以下符号：</p>
+<ul>
+<li><p><code>*</code>：所有值都匹配</p>
+</li>
+<li><p><code>?</code>：无所谓，不关心，通常放在“周几”里</p>
+</li>
+<li><p><code>,</code>：或者</p>
+</li>
+<li><p><code>/</code>：增量值</p>
+</li>
+<li><p><code>-</code>：区间</p>
+</li>
+</ul>
+<p>下面举几个例子，看了就知道了：<br><code>0 * * * * *</code>：每分钟（当秒为0的时候）<br><code>0 0 * * * *</code>：每小时（当秒和分都为0的时候）<br><code>*/10 * * * * *</code>：每10秒<br><code>0 5/15 * * * *</code>：每小时的5分、20分、35分、50分<br><code>0 0 9,13 * * *</code>：每天的9点和13点<br><code>0 0 8-10 * * *</code>：每天的8点、9点、10点<br><code>0 0/30 8-10 * * *</code>：每天的8点、8点半、9点、9点半、10点<br><code>0 0 9-17 * * MON-FRI</code>：每周一到周五的9点、10点…直到17点（含）<br><code>0 0 0 25 12 ?</code>：每年12约25日圣诞节的0点0分0秒（午夜）<br><code>0 30 10 * * ? 2016</code>：2016年每天的10点半</p>
+<p>其中的<code>?</code>在用法上其实和<code>*</code>是相同的。但是<code>*</code>语义上表示全匹配，而<code>?</code>并不代表全匹配，而是不关心。比如对于<code>0 0 0 5 8 ? 2016</code>来说，2016年8月5日是周五，<code>?</code>表示我不关心它是周几。而<code>0 0 0 5 8 * 2016</code>中的<code>*</code>表示周一也行，周二也行……语义上和2016年8月5日冲突了，你说谁优先生效呢。</p>
+<p>不记得也没关系，记住<a href="http://www.cronmaker.com/" target="_blank" rel="noopener">Cron Maker</a>也可以，它可以在线生成cron表达式。</p>
+<hr>
+<p>如果想在不同的开发环境中使用不同的定时器，可以在<code>application.properties</code> 中进行配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// application properties</span><br><span class="line">// java的properties文件支持value中带空格</span><br><span class="line">cron_expression = 0 0/2 * * * ?</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Scheduled</span>(cron = <span class="string">"$&#123;cron_expression&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">catchAllPicture</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>:point_right::point_right::point_right:摘录自<a href="https://qinghua.github.io/spring-scheduler/" target="_blank" rel="noopener"><a href="https://qinghua.github.io/spring-scheduler/" target="_blank" rel="noopener">Spring Scheduler的使用与坑</a></a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2019/08/08/2019-8-8-websocket-spring/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/08/2019-8-8-websocket-spring/" class="post-title-link" itemprop="url">java客户端连接websocket</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019年08月08日 10:30:20" itemprop="dateCreated datePublished" datetime="2019-08-08T10:30:20+08:00">2019年08月08日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:34" itemprop="dateModified" datetime="2019-11-18T11:38:34+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/learn/" itemprop="url" rel="index">
+                    <span itemprop="name">learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/08/08/2019-8-8-websocket-spring/" class="post-meta-item leancloud_visitors" data-flag-title="java客户端连接websocket" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="spring-websocket-访问"><a href="#spring-websocket-访问" class="headerlink" title="spring websocket 访问"></a>spring websocket 访问</h3><h4 id="websocket类"><a href="#websocket类" class="headerlink" title="websocket类"></a>websocket类</h4>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/08/08/2019-8-8-websocket-spring/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2019/07/18/2019-7-18-helloOldMe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/07/18/2019-7-18-helloOldMe/" class="post-title-link" itemprop="url">你好过去</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019年07月18日 20:43:20" itemprop="dateCreated datePublished" datetime="2019-07-18T20:43:20+08:00">2019年07月18日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:34" itemprop="dateModified" datetime="2019-11-18T11:38:34+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/另一半/" itemprop="url" rel="index">
+                    <span itemprop="name">另一半</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/07/18/2019-7-18-helloOldMe/" class="post-meta-item leancloud_visitors" data-flag-title="你好过去" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>33k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>30 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          这是写给一个人的文章
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/18/2019-7-18-helloOldMe/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2018/08/25/2018-8-25-summer-vacation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/25/2018-8-25-summer-vacation/" class="post-title-link" itemprop="url">暑假</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018年08月25日 22:12:58" itemprop="dateCreated datePublished" datetime="2018-08-25T22:12:58+08:00">2018年08月25日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:34" itemprop="dateModified" datetime="2019-11-18T11:38:34+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/feeling/" itemprop="url" rel="index">
+                    <span itemprop="name">feeling</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/08/25/2018-8-25-summer-vacation/" class="post-meta-item leancloud_visitors" data-flag-title="暑假" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          Welcome to my blog, enter password to read.
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/08/25/2018-8-25-summer-vacation/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2018/06/15/2018-6-15-successive/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/06/15/2018-6-15-successive/" class="post-title-link" itemprop="url">6月15日</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018年06月15日 12:12:58" itemprop="dateCreated datePublished" datetime="2018-06-15T12:12:58+08:00">2018年06月15日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:34" itemprop="dateModified" datetime="2019-11-18T11:38:34+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/feeling/" itemprop="url" rel="index">
+                    <span itemprop="name">feeling</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/06/15/2018-6-15-successive/" class="post-meta-item leancloud_visitors" data-flag-title="6月15日" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>233</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>6月了，距离考研初试，也只剩下不到200天了， 从我决定考研到现在也已经过了半年了，偶尔会有心情烦躁，不想看书，不能专心的时候，会想放松，会想打电动，想找人聊天。</p>
+<p>但总体还是坚持了下来，也学到了不少东西，高数从一开始的做题就懵逼，到现在有些题目一看到就能知道应该用什么方式去解。英语也开始认真的用墨墨去背，每天坚持签到，也花了50买了4400的单词量，希望自己能用完，不，应该是继续买。😜😜😜</p>
+<p>每天中午迷迷糊糊趴桌上的半小时，总觉得自己提笔在背单词，怕是书虫上脑了。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2018/03/13/2018-3-12-helloGRE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/03/13/2018-3-12-helloGRE/" class="post-title-link" itemprop="url">Hello Further Education</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018年03月13日 05:00:00" itemprop="dateCreated datePublished" datetime="2018-03-13T05:00:00+08:00">2018年03月13日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/feeling/" itemprop="url" rel="index">
+                    <span itemprop="name">feeling</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2018/03/13/2018-3-12-helloGRE/" class="post-meta-item leancloud_visitors" data-flag-title="Hello Further Education" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>832</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>寒假过去了，新的学期开始了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/03/13/2018-3-12-helloGRE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/22/2017-11-23-further-education/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/22/2017-11-23-further-education/" class="post-title-link" itemprop="url">Further Education Feeling</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月22日 23:42:00" itemprop="dateCreated datePublished" datetime="2017-11-22T23:42:00+08:00">2017年11月22日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/feeling/" itemprop="url" rel="index">
+                    <span itemprop="name">feeling</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/22/2017-11-23-further-education/" class="post-meta-item leancloud_visitors" data-flag-title="Further Education Feeling" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>405</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
 <p>离明年考研还有1年一个月，但我总是静不下心来看看书。</p>
-</blockquote></div><p class="readmore"><a href="/2017/11/22/2017-11-23-further-education/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/22/2017-11-22-Flask-SQLAlchemy/">Flask-SQLAlchemy 操作</a></h1><div class="post-meta">2017年11月22日</div><a data-disqus-identifier="2017/11/22/2017-11-22-Flask-SQLAlchemy/" href="/2017/11/22/2017-11-22-Flask-SQLAlchemy/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><blockquote>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/22/2017-11-23-further-education/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/22/2017-11-22-Flask-SQLAlchemy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/22/2017-11-22-Flask-SQLAlchemy/" class="post-title-link" itemprop="url">Flask-SQLAlchemy 操作</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月22日 22:22:57" itemprop="dateCreated datePublished" datetime="2017-11-22T22:22:57+08:00">2017年11月22日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/22/2017-11-22-Flask-SQLAlchemy/" class="post-meta-item leancloud_visitors" data-flag-title="Flask-SQLAlchemy 操作" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
 <p>SQLAlchemy是Python最广泛使用的一个ORM(对象关系映射，简单地说就是把数据库的表即各种操作映射到Python对象上面来)工具。它支持操作PostgreSQL、MySQL、Oracle、Microsoft SQL Server、SQLite等支持SQL的数据库。 👉👉👉 <a href="http://docs.sqlalchemy.org/en/latest/contents.html" target="_blank" rel="noopener">文档地址</a></p>
-</blockquote></div><p class="readmore"><a href="/2017/11/22/2017-11-22-Flask-SQLAlchemy/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/22/2017-11-22-flask-json-serialize/">flask对象列表序列化</a></h1><div class="post-meta">2017年11月22日</div><a data-disqus-identifier="2017/11/22/2017-11-22-flask-json-serialize/" href="/2017/11/22/2017-11-22-flask-json-serialize/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>之前不管是java还是php，从数据库取出数据库对象之后，转换成json字符串总是很方便的。</p>
-<p>但是在python的 flask框架却是没这么简单</p></div><p class="readmore"><a href="/2017/11/22/2017-11-22-flask-json-serialize/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/20/2017-11-20-aliyun-sms/">laravel5接入阿里云短信验证码服务</a></h1><div class="post-meta">2017年11月20日</div><a data-disqus-identifier="2017/11/20/2017-11-20-aliyun-sms/" href="/2017/11/20/2017-11-20-aliyun-sms/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="阿里云开通短信服务"><a href="#阿里云开通短信服务" class="headerlink" title="阿里云开通短信服务"></a>阿里云开通短信服务</h3><p>要申请两个东西</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/22/2017-11-22-Flask-SQLAlchemy/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/22/2017-11-22-flask-json-serialize/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/22/2017-11-22-flask-json-serialize/" class="post-title-link" itemprop="url">flask对象列表序列化</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月22日 18:25:09" itemprop="dateCreated datePublished" datetime="2017-11-22T18:25:09+08:00">2017年11月22日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/22/2017-11-22-flask-json-serialize/" class="post-meta-item leancloud_visitors" data-flag-title="flask对象列表序列化" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>之前不管是java还是php，从数据库取出数据库对象之后，转换成json字符串总是很方便的。</p>
+<p>但是在python的 flask框架却是没这么简单</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/22/2017-11-22-flask-json-serialize/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/20/2017-11-20-aliyun-sms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/20/2017-11-20-aliyun-sms/" class="post-title-link" itemprop="url">laravel5接入阿里云短信验证码服务</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月20日 19:05:42" itemprop="dateCreated datePublished" datetime="2017-11-20T19:05:42+08:00">2017年11月20日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/20/2017-11-20-aliyun-sms/" class="post-meta-item leancloud_visitors" data-flag-title="laravel5接入阿里云短信验证码服务" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="阿里云开通短信服务"><a href="#阿里云开通短信服务" class="headerlink" title="阿里云开通短信服务"></a>阿里云开通短信服务</h3><p>要申请两个东西</p>
 <ul>
 <li>短信签名</li>
 <li>短信模板</li>
-</ul></div><p class="readmore"><a href="/2017/11/20/2017-11-20-aliyun-sms/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/20/2017-11-20-nginx-flask/">nginx部署flask</a></h1><div class="post-meta">2017年11月20日</div><a data-disqus-identifier="2017/11/20/2017-11-20-nginx-flask/" href="/2017/11/20/2017-11-20-nginx-flask/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><blockquote>
+</ul>
+<h4 id="申请短信签名"><a href="#申请短信签名" class="headerlink" title="申请短信签名"></a>申请短信签名</h4><p><img src="1.png" alt></p>
+<p>申请完，审核时间一般两个小时以内，挺快的。</p>
+<p><img src="2.png" alt></p>
+<p>审核状态变为通过，即为审核成功。</p>
+<h4 id="申请短信模板"><a href="#申请短信模板" class="headerlink" title="申请短信模板"></a>申请短信模板</h4><p><img src="3.png" alt></p>
+<p>里面的 ${code} 在之后调研api的时候是需要传进去的。</p>
+<p><img src="4.png" alt></p>
+<p>模板里的code也是调用api的时候要使用到的。</p>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><p>调用短信服务的api，还需要两个参数</p>
+<ul>
+<li>AccessKeyId</li>
+<li>AccessKeySecret</li>
+</ul>
+<p>因此还需要去访问控制里创建一个用户，并分配 <strong>AliyunDysmsFullAccess 管理短信服务(SMS)的权限</strong></p>
+<p><img src="5.png" alt></p>
+<p>创建好的时候记得保存 <strong>AccessKeySecret</strong>，之后就没机会再查看了。</p>
+<h3 id="整合到Laravel框架"><a href="#整合到Laravel框架" class="headerlink" title="整合到Laravel框架"></a>整合到Laravel框架</h3><h4 id="手动整合"><a href="#手动整合" class="headerlink" title="手动整合"></a>手动整合</h4><p>👉👉👉 <a href="https://help.aliyun.com/document_detail/55359.html?spm=5176.doc55491.2.8.evWxXE" target="_blank" rel="noopener">SDK及DEMO下载</a></p>
+<blockquote>
+<p>之前尝试过用python版本，因为我的后台是flask，但是在flask框架里用的是python3的，官方的sdk不支持python3，改来改去，也还是有各种问题，因此采用了别的建议，这个接口单独用php的Laravel5框架来实现。<br>Laravel整合的时候 也碰到各种各样的问题。</p>
+</blockquote>
+<p><img src="7.png" alt></p>
+<p>把下载的包里面的 <code>api_sdk/lib/Core</code> 和 <code>api_sdk/lib/Api</code>复制一份放到项目 <code>app/libs/Aliyun</code> 下，没有 <code>libs</code> 文件夹就新建。</p>
+<p><img src="6.png" width="50%"></p>
+<p>然后打开项目根目录下的 <code>composer.json</code> 文件，找到下面的位置 <code>classmap</code>，加上图示代码</p>
+<p><img src="8.png" width="70%"></p>
+<p>然后终端(Terminal)进入项目根目录，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer dumpautoload</span><br></pre></td></tr></table></figure>
+<p>执行后若出现如下图所示，则表示更新成功</p>
+<p><img src="9.png" alt="composer dumpautoload"></p>
+<p>然后就可以直接使用sdk里面导入包的方式了。</p>
+<p><img src="10.png" alt></p>
+<hr>
+<p>真正做的时候也不是这样一帆风顺的，官方的sdk和demo本身也有些问题。</p>
+<h5 id="Invalid-argument-supplied-for-foreach"><a href="#Invalid-argument-supplied-for-foreach" class="headerlink" title="Invalid argument supplied for foreach()"></a>Invalid argument supplied for foreach()</h5><p><img src="11.png" alt></p>
+<p>直接把Demo复制过来，就会出现这样的问题</p>
+<p>查了很多地方，发现是少了一句demo里少了一行代码</p>
+<p>在 <code>SmsController.getAcsClient()</code> 里补上(原来是没的)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EndpointConfig::load();</span><br></pre></td></tr></table></figure>
+<p><img src="12.png" alt></p>
+<h5 id="Can-not-find-endpoint-to-access"><a href="#Can-not-find-endpoint-to-access" class="headerlink" title="Can not find endpoint to access."></a>Can not find endpoint to access.</h5><p>天真的以为问题都解决了，结果马上出来另外一个问题。</p>
+<p><img src="13.png" alt></p>
+<p>找来源发现问题在这里 <code>app/libs/Aliyun/Core/DefaultAcsClient.doActionImpl()</code>，是程序主动抛出的错误。</p>
+<p><img src="15.png" alt></p>
+<p>回去看看这个 <code>$domain</code> 是什么，结果官方注释说 $domain是产品域名,开发者无需替换。我都没替换，你报个什么错啊。</p>
+<p><img src="14.png" alt> </p>
+<p>算了，既然不需要，那就直接这里吧 <code>$domain</code> 写死好了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$domain = &apos;dysmsapi.aliyuncs.com&apos;;</span><br></pre></td></tr></table></figure>
+<p><img src="16.png" alt></p>
+<h4 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h4><p>我就把 <strong>smsDemo</strong> 里的几个方法都移到 <code>SmsController</code> 里了，</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">Controllers</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Http</span>\<span class="title">Request</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">DB</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Aliyun</span>\<span class="title">Core</span>\<span class="title">Config</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Aliyun</span>\<span class="title">Core</span>\<span class="title">Profile</span>\<span class="title">DefaultProfile</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Aliyun</span>\<span class="title">Core</span>\<span class="title">DefaultAcsClient</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Aliyun</span>\<span class="title">Api</span>\<span class="title">Sms</span>\<span class="title">Request</span>\<span class="title">V20170525</span>\<span class="title">SendSmsRequest</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Aliyun</span>\<span class="title">Api</span>\<span class="title">Sms</span>\<span class="title">Request</span>\<span class="title">V20170525</span>\<span class="title">QuerySendDetailsRequest</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Aliyun</span>\<span class="title">Core</span>\<span class="title">Regions</span>\<span class="title">EndpointConfig</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmsController</span> <span class="keyword">extends</span> <span class="title">Controller</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 可供调用的发送验证码api</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">send</span><span class="params">(Request $request)</span></span>&#123;</span><br><span class="line">        header(<span class="string">'Content-Type: text/plain; charset=utf-8'</span>);</span><br><span class="line">        $phone = $request-&gt;input(<span class="string">'phone'</span>);</span><br><span class="line">        $code = <span class="keyword">$this</span>::randomKeys(); <span class="comment">// 随机生成6位数字验证码</span></span><br><span class="line">        $response = SmsController::sendSms(</span><br><span class="line">            <span class="string">"富春江app"</span>, <span class="comment">// 短信签名</span></span><br><span class="line">            <span class="string">"SMS_111785732"</span>, <span class="comment">// 短信模板编号</span></span><br><span class="line">            $phone, <span class="comment">// 短信接收者</span></span><br><span class="line">            <span class="keyword">Array</span>(  <span class="comment">// 短信模板中字段的值</span></span><br><span class="line">              <span class="string">"code"</span>=&gt;<span class="keyword">$this</span>::randomKeys(),</span><br><span class="line">            ),</span><br><span class="line">            <span class="string">"123456"</span>   <span class="comment">// 流水号,选填</span></span><br><span class="line">        );</span><br><span class="line">        $row = [];</span><br><span class="line">        <span class="keyword">if</span>($response-&gt;Code==<span class="string">'OK'</span>)&#123;</span><br><span class="line">            $row = [<span class="string">'status'</span>=&gt;<span class="number">1</span>,<span class="string">'code'</span>=&gt;$code];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            $row = [<span class="string">'status'</span>=&gt;<span class="number">0</span>,<span class="string">'code'</span>=&gt;$response-&gt;Code,<span class="string">'message'</span>=&gt;$response-&gt;Message];</span><br><span class="line">        &#125;        </span><br><span class="line">        $row = [<span class="string">'status'</span>=&gt;<span class="number">1</span>,<span class="string">'code'</span>=&gt;$code];</span><br><span class="line">        <span class="keyword">return</span> json_encode($row);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 随机生成6位数字验证码</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">randomKeys</span><span class="params">($length = <span class="number">6</span>)</span></span>&#123;</span><br><span class="line">        $key=<span class="string">''</span>;</span><br><span class="line">        $pattern=<span class="string">'1234567890'</span>;</span><br><span class="line">        <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;$length;++$i)&#123;</span><br><span class="line">            $key .= $pattern&#123;mt_rand(<span class="number">0</span>,<span class="number">9</span>)&#125;;    <span class="comment">// 生成php随机数</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> $key;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> $acsClient = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 取得AcsClient</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> DefaultAcsClient</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getAcsClient</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//产品名称:云通信流量服务API产品,开发者无需替换</span></span><br><span class="line">        $product = <span class="string">"深呼吸app"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//产品域名,开发者无需替换</span></span><br><span class="line">        $domain = <span class="string">"dysmsapi.aliyuncs.com"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// TODO 此处需要替换成开发者自己的AK (https://ak-console.aliyun.com/)</span></span><br><span class="line">        $accessKeyId = <span class="string">"LTAIp5j2DxU47O42"</span>; <span class="comment">// AccessKeyId</span></span><br><span class="line"></span><br><span class="line">        $accessKeySecret = <span class="string">"EY9OdjeinAnEOeDyFNZb2OiT3Xg4ep"</span>; <span class="comment">// AccessKeySecret</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 暂时不支持多Region</span></span><br><span class="line">        $region = <span class="string">"cn-hangzhou"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 服务结点</span></span><br><span class="line">        $endPointName = <span class="string">"cn-hangzhou"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">static</span>::$acsClient == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//初始化acsClient,暂不支持region化</span></span><br><span class="line">            $profile = DefaultProfile::getProfile($region, $accessKeyId, $accessKeySecret);</span><br><span class="line"></span><br><span class="line">            EndpointConfig::load();</span><br><span class="line">            <span class="comment">// 增加服务结点</span></span><br><span class="line">            DefaultProfile::addEndpoint($endPointName, $region, $product, $domain);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 初始化AcsClient用于发起请求</span></span><br><span class="line">            <span class="keyword">static</span>::$acsClient = <span class="keyword">new</span> DefaultAcsClient($profile);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">static</span>::$acsClient;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 发送短信</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $signName &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 必填, 短信签名，应严格"签名名称"填写，参考：&lt;a href="https://dysms.console.aliyun.com/dysms.htm#/sign"&gt;短信签名页&lt;/a&gt;</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $templateCode &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 必填, 短信模板Code，应严格按"模板CODE"填写, 参考：&lt;a href="https://dysms.console.aliyun.com/dysms.htm#/template"&gt;短信模板页&lt;/a&gt;</span></span><br><span class="line"><span class="comment">     * (e.g. SMS_0001)</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string $phoneNumbers 必填, 短信接收号码 (e.g. 12345678901)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> array|null $templateParam &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * 选填, 假如模板中存在变量需要替换则为必填项 (e.g. Array("code"=&gt;"12345", "product"=&gt;"阿里通信"))</span></span><br><span class="line"><span class="comment">     * &lt;/p&gt;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string|null $outId [optional] 选填, 发送短信流水号 (e.g. 1234)</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> string|null $smsUpExtendCode [optional] 选填，上行短信扩展码（扩展码字段控制在7位或以下，无特殊需求用户请忽略此字段）</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> stdClass</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">sendSms</span><span class="params">($signName, $templateCode, $phoneNumbers, $templateParam = null, $outId = null, $smsUpExtendCode = null)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 初始化SendSmsRequest实例用于设置发送短信的参数</span></span><br><span class="line">        $request = <span class="keyword">new</span> SendSmsRequest();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 必填，设置雉短信接收号码</span></span><br><span class="line">        $request-&gt;setPhoneNumbers($phoneNumbers);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 必填，设置签名名称</span></span><br><span class="line">        $request-&gt;setSignName($signName);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 必填，设置模板CODE</span></span><br><span class="line">        $request-&gt;setTemplateCode($templateCode);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 可选，设置模板参数</span></span><br><span class="line">        <span class="keyword">if</span>($templateParam) &#123;</span><br><span class="line">            $request-&gt;setTemplateParam(json_encode($templateParam));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 可选，设置流水号</span></span><br><span class="line">        <span class="keyword">if</span>($outId) &#123;</span><br><span class="line">            $request-&gt;setOutId($outId);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 选填，上行短信扩展码</span></span><br><span class="line">        <span class="keyword">if</span>($smsUpExtendCode) &#123;</span><br><span class="line">            $request-&gt;setSmsUpExtendCode($smsUpExtendCode);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 发起访问请求</span></span><br><span class="line">        $acsResponse = <span class="keyword">static</span>::getAcsClient()-&gt;getAcsResponse($request);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 打印请求结果</span></span><br><span class="line">        <span class="comment">// var_dump($acsResponse);</span></span><br><span class="line">        <span class="keyword">return</span> $acsResponse;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/20/2017-11-20-nginx-flask/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/20/2017-11-20-nginx-flask/" class="post-title-link" itemprop="url">nginx部署flask</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月20日 18:56:29" itemprop="dateCreated datePublished" datetime="2017-11-20T18:56:29+08:00">2017年11月20日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/20/2017-11-20-nginx-flask/" class="post-meta-item leancloud_visitors" data-flag-title="nginx部署flask" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
 <p>以前用的一直都是apache的服务器，加上之前apache部署flask一直失败，就想着用nginx试试，网上也建议用nginx，所有就试试 nginx 来搭建服务器。</p>
-</blockquote></div><p class="readmore"><a href="/2017/11/20/2017-11-20-nginx-flask/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/20/2017-11-20-nginx/">nginx配置</a></h1><div class="post-meta">2017年11月20日</div><a data-disqus-identifier="2017/11/20/2017-11-20-nginx/" href="/2017/11/20/2017-11-20-nginx/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="yum-安装"><a href="#yum-安装" class="headerlink" title="yum 安装"></a>yum 安装</h3><p>Nginx 的稳定版包含在 CentOS 7 的软件仓库里，所以可以直接用 yum 去安装它:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">yum install nginx -y</span><br><span class="line"><span class="comment"># 启动nginx</span></span><br><span class="line">systemctl start nginx</span><br><span class="line"><span class="comment"># 自启动nginx</span></span><br><span class="line">systemctl <span class="built_in">enable</span> nginx</span><br><span class="line"><span class="comment"># 关闭自启动</span></span><br><span class="line">systemctl <span class="built_in">disable</span> nginx.service</span><br><span class="line"><span class="comment"># 查看 nginx 的状态</span></span><br><span class="line">systemctl status nginx</span><br><span class="line"><span class="comment"># 关闭nginx</span></span><br><span class="line">systemctl stop nginx.service</span><br><span class="line"><span class="comment"># 重启nginx</span></span><br><span class="line">systemctl restart nginx.service</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2017/11/20/2017-11-20-nginx/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/16/2017-11-16-flask-cors/">flask-cors实现CORS跨域请求</a></h1><div class="post-meta">2017年11月16日</div><a data-disqus-identifier="2017/11/16/2017-11-16-flask-cors/" href="/2017/11/16/2017-11-16-flask-cors/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><p>在做ionic登录的时候碰到的跨域请求的问题，因为缺少 <code>Access-Control-Allow-Origin</code>，</p>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/20/2017-11-20-nginx-flask/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/20/2017-11-20-nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/20/2017-11-20-nginx/" class="post-title-link" itemprop="url">nginx配置</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月20日 18:31:14" itemprop="dateCreated datePublished" datetime="2017-11-20T18:31:14+08:00">2017年11月20日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/20/2017-11-20-nginx/" class="post-meta-item leancloud_visitors" data-flag-title="nginx配置" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>988</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="yum-安装"><a href="#yum-安装" class="headerlink" title="yum 安装"></a>yum 安装</h3><p>Nginx 的稳定版包含在 CentOS 7 的软件仓库里，所以可以直接用 yum 去安装它:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">yum install nginx -y</span><br><span class="line"><span class="comment"># 启动nginx</span></span><br><span class="line">systemctl start nginx</span><br><span class="line"><span class="comment"># 自启动nginx</span></span><br><span class="line">systemctl <span class="built_in">enable</span> nginx</span><br><span class="line"><span class="comment"># 关闭自启动</span></span><br><span class="line">systemctl <span class="built_in">disable</span> nginx.service</span><br><span class="line"><span class="comment"># 查看 nginx 的状态</span></span><br><span class="line">systemctl status nginx</span><br><span class="line"><span class="comment"># 关闭nginx</span></span><br><span class="line">systemctl stop nginx.service</span><br><span class="line"><span class="comment"># 重启nginx</span></span><br><span class="line">systemctl restart nginx.service</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/20/2017-11-20-nginx/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/16/2017-11-16-flask-cors/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/16/2017-11-16-flask-cors/" class="post-title-link" itemprop="url">flask-cors实现CORS跨域请求</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月16日 15:13:23" itemprop="dateCreated datePublished" datetime="2017-11-16T15:13:23+08:00">2017年11月16日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/16/2017-11-16-flask-cors/" class="post-meta-item leancloud_visitors" data-flag-title="flask-cors实现CORS跨域请求" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>195</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在做ionic登录的时候碰到的跨域请求的问题，因为缺少 <code>Access-Control-Allow-Origin</code>，</p>
 <p>可以通过安装 <code>flask-cors</code> 来解决问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install flask-cors</span><br></pre></td></tr></table></figure></div><p class="readmore"><a href="/2017/11/16/2017-11-16-flask-cors/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/15/2017-11-15-flask-md5/">python3的md5加密</a></h1><div class="post-meta">2017年11月15日</div><a data-disqus-identifier="2017/11/15/2017-11-15-flask-md5/" href="/2017/11/15/2017-11-15-flask-md5/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install flask-cors</span><br></pre></td></tr></table></figure>
+<p>在出现 <code>app = Flask(__name__)</code> 这段的地方加上如下代码。即可实现跨域请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from flask_cors import CORS</span><br><span class="line">app = Flask(__name__)</span><br><span class="line">CORS(app)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/15/2017-11-15-flask-md5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/15/2017-11-15-flask-md5/" class="post-title-link" itemprop="url">python3的md5加密</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月15日 16:55:26" itemprop="dateCreated datePublished" datetime="2017-11-15T16:55:26+08:00">2017年11月15日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/15/2017-11-15-flask-md5/" class="post-meta-item leancloud_visitors" data-flag-title="python3的md5加密" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>281</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
 <p>登录注册时，密码存储不能用明文，可以选用md5加密算法。</p>
-</blockquote></div><p class="readmore"><a href="/2017/11/15/2017-11-15-flask-md5/">阅读全文</a></p></div><div class="post"><h1 class="post-title"><a href="/2017/11/12/2017-11-12-advanced-study/">Fight for Advanced Study</a></h1><div class="post-meta">2017年11月12日</div><a data-disqus-identifier="2017/11/12/2017-11-12-advanced-study/" href="/2017/11/12/2017-11-12-advanced-study/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="考研"><a href="#考研" class="headerlink" title="考研"></a>考研</h3><blockquote>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/15/2017-11-15-flask-md5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/12/2017-11-12-advanced-study/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/11/12/2017-11-12-advanced-study/" class="post-title-link" itemprop="url">Fight for Advanced Study</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年11月12日 10:51:14" itemprop="dateCreated datePublished" datetime="2017-11-12T10:51:14+08:00">2017年11月12日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/feeling/" itemprop="url" rel="index">
+                    <span itemprop="name">feeling</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/11/12/2017-11-12-advanced-study/" class="post-meta-item leancloud_visitors" data-flag-title="Fight for Advanced Study" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>605</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="考研"><a href="#考研" class="headerlink" title="考研"></a>考研</h3><blockquote>
 <p>今天我准备以后好好准备考研了，曾经的我，未曾考虑过要考研，因为英语一直都是我的软肋，曾经四级都过不了的我，现在信誓旦旦要参加难度甚至超过6级的考研英语时，是不是有点痴人说梦的意味呢。</p>
-</blockquote></div><p class="readmore"><a href="/2017/11/12/2017-11-12-advanced-study/">阅读全文</a></p></div><nav class="page-navigator"><a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">下一页</a></nav><script id="dsq-count-scr" src="//tangliangdong.disqus.com/count.js" async></script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Learn/">Learn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/feeling/">feeling</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/learn/">learn</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/另一半/">另一半</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/小记/">小记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/阅读/">阅读</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/sublime/" style="font-size: 15px;">sublime</a> <a href="/tags/插件/" style="font-size: 15px;">插件</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/备忘录/" style="font-size: 15px;">备忘录</a> <a href="/tags/maven/" style="font-size: 15px;">maven</a> <a href="/tags/spring/" style="font-size: 15px;">spring</a> <a href="/tags/配置/" style="font-size: 15px;">配置</a> <a href="/tags/browsersync/" style="font-size: 15px;">browsersync</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/gulp/" style="font-size: 15px;">gulp</a> <a href="/tags/http-server/" style="font-size: 15px;">http-server</a> <a href="/tags/响应式/" style="font-size: 15px;">响应式</a> <a href="/tags/ionic/" style="font-size: 15px;">ionic</a> <a href="/tags/端口/" style="font-size: 15px;">端口</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/generator/" style="font-size: 15px;">generator</a> <a href="/tags/mybatis/" style="font-size: 15px;">mybatis</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/easyui/" style="font-size: 15px;">easyui</a> <a href="/tags/json/" style="font-size: 15px;">json</a> <a href="/tags/url/" style="font-size: 15px;">url</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/PDO/" style="font-size: 15px;">PDO</a> <a href="/tags/Filter/" style="font-size: 15px;">Filter</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/freemarker/" style="font-size: 15px;">freemarker</a> <a href="/tags/baidu-map/" style="font-size: 15px;">baidu-map</a> <a href="/tags/springboot/" style="font-size: 15px;">springboot</a> <a href="/tags/css3/" style="font-size: 15px;">css3</a> <a href="/tags/Calendar/" style="font-size: 15px;">Calendar</a> <a href="/tags/betahouse/" style="font-size: 15px;">betahouse</a> <a href="/tags/Excel/" style="font-size: 15px;">Excel</a> <a href="/tags/jekyll/" style="font-size: 15px;">jekyll</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/flying-saucer/" style="font-size: 15px;">flying saucer</a> <a href="/tags/pdf/" style="font-size: 15px;">pdf</a> <a href="/tags/word/" style="font-size: 15px;">word</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/CodeIgniter/" style="font-size: 15px;">CodeIgniter</a> <a href="/tags/跨域/" style="font-size: 15px;">跨域</a> <a href="/tags/webpack/" style="font-size: 15px;">webpack</a> <a href="/tags/https/" style="font-size: 15px;">https</a> <a href="/tags/laravel/" style="font-size: 15px;">laravel</a> <a href="/tags/服务器/" style="font-size: 15px;">服务器</a> <a href="/tags/flask/" style="font-size: 15px;">flask</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/爬虫/" style="font-size: 15px;">爬虫</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/centos7/" style="font-size: 15px;">centos7</a> <a href="/tags/python3/" style="font-size: 15px;">python3</a> <a href="/tags/考研/" style="font-size: 15px;">考研</a> <a href="/tags/phonegap/" style="font-size: 15px;">phonegap</a> <a href="/tags/websocket/" style="font-size: 15px;">websocket</a> <a href="/tags/sass/" style="font-size: 15px;">sass</a> <a href="/tags/fetch/" style="font-size: 15px;">fetch</a> <a href="/tags/aop/" style="font-size: 15px;">aop</a> <a href="/tags/ionic3/" style="font-size: 15px;">ionic3</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/router/" style="font-size: 15px;">router</a> <a href="/tags/svg/" style="font-size: 15px;">svg</a> <a href="/tags/antd/" style="font-size: 15px;">antd</a> <a href="/tags/Tabs/" style="font-size: 15px;">Tabs</a> <a href="/tags/css-loader/" style="font-size: 15px;">css-loader</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/redis/" style="font-size: 15px;">redis</a> <a href="/tags/树莓派/" style="font-size: 15px;">树莓派</a> <a href="/tags/openjdk/" style="font-size: 15px;">openjdk</a> <a href="/tags/快捷键/" style="font-size: 15px;">快捷键</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a> <a href="/tags/电车难题/" style="font-size: 15px;">电车难题</a> <a href="/tags/美国/" style="font-size: 15px;">美国</a> <a href="/tags/法律/" style="font-size: 15px;">法律</a> <a href="/tags/IDEA/" style="font-size: 15px;">IDEA</a> <a href="/tags/xpath/" style="font-size: 15px;">xpath</a> <a href="/tags/Raspbian/" style="font-size: 15px;">Raspbian</a> <a href="/tags/ssh/" style="font-size: 15px;">ssh</a> <a href="/tags/jenkins/" style="font-size: 15px;">jenkins</a> <a href="/tags/email/" style="font-size: 15px;">email</a> <a href="/tags/webhook/" style="font-size: 15px;">webhook</a> <a href="/tags/tomcat8/" style="font-size: 15px;">tomcat8</a> <a href="/tags/jdk8/" style="font-size: 15px;">jdk8</a> <a href="/tags/springcloud/" style="font-size: 15px;">springcloud</a> <a href="/tags/feign/" style="font-size: 15px;">feign</a> <a href="/tags/restTemplate/" style="font-size: 15px;">restTemplate</a> <a href="/tags/Gateway/" style="font-size: 15px;">Gateway</a> <a href="/tags/Spring-Cloud/" style="font-size: 15px;">Spring Cloud</a> <a href="/tags/Nacos/" style="font-size: 15px;">Nacos</a> <a href="/tags/atomikos/" style="font-size: 15px;">atomikos</a> <a href="/tags/小婷婷/" style="font-size: 15px;">小婷婷</a> <a href="/tags/navicat/" style="font-size: 15px;">navicat</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/26/2019-12-27-springcloud-nacos-gateway-dynamic-config/">Spring Cloud Gateway和Nacos实现动态路由</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/26/2019-12-26-springcloud-gateway/">springcloud 配置gateway网关</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/18/2019-12-18-github-contributions/">Github的Contributions没有增加的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/2019-12-17-springcloud-feignclient/">服务消费者Feign访问springcloud服务提供者</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/2019-12-17-springcloud-restTemplate/">spring restTemplate调用提供者方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/2019-12-12-springcloud-config/">springboot 2.x springcloud Eureka 注册</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/2019-12-9-springboot-atomikos/">springboot分布式事务atomikos</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/2019-11-21-java8-features/">java8 stream流</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/2019-11-20-jenkins-docker-deploy/">jenkins持续集成docker部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/2019-11-19-jenkins-user-permissions/">jenkins执行脚本权限不足</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//tangliangdong.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 大佬博客</i></div><ul></ul><a href="http://zhoushidong.cc/" title="Clark's Blog" target="_blank">Clark's Blog</a><ul></ul><a href="https://coink.wang/" title="Coink丨Do Boom!" target="_blank">Coink丨Do Boom!</a><ul></ul><a href="http://www.ruanyifeng.com/blog/" title="阮一峰的网络日志" target="_blank">阮一峰的网络日志</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">XiaoTang' Blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.0.47/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-   search_path = 'search.xml';
-}
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script>var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?a76973d251488473df77d002243aea2f";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-  })();
-</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body></html>
+</blockquote>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/11/12/2017-11-12-advanced-study/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">XiaoTang</p>
+  <div class="site-description" itemprop="description">你的指尖拥有改变世界的力量</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer" id="footer" >
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">XiaoTang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">316k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv">
+      我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+    </span>
+    <span class="site-pv">
+      历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+    </span>
+</div>
+
+
+
+
+
+
+  <script>
+  function leancloudSelector(url) {
+    url = encodeURI(url);
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.getAttribute('id'));
+      var title = visitors.getAttribute('data-flag-title');
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              })
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.getAttribute('id'));
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (let item of results) {
+            let { url, time } = item;
+            leancloudSelector(url).innerText = time;
+          }
+          for (let url of entries) {
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+            'X-LC-Key': 'AJ3paOnlxYMTA5dQejavW0MO',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+
+
+
+  <script src="/js/wobblewindow.js"></script>
+  <script>
+    //只在桌面版网页启用特效
+    if( window.innerWidth > 768  ){
+      $(document).ready(function () {
+        
+          $('#header').wobbleWindow({
+            radius: 50,
+            movementTop: false,
+            movementLeft: false,
+            movementRight: false,
+            debug: false,
+          });
+        
+
+        
+
+        
+          $('#footer').wobbleWindow({
+            radius: 50,
+            movementBottom: false,
+            movementLeft: false,
+            movementRight: false,
+            offsetX: ,
+            position: 'absolute',
+            debug: false,
+          });
+        
+      });
+    }
+  </script>
+
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20161001,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `我已在此等候你 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  console.log(copyright)
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+ 
+<script>
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)我藏好了哦~" + OriginTitile;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*) 被你发现啦~" + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
+</html>
