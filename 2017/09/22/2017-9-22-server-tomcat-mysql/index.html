@@ -26,8 +26,8 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
@@ -108,8 +108,10 @@
 </noscript>
 
 </head>
+<script src="/lib/jquery.js??v=2.1.3"></script>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+
   <div class="container use-motion">
     <div class="headband"></div>
 
@@ -144,11 +146,6 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
@@ -162,6 +159,26 @@
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>阅读</a>
+
+  </li>
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies/" rel="section"><i class="fa fa-fw fa-video-camera"></i>电影</a>
+
+  </li>
+        <li class="menu-item menu-item-games">
+
+    <a href="/games/" rel="section"><i class="fa fa-fw fa-gamepad"></i>游戏</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -194,6 +211,12 @@
   </div>
 </div>
     </header>
+    <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+  <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+      </svg>
+    </a>
 
     
   <div class="back-to-top">
@@ -218,7 +241,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/09/22/2017-9-22-server-tomcat-mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="XiaoTang">
       <meta itemprop="description" content="你的指尖拥有改变世界的力量">
     </span>
@@ -273,7 +296,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.4k</span>
+              <span>3.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -304,53 +327,53 @@
 </blockquote>
 <a id="more"></a>
 <p>还要稍早写的一篇 👉👉👉 <a href="http://tangliangdong.github.io/2017/09/22/2017-9-22-centos-configuration/" target="_blank" rel="noopener">centos7配置apache，添加域名</a></p>
-<h2 id="centos7-安装、配置mysql数据库"><a href="#centos7-安装、配置mysql数据库" class="headerlink" title="centos7 安装、配置mysql数据库"></a>centos7 安装、配置mysql数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install mysql</span><br><span class="line">yum install mysql-server</span><br><span class="line">yum install mysql-devel</span><br></pre></td></tr></table></figure>
+<h2 id="centos7-安装、配置mysql数据库"><a href="#centos7-安装、配置mysql数据库" class="headerlink" title="centos7 安装、配置mysql数据库"></a>centos7 安装、配置mysql数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> mysql</span><br><span class="line">yum <span class="keyword">install</span> mysql-<span class="keyword">server</span></span><br><span class="line">yum <span class="keyword">install</span> mysql-devel</span><br></pre></td></tr></table></figure>
 <p>安装mysql和mysql-devel都成功，但是安装mysql-server失败</p>
 <p>CentOS 7 版本将MySQL数据库软件从默认的程序列表中移除，用mariadb代替了</p>
 <p>MariaDB数据库管理系统是MySQL的一个分支，主要由开源社区在维护，采用GPL授权许可。开发这个分支的原因之一是：甲骨文公司收购了MySQL后，有将MySQL闭源的潜在风险，因此社区采用分支的方式来避开这个风险。MariaDB的目的是完全兼容MySQL，包括API和命令行，使之能轻松成为MySQL的代替品。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install mariadb-server mariadb</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum <span class="keyword">install</span> mariadb-<span class="keyword">server</span> mariadb</span><br></pre></td></tr></table></figure>
 <p>mariadb数据库的相关命令是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mariadb  // 启动MariaDB</span><br><span class="line"></span><br><span class="line">systemctl stop mariadb  // 停止MariaDB</span><br><span class="line"></span><br><span class="line">systemctl restart mariadb  // 重启MariaDB</span><br><span class="line"></span><br><span class="line">systemctl enable mariadb  // 设置开机启动</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">systemctl</span> start <span class="keyword">mariadb </span> // 启动<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>stop <span class="keyword">mariadb </span> // 停止<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>restart <span class="keyword">mariadb </span> // 重启<span class="keyword">MariaDB</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">systemctl </span>enable <span class="keyword">mariadb </span> // 设置开机启动</span><br></pre></td></tr></table></figure>
 <p>启动数据库后，就可以正常使用了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mysql -u root -p</span></span><br></pre></td></tr></table></figure>
 <p>为了方便使用，需要在本地使用 Navicat 连接服务器上的数据库。</p>
 <ol>
 <li>可能会碰到没有权限的问题，可能需要firewall 防火墙开放3306端口</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld  // 开启防火墙</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent // 将3306端口添加到防火墙</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload  // 防火墙重新配置</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld  <span class="string">//</span> 开启防火墙</span><br><span class="line"></span><br><span class="line">firewall-cmd <span class="params">--zone=public</span> <span class="params">--add-port=3306/tcp</span> <span class="params">--permanent</span> <span class="string">//</span> 将3306端口添加到防火墙</span><br><span class="line"></span><br><span class="line">firewall-cmd <span class="params">--reload</span>  <span class="string">//</span> 防火墙重新配置</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>还可能碰到这个问题 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Host &apos;xxx.xx.xxx.xxx&apos; is not allowed to connect to this MySQL server</span><br></pre></td></tr></table></figure>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Host <span class="string">'xxx.xx.xxx.xxx'</span> <span class="keyword">is</span> <span class="keyword">not</span> allowed <span class="keyword">to</span> connect <span class="keyword">to</span> <span class="keyword">this</span> MySQL server</span><br></pre></td></tr></table></figure>
 <p><img src="server-mysql-tomcat.png" alt="Nacicat 连接数据库失败"></p>
 <blockquote>
 <p>可能是一种安全预防措施，可以尝试添加新的管理员帐户：admin 123456</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER &apos;admin&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;123456&apos;;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;admin&apos;@&apos;localhost&apos; WITH GRANT OPTION;</span><br><span class="line">mysql&gt; CREATE USER &apos;admin&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;admin&apos;@&apos;%&apos; WITH GRANT OPTION;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE USER <span class="string">'admin'</span>@<span class="string">'localhost'</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">'123456'</span>;</span><br><span class="line">mysql&gt; GRANT <span class="literal">ALL</span> PRIVILEGES <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'admin'</span>@<span class="string">'localhost'</span> <span class="keyword">WITH</span> GRANT OPTION;</span><br><span class="line">mysql&gt; CREATE USER <span class="string">'admin'</span>@<span class="string">'%'</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">'123456'</span>;</span><br><span class="line">mysql&gt; GRANT <span class="literal">ALL</span> PRIVILEGES <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'admin'</span>@<span class="string">'%'</span> <span class="keyword">WITH</span> GRANT OPTION;</span><br></pre></td></tr></table></figure>
 <p>这样就可以用新的管理员账号连接mysql了。</p>
 <p><img src="server-mysql-tomcat2.png" alt="Navicat 配置数据库连接信息"></p>
 <h2 id="centos7-安装、配置-Tomcat"><a href="#centos7-安装、配置-Tomcat" class="headerlink" title="centos7 安装、配置 Tomcat"></a>centos7 安装、配置 Tomcat</h2><h3 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h3><p>安装Tomcat之前需要确保已经安装了 JDK</p>
 <p>输入 <code>java -version</code> 来判断是否已经安装了java</p>
 <p>如果没有安装，则本地先下载JDK，再上传到服务器的 <code>/usr/local/</code> 目录</p>
 <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">下载jdk-8u144-linux-x64.rpm</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 执行 rpm包安装</span><br><span class="line">rpm -ivh jdk-8u111-linux-x64.rpm</span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 执行 rpm包安装</span></span><br><span class="line">rpm -ivh jdk<span class="number">-8</span>u111-linux-x64.rpm</span><br></pre></td></tr></table></figure>
 <p>检查java版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -<span class="built_in">version</span></span><br></pre></td></tr></table></figure>
 <h3 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h3><ul>
 <li><p>下载 <a href="http://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">apache-tomcat-8.0.46</a>，解压之后，再上传到 <code>/usr/local/</code> 目录</p>
 </li>
 <li><p>创建用户组，并添加用户到用户组</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd tomcat</span><br><span class="line">usermod -a -G tomcat root</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd tomcat</span><br><span class="line">usermod -<span class="selector-tag">a</span> -G tomcat root</span><br></pre></td></tr></table></figure>
 <ul>
 <li>修改权限</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R tomcat:root apache-tomcat-8.5.9</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">chown</span> <span class="selector-tag">-R</span> <span class="selector-tag">tomcat</span><span class="selector-pseudo">:root</span> <span class="selector-tag">apache-tomcat-8</span><span class="selector-class">.5</span><span class="selector-class">.9</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>启动Tomcat</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/apache-tomcat-8.0.46/bin/startup.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/apache-tomcat-8.0.46/</span>bin<span class="regexp">/startup.sh</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>当然每次启动Tomcat都要进入这个文件夹，很麻烦，我们可以将Tomcat配置为系统服务，直接通过 <code>systemctl start/stop/restart tomcat</code> 操作Tomcat。</p>
 </blockquote>
@@ -368,7 +391,7 @@
 <li>配置 Tomcat绑定多个域名</li>
 </ul>
 <p>编辑 <code>server.xml</code>，在 <code>&lt;Service&gt;&lt;/Service&gt;</code> 标签中添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;Host name=&quot;zzz.tangliangdong.me&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">　　  &lt;Context path=&quot;&quot; docBase=&quot;/usr/local/apache-tomcat-8.0.46/webapps&quot;/&gt;</span><br><span class="line">　　  &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot; prefix=&quot;localhost_access_log.&quot; suffix=&quot;.txt&quot; pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;</span><br><span class="line">&lt;/Host&gt;</span><br><span class="line"></span><br><span class="line">&lt;Host name=&quot;www.tangliangdong.me&quot;  appBase=&quot;webapps&quot; unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line">　　  &lt;Context path=&quot;&quot; docBase=&quot;/usr/local/apache-tomcat-8.0.46/webapps/myhomepage&quot;/&gt;</span><br><span class="line">　　  &lt;Valve className=&quot;org.apache.catalina.valves.AccessLogValve&quot; directory=&quot;logs&quot; prefix=&quot;localhost_access_log.&quot; suffix=&quot;.txt&quot; pattern=&quot;%h %l %u %t &amp;quot;%r&amp;quot; %s %b&quot; /&gt;</span><br><span class="line">&lt;/Host&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Host</span> <span class="attr">name</span>=<span class="string">"zzz.tangliangdong.me"</span>  <span class="attr">appBase</span>=<span class="string">"webapps"</span> <span class="attr">unpackWARs</span>=<span class="string">"true"</span> <span class="attr">autoDeploy</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">　　  <span class="tag">&lt;<span class="name">Context</span> <span class="attr">path</span>=<span class="string">""</span> <span class="attr">docBase</span>=<span class="string">"/usr/local/apache-tomcat-8.0.46/webapps"</span>/&gt;</span></span><br><span class="line">　　  <span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.valves.AccessLogValve"</span> <span class="attr">directory</span>=<span class="string">"logs"</span> <span class="attr">prefix</span>=<span class="string">"localhost_access_log."</span> <span class="attr">suffix</span>=<span class="string">".txt"</span> <span class="attr">pattern</span>=<span class="string">"%h %l %u %t &amp;quot;%r&amp;quot; %s %b"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Host</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Host</span> <span class="attr">name</span>=<span class="string">"www.tangliangdong.me"</span>  <span class="attr">appBase</span>=<span class="string">"webapps"</span> <span class="attr">unpackWARs</span>=<span class="string">"true"</span> <span class="attr">autoDeploy</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">　　  <span class="tag">&lt;<span class="name">Context</span> <span class="attr">path</span>=<span class="string">""</span> <span class="attr">docBase</span>=<span class="string">"/usr/local/apache-tomcat-8.0.46/webapps/myhomepage"</span>/&gt;</span></span><br><span class="line">　　  <span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">"org.apache.catalina.valves.AccessLogValve"</span> <span class="attr">directory</span>=<span class="string">"logs"</span> <span class="attr">prefix</span>=<span class="string">"localhost_access_log."</span> <span class="attr">suffix</span>=<span class="string">".txt"</span> <span class="attr">pattern</span>=<span class="string">"%h %l %u %t &amp;quot;%r&amp;quot; %s %b"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Host</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>只需要改两个地方：</p>
 <ul>
 <li>name  ——  绑定的域名</li>
@@ -388,6 +411,17 @@
 <li><a href="https://www.bbsmax.com/A/Vx5M10yg5N/" target="_blank" rel="noopener">tomcat实现多端口、多域名访问</a></li>
 </ul>
 
+
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------</div>
+    
+</div>
+
+        
+      </div>
     </div>
 
     
@@ -491,12 +525,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7-安装、配置mysql数据库"><span class="nav-number">2.</span> <span class="nav-text">centos7 安装、配置mysql数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7-安装、配置-Tomcat"><span class="nav-number">3.</span> <span class="nav-text">centos7 安装、配置 Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装JDK"><span class="nav-number">3.1.</span> <span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Tomcat"><span class="nav-number">3.2.</span> <span class="nav-text">安装Tomcat</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7-安装、配置mysql数据库"><span class="nav-text">centos7 安装、配置mysql数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7-安装、配置-Tomcat"><span class="nav-text">centos7 安装、配置 Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装JDK"><span class="nav-text">安装JDK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Tomcat"><span class="nav-text">安装Tomcat</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="XiaoTang"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">XiaoTang</p>
   <div class="site-description" itemprop="description">你的指尖拥有改变世界的力量</div>
 </div>
@@ -505,7 +541,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-count">112</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -518,11 +554,23 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-count">96</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
   <div class="cc-license motion-element" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
@@ -546,7 +594,7 @@
 <div class="copyright">
   
   &copy; 2016 – 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -556,7 +604,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">316k</span>
+    <span title="站点总字数">318k</span>
 </div>
 
         
@@ -678,6 +726,8 @@
 <script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
 
+  <script defer src="[object Object]"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
@@ -734,7 +784,7 @@
             movementBottom: false,
             movementLeft: false,
             movementRight: false,
-            offsetX: ,
+            offsetX: 0,
             position: 'absolute',
             debug: false,
           });
@@ -791,5 +841,9 @@
   });
 </script>
 
+
+
+<script type="text/javascript" src="/js/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/custom.js"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>

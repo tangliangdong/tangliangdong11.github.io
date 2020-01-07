@@ -26,8 +26,8 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
@@ -107,8 +107,10 @@
 </noscript>
 
 </head>
+<script src="/lib/jquery.js??v=2.1.3"></script>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+
   <div class="container use-motion">
     <div class="headband"></div>
 
@@ -143,11 +145,6 @@
     <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
@@ -161,6 +158,26 @@
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>阅读</a>
+
+  </li>
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies/" rel="section"><i class="fa fa-fw fa-video-camera"></i>电影</a>
+
+  </li>
+        <li class="menu-item menu-item-games">
+
+    <a href="/games/" rel="section"><i class="fa fa-fw fa-gamepad"></i>游戏</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -193,6 +210,12 @@
   </div>
 </div>
     </header>
+    <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+  <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+      </svg>
+    </a>
 
     
   <div class="back-to-top">
@@ -217,7 +240,7 @@
     <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/09/17/2017-9-17-ionic3-http/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="XiaoTang">
       <meta itemprop="description" content="你的指尖拥有改变世界的力量">
     </span>
@@ -272,7 +295,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.3k</span>
+              <span>4.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -316,7 +339,7 @@
 <h5 id="但这样会造成如下跨域的问题"><a href="#但这样会造成如下跨域的问题" class="headerlink" title="但这样会造成如下跨域的问题"></a>但这样会造成如下跨域的问题</h5><p><img src="cross-domain.png" alt></p>
 <p>可以先用Jsonp来解决，</p>
 <p>同样需要先在App.module.ts中注册JsonpModule的模块</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import &#123; HttpModule,JsonpModule&#125; from &apos;@angular/http&apos;;</span><br><span class="line">import &#123; HomePage &#125; from &apos;../pages/home/home&apos;;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    MyApp,</span><br><span class="line">    HomePage,</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    HttpModule,</span><br><span class="line">    JsonpModule,</span><br><span class="line">    IonicModule.forRoot(MyApp)</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [IonicApp],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; HttpModule,JsonpModule&#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HomePage &#125; <span class="keyword">from</span> <span class="string">'../pages/home/home'</span>;</span><br><span class="line"></span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  declarations: [</span><br><span class="line">    MyApp,</span><br><span class="line">    HomePage,</span><br><span class="line">  ],</span><br><span class="line">  imports: [</span><br><span class="line">    BrowserModule,</span><br><span class="line">    HttpModule,</span><br><span class="line">    JsonpModule,</span><br><span class="line">    IonicModule.forRoot(MyApp)</span><br><span class="line">  ],</span><br><span class="line">  bootstrap: [IonicApp],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>修改home.ts中的代码</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; NavController &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Http,Jsonp &#125; <span class="keyword">from</span> <span class="string">'@angular/http'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'page-home'</span>,</span><br><span class="line">  templateUrl: <span class="string">'home.html'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> HomePage &#123;</span><br><span class="line">  User = &#123;</span><br><span class="line">    username: <span class="string">''</span>,</span><br><span class="line">    passwd: <span class="string">''</span>,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> navCtrl: NavController,<span class="keyword">private</span> http: Http,<span class="keyword">public</span> jsonp: Jsonp</span>) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  submit(event)&#123;</span><br><span class="line">    <span class="keyword">this</span>.jsonp.request(<span class="string">'http://localhost:9090/app/login?account='</span>+<span class="keyword">this</span>.User.username+<span class="string">'&amp;passwd='</span>+<span class="keyword">this</span>.User.passwd+<span class="string">'&amp;jsonp=callback&amp;callback=JSONP_CALLBACK'</span>, &#123; method: <span class="string">'Get'</span> &#125;)</span><br><span class="line">      .subscribe(</span><br><span class="line">        (data) =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(data);</span><br><span class="line">            <span class="comment">// data.json() 将获取的json字符串转换成对象</span></span><br><span class="line">            <span class="built_in">console</span>.log(data.json());</span><br><span class="line">        &#125;,</span><br><span class="line">        (error) =&gt; &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(error);</span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Promise写法"><a href="#Promise写法" class="headerlink" title="Promise写法"></a>Promise写法</h3><blockquote>
@@ -326,9 +349,20 @@
 <p><code>this.http.post(URL,postParams,headerOptions)</code> 接收三个参数，也可以只传两个参数 <code>(URL,headerOptions)</code>，想要传输的参数就拼在url里。如果想通过 <code>postParams</code>传参，则需要这么写</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> postParams = &#123;</span><br><span class="line">    phone: <span class="number">18362132311</span>,</span><br><span class="line">    password: <span class="number">123456</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>但是这样的参数是会出现在 <code>RequestPayload</code> 里的，python 后台无法通过 <code>request.form[&#39;phone&#39;]</code> 来获取参数，因此只能通过参数跟在 <strong>url</strong> 里的形式，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let URL = &apos;http://localhost:5000/app/login?&apos;</span><br><span class="line">    + &apos;phone=&apos;+this.User.phone</span><br><span class="line">    + &apos;&amp;password=&apos;+this.User.password</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let URL = <span class="string">'http://localhost:5000/app/login?'</span></span><br><span class="line">    + <span class="string">'phone='</span>+this<span class="selector-class">.User</span><span class="selector-class">.phone</span></span><br><span class="line">    + <span class="string">'&amp;password='</span>+this<span class="selector-class">.User</span><span class="selector-class">.password</span></span><br></pre></td></tr></table></figure>
 <p>有个疑问，明明这里指定了 <code>Content-Type</code> 为 <code>application/x-www-form-urlencoded</code> 但是实际请求的时候却是无效的，显示的依旧是 <code>text/html; charset=utf-8</code>。</p>
 
+
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------</div>
+    
+</div>
+
+        
+      </div>
     </div>
 
     
@@ -432,12 +466,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#四种数据绑定的形式"><span class="nav-number">1.</span> <span class="nav-text">四种数据绑定的形式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#但这样会造成如下跨域的问题"><span class="nav-number">2.</span> <span class="nav-text">但这样会造成如下跨域的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise写法"><span class="nav-number"></span> <span class="nav-text">Promise写法</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise写法"><span class="nav-text">Promise写法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="XiaoTang"
+      src="/images/avatar.png">
   <p class="site-author-name" itemprop="name">XiaoTang</p>
   <div class="site-description" itemprop="description">你的指尖拥有改变世界的力量</div>
 </div>
@@ -446,7 +482,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">111</span>
+          <span class="site-state-item-count">112</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -459,11 +495,23 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">95</span>
+        <span class="site-state-item-count">96</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
   <div class="cc-license motion-element" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
@@ -487,7 +535,7 @@
 <div class="copyright">
   
   &copy; 2016 – 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -497,7 +545,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">316k</span>
+    <span title="站点总字数">318k</span>
 </div>
 
         
@@ -619,6 +667,8 @@
 <script src="/js/schemes/muse.js"></script>
 <script src="/js/next-boot.js"></script>
 
+  <script defer src="[object Object]"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
 
 
   
@@ -675,7 +725,7 @@
             movementBottom: false,
             movementLeft: false,
             movementRight: false,
-            offsetX: ,
+            offsetX: 0,
             position: 'absolute',
             debug: false,
           });
@@ -732,5 +782,9 @@
   });
 </script>
 
+
+
+<script type="text/javascript" src="/js/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/custom.js"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>
