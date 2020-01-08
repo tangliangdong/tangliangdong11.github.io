@@ -26,7 +26,7 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -226,7 +226,7 @@
 </div>
     </header>
     <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1000" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
   <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
       </svg>
@@ -305,6 +305,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/03/29/2017-03-30-feeling/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/03/29/2017-03-30-feeling/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -330,9 +344,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="betahouse.png" alt width="40%" style="margin:20px auto 50px;"></p>
+        <img src="betahouse.png" alt width="40%" style="margin:20px auto 50px;">
+
 <h2 id="Hello-Betahouse"><a href="#Hello-Betahouse" class="headerlink" title="Hello Betahouse"></a>Hello Betahouse</h2><p>&emsp;&emsp;一年前的现在，是 <em>betahouse 2016</em> 招新的时候，那时我还是游离在大学的迷雾中。开专业大会的时候，芦苇学姐 还有炳炳学长 给我们开了宣讲会。我当时激情澎湃的报名加入betahouse的大家庭，并且坚持了下来，最后成功留在了这里。</p>
-<div align="center"><br>    <img src="message.jpg" width="50%"><br></div>
+<div align="center">
+    <img src="message.jpg" width="50%">
+</div>
 
 <p>&emsp;&emsp;当时电话面试完后，还到处托人打听面试的情况，当收到这条短信的时候，那种欣喜难以言表。</p>
 <h2 id="Welcome-Again"><a href="#Welcome-Again" class="headerlink" title="Welcome Again"></a>Welcome Again</h2><p>&emsp;&emsp;恍惚间，一年过去了，现在轮到我们招新了，我受邀参与招新页面的设计与开发，作为一个工科男，表示压力山大</p>
@@ -367,7 +384,8 @@
 <p><img src="qingshanhu2.jpg" alt></p>
 <p style="text-align: center;font-size: 20px; font-weight: bold;margin-bottom: 70px;">青山湖技术交流分享会</p>
 
-<p><img src="great.png" width="40%"></p>
+<img src="great.png" width="40%">
+
 <p><img src="qingshanhu1.jpg" alt></p>
 <p style="text-align: center;font-size: 20px; font-weight: bold;margin-bottom: 30px;">大家一起桌游嗨起来🤗 🤗 🤗</p>
 
@@ -446,6 +464,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -508,14 +527,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -526,13 +545,9 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tangliangdong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -571,7 +586,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">318k</span>
+    <span title="站点总字数">320k</span>
 </div>
 
         
@@ -744,6 +759,15 @@
         
 
         
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
 
         
           $('#footer').wobbleWindow({
@@ -812,5 +836,35 @@
 
 <script type="text/javascript" src="/js/clipboard.min.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('[object Object]', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: true,
+      appId: 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+      appKey: 'AJ3paOnlxYMTA5dQejavW0MO',
+      placeholder: "Just go go",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>

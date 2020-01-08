@@ -26,7 +26,7 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -209,7 +209,7 @@
 </div>
     </header>
     <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1000" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
   <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
       </svg>
@@ -288,6 +288,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/07/17/2017-7-17-sass/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/07/17/2017-7-17-sass/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -315,8 +329,10 @@
       
         <p>sass存在两种后缀的文件，一种是早些的.sass，是以缩进和换行来区分代码块，不是很方便。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// .sass</span><br><span class="line">$color: red</span><br><span class="line"></span><br><span class="line">.button</span><br><span class="line">    color: $color;</span><br></pre></td></tr></table></figure>
+
 <p>另一种是.scss，是后来的sass版本出现的新的语法，和css的写法很类似，用<code>{}</code>来包含代码块。我们甚至可以直接把后缀<code>.css</code>的文件直接转成<code>.scss</code>也能使用。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// .scss</span><br><span class="line">$color:red;</span><br><span class="line"></span><br><span class="line">.button&#123;</span><br><span class="line">    color: $color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p>sass提供四种编译风格的选项。</p>
 <ul>
@@ -326,29 +342,40 @@
 <li>compressed：压缩后的css代码。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// nested   嵌套缩进的css代码</span><br><span class="line">nav ul &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  padding: 0;</span><br><span class="line">  list-style: none; &#125;</span><br><span class="line"></span><br><span class="line">// expanded   嵌套输出方式，默认值</span><br><span class="line">nav ul &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  padding: 0;</span><br><span class="line">  list-style: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// compact  简洁格式的css代码。</span><br><span class="line">nav ul &#123; margin: 0; padding: 0; list-style: none; &#125;</span><br><span class="line"></span><br><span class="line">// compressed  没有缩进的、扩展的css代码。适合生产环境</span><br><span class="line">nav ul &#123;margin:0;padding:0;list-style:none&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h3 id="sass语法"><a href="#sass语法" class="headerlink" title="sass语法"></a>sass语法</h3><h4 id="可嵌套"><a href="#可嵌套" class="headerlink" title="可嵌套"></a>可嵌套</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">.header&#123;</span><br><span class="line"></span><br><span class="line">    .button&#123;</span><br><span class="line">        color: red;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    a&#123;</span><br><span class="line">        // 伪类嵌套</span><br><span class="line">        // &amp;是父元素选择器</span><br><span class="line">        &amp;: hover&#123;</span><br><span class="line">            color: blue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 属性嵌套</span><br><span class="line">    h1&#123;</span><br><span class="line">        font:&#123;</span><br><span class="line">            size: 12px;</span><br><span class="line">            weight: bold;</span><br><span class="line">            family: &apos;Consolas&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="混合宏-mixin"><a href="#混合宏-mixin" class="headerlink" title="混合宏 @mixin"></a>混合宏 @mixin</h4><blockquote>
 <p>如果需要给类传参数，就可以选择混合宏。</p>
 </blockquote>
 <h5 id="不带参数混合宏"><a href="#不带参数混合宏" class="headerlink" title="不带参数混合宏"></a>不带参数混合宏</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@mixin border-radius&#123;</span><br><span class="line">    -webkit-border-radius: 5px;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>调用混合宏</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">button &#123;</span><br><span class="line">    @include border-radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="带参数混合宏，且参数带有默认值。"><a href="#带参数混合宏，且参数带有默认值。" class="headerlink" title="带参数混合宏，且参数带有默认值。"></a>带参数混合宏，且参数带有默认值。</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@mixin border($radius)&#123;</span><br><span class="line">    border-radius: $radius;</span><br><span class="line">&#125;</span><br><span class="line">@mixin border-radius($radius: 5px)&#123;</span><br><span class="line">    border-radius: $radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>调用带参数混合宏的两种方式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.btn&#123;</span><br><span class="line">    @include border(3px);</span><br><span class="line">&#125;</span><br><span class="line">.button &#123;</span><br><span class="line">    // 默认是5</span><br><span class="line">    @include border-radius();</span><br><span class="line">&#125;</span><br><span class="line">.button2 &#123;</span><br><span class="line">    // 输出是10px;</span><br><span class="line">    @include border-radius(10px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="传多个参数"><a href="#传多个参数" class="headerlink" title="传多个参数"></a>传多个参数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@mixin box-shadow($shadows...)&#123;</span><br><span class="line">  @if length($shadows) &gt;= 1 &#123;</span><br><span class="line">    box-shadow: $shadows;</span><br><span class="line">  &#125; @else &#123;</span><br><span class="line">    $shadows: 0 0 2px rgba(#000,.25);</span><br><span class="line">    box-shadow: $shadow;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="继承-extend"><a href="#继承-extend" class="headerlink" title="继承 @extend"></a>继承 @extend</h4><blockquote>
 <p>继承适用于被继承的小组件也需要使用的情况下，因为被继承的组件也会输出到.css中。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.btn &#123;</span><br><span class="line">    border: 1px solid #ccc;</span><br><span class="line">    font-size: 14px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn-primary &#123;</span><br><span class="line">    // 继承.btn的属性</span><br><span class="line">    @extend .btn;</span><br><span class="line">    background-color: #f36;</span><br><span class="line">    color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="占位符"><a href="#占位符" class="headerlink" title="占位符 %"></a>占位符 %</h4><blockquote>
 <p>如果一个类只是用来给别的类继承的，就可以用占位符，不用继承。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 下方这块代码如果没有被 @extend调用，就不会产生任何代码块。</span><br><span class="line">%color5 &#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.btn &#123;</span><br><span class="line">  @extend %color5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单行注释，只能在scss文件中可见，编译后被省略</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 多行注释，在编译后的.css文件也可见，除了compressed压缩编译之外 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*!</span></span><br><span class="line"><span class="comment">    重要注释，即使是压缩模式，也会保留这段注释，一般用于声明版权信息。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h3><p>插入外部的css文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;path/filename.scss&quot;;</span><br></pre></td></tr></table></figure>
+
 
 
       <div>
@@ -417,6 +444,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -479,14 +507,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -497,13 +525,9 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tangliangdong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -542,7 +566,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">318k</span>
+    <span title="站点总字数">320k</span>
 </div>
 
         
@@ -715,6 +739,15 @@
         
 
         
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
 
         
           $('#footer').wobbleWindow({
@@ -783,5 +816,35 @@
 
 <script type="text/javascript" src="/js/clipboard.min.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('[object Object]', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: true,
+      appId: 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+      appKey: 'AJ3paOnlxYMTA5dQejavW0MO',
+      placeholder: "Just go go",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>

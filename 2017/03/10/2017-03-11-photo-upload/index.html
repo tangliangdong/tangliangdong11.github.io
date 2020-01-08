@@ -26,7 +26,7 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -209,7 +209,7 @@
 </div>
     </header>
     <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1000" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
   <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
       </svg>
@@ -288,6 +288,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/03/10/2017-03-11-photo-upload/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/03/10/2017-03-11-photo-upload/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -324,18 +338,22 @@
 <li><code>accept=&quot;image/gif, image/jpeg,image/png&quot;</code>表示允许上传的文件仅限于<code>jpg,gif,png</code>。</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"&lt;c:url value='/public'/&gt;"</span> <span class="attr">id</span>=<span class="string">"myForm"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    标题：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span></span><br><span class="line">    地点：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"local"</span>&gt;</span></span><br><span class="line">    时间：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"time"</span>&gt;</span></span><br><span class="line">    人数：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span>  <span class="attr">name</span>=<span class="string">"total"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file_data"</span> <span class="attr">accept</span>=<span class="string">"image/gif, image/jpeg,image/png"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">id</span>=<span class="string">"public-btn"</span>&gt;</span>发布<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h3><blockquote>
 <p>在控制器有两种方式可以获取到提交的文件</p>
 </blockquote>
 <h4 id="一、自动和参数对应"><a href="#一、自动和参数对应" class="headerlink" title="一、自动和参数对应"></a>一、自动和参数对应</h4><p><code>@RequestParam(&quot;file_data&quot;) MultipartFile filedata)</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"public"</span>,method = RequestMethod.POST)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">publicActivity</span><span class="params">(@RequestParam(<span class="string">"file_data"</span>)</span> MultipartFile filedata,</span></span><br><span class="line"><span class="function">        String title,Model model,HttpServletRequest req,HttpServletResponse res) </span></span><br><span class="line"><span class="function">        <span class="keyword">throws</span> IllegalStateException, IOException</span>&#123;</span><br><span class="line"></span><br><span class="line">    String pathRoot = req.getSession().getServletContext().getRealPath(<span class="string">""</span>);</span><br><span class="line">    String path=<span class="string">""</span>;</span><br><span class="line">    HttpSession session = req.getSession();</span><br><span class="line">    Person person = (Person)session.getAttribute(<span class="string">"person"</span>);</span><br><span class="line">    <span class="keyword">if</span>(!filedata.isEmpty())&#123;  </span><br><span class="line">        String fileName = filedata.getOriginalFilename();</span><br><span class="line">        <span class="comment">// 获取图片的扩展名</span></span><br><span class="line">        String extensionName = fileName</span><br><span class="line">                .substring(fileName.lastIndexOf(<span class="string">"."</span>) + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 新的图片文件名 = 获取时间戳+"."图片扩展名</span></span><br><span class="line">        <span class="comment">// System.currentTimeMillis()用来获取当前时间的时间戳</span></span><br><span class="line">        String newFileName = String.valueOf(System.currentTimeMillis())</span><br><span class="line">                + <span class="string">"."</span> + extensionName;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获得文件类型（可以判断如果不是图片，禁止上传）  </span></span><br><span class="line">        <span class="comment">// 可以在前端限制文件类型</span></span><br><span class="line">        String contentType=filedata.getContentType();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获得文件后缀名称  </span></span><br><span class="line">        <span class="comment">// String imageName=contentType.substring(contentType.indexOf("/")+1);</span></span><br><span class="line">        path = newFileName;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将图片写入对应的位置</span></span><br><span class="line">        filedata.transferTo(<span class="keyword">new</span> File( pathRoot + path ));  </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//...... 再将图片的路径存入数据库。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="二、通过HttpServletRequest获取"><a href="#二、通过HttpServletRequest获取" class="headerlink" title="二、通过HttpServletRequest获取"></a>二、通过HttpServletRequest获取</h4><p>获取到<code>MultipartFile</code>后，再进行后续上传的操作。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;</span><br><span class="line">MultipartFile filedata = multipartRequest.getFile(<span class="string">"file"</span>);</span><br></pre></td></tr></table></figure>
+
 <h3 id="dispatcher-servlet-xml配置文件"><a href="#dispatcher-servlet-xml配置文件" class="headerlink" title="dispatcher-servlet.xml配置文件"></a><code>dispatcher-servlet.xml</code>配置文件</h3><blockquote>
 <p>配置multipartResolver来解析带enctype=”multipart/form-data”属性的表单</p>
 </blockquote>
-<p>*<em> 如果不配置<code>multipartResolver</code>，那带属性<code>enctype=&quot;multipart/form-data&quot;</code>的所有表单数据就都无法获取到数据 </em></p>
+<p>** 如果不配置<code>multipartResolver</code>，那带属性<code>enctype=&quot;multipart/form-data&quot;</code>的所有表单数据就都无法获取到数据 *</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"multipartResolver"</span> <span class="attr">class</span>=<span class="string">"org.springframework.web.multipart.commons.CommonsMultipartResolver"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 文件上传头部编码，默认是iso-8859-1，注意defaultEncoding必须和用户的jsp的pageEncoding属性一致，以便能正常读取文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultEncoding"</span> <span class="attr">value</span>=<span class="string">"utf-8"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- maxUploadSize 是上传文件的大小，单位为字节 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxUploadSize"</span> <span class="attr">value</span>=<span class="string">"10485760000"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 读取文件到内存中最大的字节数，默认是1024 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxInMemorySize"</span> <span class="attr">value</span>=<span class="string">"40960"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>需要引入<code>commons-fileupload-1.3.2.jar</code></p>
 
 
@@ -405,6 +423,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -467,14 +486,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -485,13 +504,9 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tangliangdong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -530,7 +545,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">318k</span>
+    <span title="站点总字数">320k</span>
 </div>
 
         
@@ -703,6 +718,15 @@
         
 
         
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
 
         
           $('#footer').wobbleWindow({
@@ -771,5 +795,35 @@
 
 <script type="text/javascript" src="/js/clipboard.min.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('[object Object]', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: true,
+      appId: 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+      appKey: 'AJ3paOnlxYMTA5dQejavW0MO',
+      placeholder: "Just go go",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>

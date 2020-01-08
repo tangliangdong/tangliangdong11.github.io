@@ -26,7 +26,7 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -209,7 +209,7 @@
 </div>
     </header>
     <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1000" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
   <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
       </svg>
@@ -288,6 +288,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/06/2019-11-6-jdk8函数式编程/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/06/2019-11-6-jdk8函数式编程/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -316,6 +330,9 @@
 <p> JDK中已有的一些接口本身就是函数式接口，如<code>Runnable</code>。 JDK 8中又增加了<code>java.util.function</code>包， 提供了常用的函数式接口。 </p>
 </blockquote>
 <a id="more"></a>
+
+
+
 <h2 id="JDK-8之前已有的函数式接口"><a href="#JDK-8之前已有的函数式接口" class="headerlink" title="JDK 8之前已有的函数式接口"></a>JDK 8之前已有的函数式接口</h2><ul>
 <li>java.lang.Runnable</li>
 <li>java.util.concurrent.Callable</li>
@@ -339,297 +356,296 @@
 </ul>
 <hr>
 <h3 id="Predicate"><a href="#Predicate" class="headerlink" title="Predicate"></a>Predicate</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只需注明传入参数的类型，返回值为Bool</span></span><br><span class="line">Predicate&lt;Integer&gt; fun1 = (x) -&gt; x &gt; <span class="number">1</span>; </span><br><span class="line">Boolean bool = fun1.test(<span class="number">2</span>);  <span class="comment">// bool = true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以使用大括号来包住一个代码块，不过需要使用return来确定最后的返回值</span></span><br><span class="line">Predicate&lt;Integer&gt; fun11 = (x) -&gt; &#123;</span><br><span class="line">    Integer sum = x * <span class="number">1000</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> sum &gt; <span class="number">2000</span>;</span><br><span class="line">&#125;;</span><br><span class="line">Boolean bool1 = fun11.test(<span class="number">2</span>); <span class="comment">// bool1 = true</span></span><br></pre></td></tr></table></figure>
+
 <p>Predicate 扩展的函数列表</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">interface</th>
-<th style="text-align:left">functional method</th>
-<th style="text-align:left">说明</th>
+<th align="left">interface</th>
+<th align="left">functional method</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Predicate<t></t></td>
-<td style="text-align:left">boolean test(T t)</td>
-<td style="text-align:left">接收一个泛型参数</td>
+<tbody><tr>
+<td align="left">Predicate<t></t></td>
+<td align="left">boolean test(T t)</td>
+<td align="left">接收一个泛型参数</td>
 </tr>
 <tr>
-<td style="text-align:left">IntPredicate</td>
-<td style="text-align:left">boolean test(int value)</td>
-<td style="text-align:left">以下三个接口，接收指定类型的参数</td>
+<td align="left">IntPredicate</td>
+<td align="left">boolean test(int value)</td>
+<td align="left">以下三个接口，接收指定类型的参数</td>
 </tr>
 <tr>
-<td style="text-align:left">LongPredicate</td>
-<td style="text-align:left">boolean test(long value)</td>
-<td style="text-align:left"></td>
+<td align="left">LongPredicate</td>
+<td align="left">boolean test(long value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">DoublePredicate</td>
-<td style="text-align:left">boolean test(double value)</td>
-<td style="text-align:left"></td>
+<td align="left">DoublePredicate</td>
+<td align="left">boolean test(double value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">BiPredicate&lt;T,U&gt;</td>
-<td style="text-align:left">boolean test(T t, U u)</td>
-<td style="text-align:left">接收两个泛型参数，分别为T，U</td>
+<td align="left">BiPredicate&lt;T,U&gt;</td>
+<td align="left">boolean test(T t, U u)</td>
+<td align="left">接收两个泛型参数，分别为T，U</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <h3 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a>Consumer</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 需注明传入参数的类型，无返回值</span></span><br><span class="line">Consumer&lt;String&gt; fun2 = (x) -&gt; System.out.println(x);</span><br><span class="line">fun2.accept(<span class="string">"hello world"</span>); <span class="comment">// hello world</span></span><br></pre></td></tr></table></figure>
+
 <p>Consumer 扩展的函数列表</p>
 <h4 id="接收一个参数"><a href="#接收一个参数" class="headerlink" title="接收一个参数"></a>接收一个参数</h4><table>
 <thead>
 <tr>
-<th style="text-align:left"><strong>interface</strong></th>
-<th style="text-align:left"><strong>functional method</strong></th>
-<th style="text-align:left">说明</th>
+<th align="left"><strong>interface</strong></th>
+<th align="left"><strong>functional method</strong></th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Consumer<t></t></td>
-<td style="text-align:left">void accept(T t)</td>
-<td style="text-align:left">接收一个泛型参数，无返回值</td>
+<tbody><tr>
+<td align="left">Consumer<t></t></td>
+<td align="left">void accept(T t)</td>
+<td align="left">接收一个泛型参数，无返回值</td>
 </tr>
 <tr>
-<td style="text-align:left">IntConsumer</td>
-<td style="text-align:left">void accept(int value)</td>
-<td style="text-align:left">以下三个类，接收一个指定类型的参数</td>
+<td align="left">IntConsumer</td>
+<td align="left">void accept(int value)</td>
+<td align="left">以下三个类，接收一个指定类型的参数</td>
 </tr>
 <tr>
-<td style="text-align:left">LongConsumer</td>
-<td style="text-align:left">void accept(long value)</td>
-<td style="text-align:left"></td>
+<td align="left">LongConsumer</td>
+<td align="left">void accept(long value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">DoubleConsumer</td>
-<td style="text-align:left">void accept(double value)</td>
+<td align="left">DoubleConsumer</td>
+<td align="left">void accept(double value)</td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="接收两个参数"><a href="#接收两个参数" class="headerlink" title="接收两个参数"></a>接收两个参数</h4><table>
 <thead>
 <tr>
-<th style="text-align:left">interface</th>
-<th style="text-align:left">functional method</th>
-<th style="text-align:left">说明</th>
+<th align="left">interface</th>
+<th align="left">functional method</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">BiConsumer&lt;T, U&gt;</td>
-<td style="text-align:left">void accept(T t, U u)</td>
-<td style="text-align:left">接收两个泛型参数</td>
+<tbody><tr>
+<td align="left">BiConsumer&lt;T, U&gt;</td>
+<td align="left">void accept(T t, U u)</td>
+<td align="left">接收两个泛型参数</td>
 </tr>
 <tr>
-<td style="text-align:left">ObjIntConsumer<t></t></td>
-<td style="text-align:left">void accept(T t, int value)</td>
-<td style="text-align:left">以下三个类，接收一个泛型参数，一个指定类型的参数</td>
+<td align="left">ObjIntConsumer<t></t></td>
+<td align="left">void accept(T t, int value)</td>
+<td align="left">以下三个类，接收一个泛型参数，一个指定类型的参数</td>
 </tr>
 <tr>
-<td style="text-align:left">ObjLongConsumer<t></t></td>
-<td style="text-align:left">void accept(T t, long value)</td>
-<td style="text-align:left"></td>
+<td align="left">ObjLongConsumer<t></t></td>
+<td align="left">void accept(T t, long value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">ObjDoubleConsumer<t></t></td>
-<td style="text-align:left">void accept(T t, double value)</td>
+<td align="left">ObjDoubleConsumer<t></t></td>
+<td align="left">void accept(T t, double value)</td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Function&lt;String, Integer&gt; fun3 = (x) -&gt; Integer.valueOf(x);</span><br><span class="line">Integer num = fun3.apply(<span class="string">"1024"</span>); <span class="comment">// num = 1024</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="接收单个参数"><a href="#接收单个参数" class="headerlink" title="接收单个参数"></a>接收单个参数</h4><table>
 <thead>
 <tr>
-<th style="text-align:left">Interface</th>
-<th style="text-align:left">functional method</th>
-<th style="text-align:left">说明</th>
+<th align="left">Interface</th>
+<th align="left">functional method</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Function&lt;T,R&gt;</td>
-<td style="text-align:left">R apply(T t)</td>
-<td style="text-align:left">接收参数类型为T，返回参数类型为R</td>
+<tbody><tr>
+<td align="left">Function&lt;T,R&gt;</td>
+<td align="left">R apply(T t)</td>
+<td align="left">接收参数类型为T，返回参数类型为R</td>
 </tr>
 <tr>
-<td style="text-align:left">IntFunction<r></r></td>
-<td style="text-align:left">R apply(int value)</td>
-<td style="text-align:left">以下三个接口，指定了接收参数类型，返回参数类型为泛型R</td>
+<td align="left">IntFunction<r></r></td>
+<td align="left">R apply(int value)</td>
+<td align="left">以下三个接口，指定了接收参数类型，返回参数类型为泛型R</td>
 </tr>
 <tr>
-<td style="text-align:left">LongFunction<r></r></td>
-<td style="text-align:left">R apply(long value)</td>
-<td style="text-align:left"></td>
+<td align="left">LongFunction<r></r></td>
+<td align="left">R apply(long value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">Double<r></r></td>
-<td style="text-align:left">R apply(double value)</td>
-<td style="text-align:left"></td>
+<td align="left">Double<r></r></td>
+<td align="left">R apply(double value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">ToIntFunction<t></t></td>
-<td style="text-align:left">int applyAsInt(T value)</td>
-<td style="text-align:left">以下三个接口，指定了返回参数类型，接收参数类型为泛型T</td>
+<td align="left">ToIntFunction<t></t></td>
+<td align="left">int applyAsInt(T value)</td>
+<td align="left">以下三个接口，指定了返回参数类型，接收参数类型为泛型T</td>
 </tr>
 <tr>
-<td style="text-align:left">ToLongFunction<t></t></td>
-<td style="text-align:left">long applyAsLong(T value)</td>
-<td style="text-align:left"></td>
+<td align="left">ToLongFunction<t></t></td>
+<td align="left">long applyAsLong(T value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">ToDoubleFunction<t></t></td>
-<td style="text-align:left">double applyAsDouble(T value)</td>
-<td style="text-align:left"></td>
+<td align="left">ToDoubleFunction<t></t></td>
+<td align="left">double applyAsDouble(T value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">IntToLongFunction</td>
-<td style="text-align:left">long applyAsLong(int value)</td>
-<td style="text-align:left">以下六个接口，既指定了接收参数类型，也指定了返回参数类型</td>
+<td align="left">IntToLongFunction</td>
+<td align="left">long applyAsLong(int value)</td>
+<td align="left">以下六个接口，既指定了接收参数类型，也指定了返回参数类型</td>
 </tr>
 <tr>
-<td style="text-align:left">IntToDoubleFunction</td>
-<td style="text-align:left">double applyAsLong(int value)</td>
-<td style="text-align:left"></td>
+<td align="left">IntToDoubleFunction</td>
+<td align="left">double applyAsLong(int value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">LongToIntFunction</td>
-<td style="text-align:left">int applyAsLong(long value)</td>
-<td style="text-align:left"></td>
+<td align="left">LongToIntFunction</td>
+<td align="left">int applyAsLong(long value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">LongToDoubleFunction</td>
-<td style="text-align:left">double applyAsLong(long value)</td>
-<td style="text-align:left"></td>
+<td align="left">LongToDoubleFunction</td>
+<td align="left">double applyAsLong(long value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">DoubleToIntFunction</td>
-<td style="text-align:left">int applyAsLong(double value)</td>
-<td style="text-align:left"></td>
+<td align="left">DoubleToIntFunction</td>
+<td align="left">int applyAsLong(double value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">DoubleToLongFunction</td>
-<td style="text-align:left">long applyAsLong(double value)</td>
-<td style="text-align:left"></td>
+<td align="left">DoubleToLongFunction</td>
+<td align="left">long applyAsLong(double value)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">UnaryOperator<t></t></td>
-<td style="text-align:left">T apply(T t)</td>
-<td style="text-align:left">特殊的Function，接收参数类型和返回参数类型一样</td>
+<td align="left">UnaryOperator<t></t></td>
+<td align="left">T apply(T t)</td>
+<td align="left">特殊的Function，接收参数类型和返回参数类型一样</td>
 </tr>
 <tr>
-<td style="text-align:left">IntUnaryOperator</td>
-<td style="text-align:left">int applyAsInt(int left, int right)</td>
-<td style="text-align:left">以下三个接口，制定了接收参数和返回参数类型，并且都一样</td>
+<td align="left">IntUnaryOperator</td>
+<td align="left">int applyAsInt(int left, int right)</td>
+<td align="left">以下三个接口，制定了接收参数和返回参数类型，并且都一样</td>
 </tr>
 <tr>
-<td style="text-align:left">LongUnaryOperator</td>
-<td style="text-align:left">long applyAsInt(long left, long right)</td>
-<td style="text-align:left"></td>
+<td align="left">LongUnaryOperator</td>
+<td align="left">long applyAsInt(long left, long right)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">DoubleUnaryOperator</td>
-<td style="text-align:left">double applyAsInt(double left, double right)</td>
+<td align="left">DoubleUnaryOperator</td>
+<td align="left">double applyAsInt(double left, double right)</td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="接收两个参数-1"><a href="#接收两个参数-1" class="headerlink" title="接收两个参数"></a>接收两个参数</h3><table>
 <thead>
 <tr>
-<th style="text-align:left">interface</th>
-<th style="text-align:left">functional method</th>
-<th style="text-align:left">说明</th>
+<th align="left">interface</th>
+<th align="left">functional method</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">BiFunction&lt;T, U, R&gt;</td>
-<td style="text-align:left">R apply(T t, U u)</td>
-<td style="text-align:left">接收两个参数的Function</td>
+<tbody><tr>
+<td align="left">BiFunction&lt;T, U, R&gt;</td>
+<td align="left">R apply(T t, U u)</td>
+<td align="left">接收两个参数的Function</td>
 </tr>
 <tr>
-<td style="text-align:left">ToIntBiFunction&lt;T, U&gt;</td>
-<td style="text-align:left">int applyAsInt(T t, U u)</td>
-<td style="text-align:left">以下三个接口，指定了返回参数类型，接收参数类型分别为泛型T, U</td>
+<td align="left">ToIntBiFunction&lt;T, U&gt;</td>
+<td align="left">int applyAsInt(T t, U u)</td>
+<td align="left">以下三个接口，指定了返回参数类型，接收参数类型分别为泛型T, U</td>
 </tr>
 <tr>
-<td style="text-align:left">ToLongBiFunction&lt;T, U&gt;</td>
-<td style="text-align:left">long applyAsLong(T t, U u)</td>
-<td style="text-align:left"></td>
+<td align="left">ToLongBiFunction&lt;T, U&gt;</td>
+<td align="left">long applyAsLong(T t, U u)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">ToDoubleBiFunction&lt;T,U&gt;</td>
-<td style="text-align:left">double appleyAsDouble(T t, U u)</td>
-<td style="text-align:left"></td>
+<td align="left">ToDoubleBiFunction&lt;T,U&gt;</td>
+<td align="left">double appleyAsDouble(T t, U u)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">BinaryOperator<t></t></td>
-<td style="text-align:left">T apply(T t, T u)</td>
-<td style="text-align:left">特殊的BiFunction, 接收参数和返回参数类型一样</td>
+<td align="left">BinaryOperator<t></t></td>
+<td align="left">T apply(T t, T u)</td>
+<td align="left">特殊的BiFunction, 接收参数和返回参数类型一样</td>
 </tr>
 <tr>
-<td style="text-align:left">IntBinaryOperator</td>
-<td style="text-align:left">int applyAsInt(int left, int right)</td>
-<td style="text-align:left"></td>
+<td align="left">IntBinaryOperator</td>
+<td align="left">int applyAsInt(int left, int right)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">LongBinaryOperator</td>
-<td style="text-align:left">long applyAsInt(long left, long right)</td>
-<td style="text-align:left"></td>
+<td align="left">LongBinaryOperator</td>
+<td align="left">long applyAsInt(long left, long right)</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">DoubleBinaryOperator</td>
-<td style="text-align:left">double applyAsInt(double left, double right)</td>
+<td align="left">DoubleBinaryOperator</td>
+<td align="left">double applyAsInt(double left, double right)</td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <h3 id="Supplier"><a href="#Supplier" class="headerlink" title="Supplier"></a>Supplier</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无参数传入，需注明返回的参数类型</span></span><br><span class="line">Supplier&lt;String&gt; fun4 = () -&gt; <span class="string">"hello world"</span>;</span><br><span class="line">String word = fun4.get(); <span class="comment">// word = "hello world"</span></span><br></pre></td></tr></table></figure>
+
 <p>Supplier  扩展函数列表</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">interface</th>
-<th style="text-align:left">functional method</th>
-<th style="text-align:left">说明</th>
+<th align="left">interface</th>
+<th align="left">functional method</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Supplier<t></t></td>
-<td style="text-align:left">T get()</td>
-<td style="text-align:left">返回类型为泛型T</td>
+<tbody><tr>
+<td align="left">Supplier<t></t></td>
+<td align="left">T get()</td>
+<td align="left">返回类型为泛型T</td>
 </tr>
 <tr>
-<td style="text-align:left">BooleanSupplier</td>
-<td style="text-align:left">boolean getAsBoolean()</td>
-<td style="text-align:left">以下三个接口，返回指定类型</td>
+<td align="left">BooleanSupplier</td>
+<td align="left">boolean getAsBoolean()</td>
+<td align="left">以下三个接口，返回指定类型</td>
 </tr>
 <tr>
-<td style="text-align:left">IntSupplier</td>
-<td style="text-align:left">int getAsInt()</td>
-<td style="text-align:left"></td>
+<td align="left">IntSupplier</td>
+<td align="left">int getAsInt()</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">LongSupplier</td>
-<td style="text-align:left">long getAsLong()</td>
-<td style="text-align:left"></td>
+<td align="left">LongSupplier</td>
+<td align="left">long getAsLong()</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align:left">DoubleSupplier</td>
-<td style="text-align:left">double getAsDouble()</td>
+<td align="left">DoubleSupplier</td>
+<td align="left">double getAsDouble()</td>
+<td align="left"></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <h3 id="UnaryOperator"><a href="#UnaryOperator" class="headerlink" title="UnaryOperator"></a>UnaryOperator</h3><p>一元操作符， 继承Function,传入参数的类型和返回类型相同。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注明参数的类型</span></span><br><span class="line">UnaryOperator&lt;String&gt; fun5 = (x) -&gt; <span class="string">"你好，欢迎"</span> + x;</span><br><span class="line">String word = fun5.apply(<span class="string">"张三"</span>); <span class="comment">// word = "你好，欢迎张三"</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h3 id="BinaryOperator"><a href="#BinaryOperator" class="headerlink" title="BinaryOperator"></a>BinaryOperator</h3><p> 二元操作符， 传入的两个参数的类型和返回类型相同， 继承 BiFunction </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 因为传入的两个参数和返回类型均一致，则只需注明一个类型就行了</span></span><br><span class="line">BinaryOperator&lt;String&gt; fun6 = (x, y) -&gt; x + y;</span><br><span class="line">String word = fun6.apply(<span class="string">"hello "</span>, <span class="string">"java"</span>); <span class="comment">// word = "hello java"</span></span><br></pre></td></tr></table></figure>
+
 
 
       <div>
@@ -658,7 +674,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://zhizhi.tangliangdong.me/2019/11/06/2019-11-6-jdk8函数式编程/" title="java8函数式编程">http://zhizhi.tangliangdong.me/2019/11/06/2019-11-6-jdk8函数式编程/</a>
+    <a href="http://zhizhi.tangliangdong.me/2019/11/06/2019-11-6-jdk8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" title="java8函数式编程">http://zhizhi.tangliangdong.me/2019/11/06/2019-11-6-jdk8函数式编程/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -698,6 +714,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -760,14 +777,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -778,13 +795,9 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tangliangdong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -823,7 +836,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">318k</span>
+    <span title="站点总字数">320k</span>
 </div>
 
         
@@ -996,6 +1009,15 @@
         
 
         
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
 
         
           $('#footer').wobbleWindow({
@@ -1064,5 +1086,35 @@
 
 <script type="text/javascript" src="/js/clipboard.min.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('[object Object]', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: true,
+      appId: 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+      appKey: 'AJ3paOnlxYMTA5dQejavW0MO',
+      placeholder: "Just go go",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>

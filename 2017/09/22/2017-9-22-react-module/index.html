@@ -26,7 +26,7 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -211,7 +211,7 @@
 </div>
     </header>
     <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1000" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
   <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
       </svg>
@@ -290,6 +290,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/09/22/2017-9-22-react-module/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/09/22/2017-9-22-react-module/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -315,7 +329,9 @@
 
       
         <h3 id="组件化的使用React组件"><a href="#组件化的使用React组件" class="headerlink" title="组件化的使用React组件"></a>组件化的使用React组件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;PCNewsImageBlock count=&#123;<span class="number">10</span>&#125; type=<span class="string">"guoji"</span> width=<span class="string">"400px"</span></span><br><span class="line">     cartTitle=<span class="string">"国际新闻"</span> imageWidth=<span class="string">"112px"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">PCNewsImageBlock</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
+
 <ul>
 <li>count: 图片的数量</li>
 <li>type: 申请新闻接口的类别</li>
@@ -328,6 +344,7 @@
 <p>每一个附加在组件上的属性均可以通过 <code>this.props.count</code> 来获取，我们需要定制什么属性，都可以把接口暴露出来，在调用组件的时候就可以实现组件的高度定制。</p>
 </blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Card&#125; <span class="keyword">from</span> <span class="string">'antd'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;BrowserRouter, Route, Link&#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>; <span class="comment">// 引入路由 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> PCNewsDetail <span class="keyword">from</span> <span class="string">'./pc_news_detail'</span>;</span><br><span class="line"><span class="keyword">var</span> pcCss = <span class="built_in">require</span>(<span class="string">'../../sass/pc.scss'</span>); <span class="comment">// 引入CSS</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">PCNewsImageBlock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 构造函数</span></span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props); <span class="comment">// 调用父类的构造函数</span></span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      news: <span class="string">''</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">    </span><br><span class="line">  <span class="comment">// 组件加载完毕之后立即执行</span></span><br><span class="line">  componentWillMount() &#123;</span><br><span class="line">    fetch(<span class="string">'http://newsapi.gugujiankong.com/Handler.ashx?action=getnews'</span>+</span><br><span class="line">        <span class="string">'&amp;type='</span> + <span class="keyword">this</span>.props.type + <span class="string">'&amp;count='</span> + <span class="keyword">this</span>.props.count, &#123;</span><br><span class="line">      method: <span class="string">'GET'</span>,</span><br><span class="line">      mode: <span class="string">'cors'</span></span><br><span class="line">    &#125;).then(<span class="function"><span class="params">response</span> =&gt;</span> response.json()).then(<span class="function"><span class="params">json</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.setState(&#123;<span class="attr">news</span>: json&#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 继承自React.component 每个组件必须实现的方法</span></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// inline style 采用驼峰(camelCased)写法</span></span><br><span class="line">    <span class="comment">// 通过表达式写入到标签里 style=&#123;styleImage&#125;</span></span><br><span class="line">    <span class="keyword">const</span> styleImage = &#123;</span><br><span class="line">      display: <span class="string">'block'</span>,</span><br><span class="line">      width: <span class="keyword">this</span>.props.imageWidth, <span class="comment">// 图片的宽度</span></span><br><span class="line">      height: <span class="string">'90px'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> styleH3 = &#123;</span><br><span class="line">      width: <span class="keyword">this</span>.props.imageWidth,</span><br><span class="line">      whiteSpace: <span class="string">'nowrap'</span>,</span><br><span class="line">      overflow: <span class="string">'hidden'</span>,</span><br><span class="line">      textOverflow: <span class="string">'ellipsis'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> &#123;news&#125; = <span class="keyword">this</span>.state;</span><br><span class="line">    <span class="keyword">const</span> newsList = news.length</span><br><span class="line">      ? news.map(<span class="function">(<span class="params">newsItem, index</span>) =&gt;</span> (</span><br><span class="line">        &lt;div key=&#123;index&#125; <span class="class"><span class="keyword">class</span></span>=&#123;pcCss.image_block&#125;&gt;</span><br><span class="line">          &lt;Link to=&#123;<span class="string">`details/<span class="subst">$&#123;newsItem.uniquekey&#125;</span>`</span>&#125; target=<span class="string">"_blank"</span>&gt;</span><br><span class="line">            &lt;div className=<span class="string">"custom-image"</span>&gt;</span><br><span class="line">              &lt;img src=&#123;newsItem.thumbnail_pic_s&#125; style=&#123;styleImage&#125; alt=&#123;newsItem.title&#125;/&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">            &lt;div class="custom-card"&gt;</span></span><br><span class="line"><span class="regexp">              &lt;h3 style=&#123;styleH3&#125;&gt;&#123;newsItem.title&#125;&lt;/</span>h3&gt;</span><br><span class="line">              &lt;p&gt;&#123;newsItem.author_name&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">          &lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">      ))</span><br><span class="line">      : <span class="string">"没有加载到任何新闻"</span>;</span><br><span class="line">      </span><br><span class="line">    <span class="comment">// 返回JSX的元素</span></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"topNewsList"</span>&gt;</span><br><span class="line">        &lt;BrowserRouter&gt;</span><br><span class="line">          &lt;Card title=&#123;<span class="keyword">this</span>.props.cartTitle&#125; bordered=&#123;<span class="literal">true</span>&#125; style=&#123;&#123;</span><br><span class="line">            width: <span class="keyword">this</span>.props.width</span><br><span class="line">          &#125;&#125;&gt;</span><br><span class="line">            &#123;newsList&#125;</span><br><span class="line">          &lt;<span class="regexp">/Card&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>BrowserRouter&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="React-官方对-Inline-Style-的-介绍"><a href="#React-官方对-Inline-Style-的-介绍" class="headerlink" title="React 官方对 Inline Style 的 介绍"></a>React 官方对 Inline Style 的 介绍</h3><ol>
 <li>采用驼峰(camelCased)写法，对于 backgroundImage 渲染后成为 <code>background-image</code>；</li>
 <li>可以不用写 px 直接采用数字 1 取代 1px，React 会自动加上 px，有些 CSS 样式属性不会自动加上 px，请参考不会自动添加 px 的样式属性； WebkitTransition 和 msTransition 中，Webkit 和 ms</li>
@@ -409,6 +426,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -471,14 +489,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -489,13 +507,9 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tangliangdong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -534,7 +548,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">318k</span>
+    <span title="站点总字数">320k</span>
 </div>
 
         
@@ -707,6 +721,15 @@
         
 
         
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
 
         
           $('#footer').wobbleWindow({
@@ -775,5 +798,35 @@
 
 <script type="text/javascript" src="/js/clipboard.min.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('[object Object]', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: true,
+      appId: 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+      appKey: 'AJ3paOnlxYMTA5dQejavW0MO',
+      placeholder: "Just go go",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>

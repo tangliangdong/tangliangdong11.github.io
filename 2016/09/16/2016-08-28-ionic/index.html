@@ -26,7 +26,7 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -214,7 +214,7 @@
 </div>
     </header>
     <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1000" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
   <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
       </svg>
@@ -293,6 +293,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/09/16/2016-08-28-ionic/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/09/16/2016-08-28-ionic/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -323,6 +337,7 @@
 <p>但当在<code>ionic</code>的<code>constructor(){}</code>用<code>document.getElementById()</code>获取DOM元素时，取出来的都是<code>null</code>。</p>
 <p>我们可以用<code>platform</code>的<code>ready()</code>方法。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Platform &#125; <span class="keyword">from</span> <span class="string">'ionic-angular'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;...&#125;)</span><br><span class="line"><span class="keyword">export</span> MyApp &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(platform: Platform) &#123;</span><br><span class="line">    platform.ready().then(<span class="function">(<span class="params">readySource</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'Platform ready from'</span>, readySource);</span><br><span class="line">      <span class="comment">// Platform now ready, execute any required native code</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这个方法是当html的页面元素被加载完毕的时候才执行，</p>
 <p>因此可以拿来获取DOM元素。</p>
 <blockquote>
@@ -336,25 +351,34 @@
 </blockquote>
 <h4 id="2-修改元素的class属性"><a href="#2-修改元素的class属性" class="headerlink" title="2. 修改元素的class属性"></a>2. 修改元素的class属性</h4><h5 id="1-修改所有的class属性"><a href="#1-修改所有的class属性" class="headerlink" title="1. 修改所有的class属性"></a>1. 修改所有的<code>class</code>属性</h5><p>用新的<code>class</code>替换掉原有的所有<code>class</code>，可以设置<code>className</code>属性：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"MyElement"</span>).className = <span class="string">"MyClass"</span>;</span><br></pre></td></tr></table></figure>
+
 <h5 id="2-为元素添加新的class"><a href="#2-为元素添加新的class" class="headerlink" title="2. 为元素添加新的class"></a>2. 为元素添加新的<code>class</code></h5><p>如果想添加一个新的<code>class</code>，并保留所有原有的<code>class</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"MyElement"</span>).className += <span class="string">" MyClass"</span>;</span><br><span class="line"><span class="comment">//注意 MyClass 前面的空格。</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="3-删除元素的某个class"><a href="#3-删除元素的某个class" class="headerlink" title="3. 删除元素的某个class"></a>3. 删除元素的某个<code>class</code></h5><p>如果要删除某个元素的单个<code>class</code>属性，而不影响其它<code>class</code>，可以使用正则表达式进行替换。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"MyElement"</span>).className =</span><br><span class="line">   <span class="built_in">document</span>.getElementById(<span class="string">"MyElement"</span>).className.replace</span><br><span class="line">      (<span class="regexp">/(?:^|\s)MyClass(?!\S)/g</span> ,<span class="string">''</span>);</span><br></pre></td></tr></table></figure>
+
 <p><a href="http://javascript.ruanyifeng.com/stdlib/regexp.html" target="_blank" rel="noopener">正则表达式参考</a></p>
 <h5 id="4-检查元素是否已经存在某class"><a href="#4-检查元素是否已经存在某class" class="headerlink" title="4. 检查元素是否已经存在某class"></a>4. 检查元素是否已经存在某<code>class</code></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">document</span>.getElementById(<span class="string">"MyElement"</span>).className.match(<span class="regexp">/(?:^|\s)MyClass(?!\S)/</span>))&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><a href="http://www.html-js.com/article/1641" target="_blank" rel="noopener">参考文章</a></p>
 </blockquote>
 <h3 id="9-7"><a href="#9-7" class="headerlink" title="9.7"></a>9.7</h3><h4 id="1-ionic-生命周期函数"><a href="#1-ionic-生命周期函数" class="headerlink" title="1. ionic 生命周期函数"></a>1. ionic 生命周期函数</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">onPageLoaded()&#123; <span class="comment">//page初始化时</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"page 1 : page loaded"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在这里可以做页面初始化的一些事情</span></span><br><span class="line">onPageWillEnter()&#123; <span class="comment">//page即将进入时</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"page 1 : page will enter"</span>);</span><br><span class="line">&#125;</span><br><span class="line">onPageDidEnter()&#123; <span class="comment">//page进入后</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"page 1 : page did enter"</span>);</span><br><span class="line">&#125;</span><br><span class="line">onPageWillLeave()&#123; <span class="comment">//page即将离开</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"page 1 : page will leave"</span>);</span><br><span class="line">&#125;</span><br><span class="line">onPageDidLeave()&#123; <span class="comment">//page离开后</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"page 1 : page did leave"</span>);</span><br><span class="line">&#125;</span><br><span class="line">onPageWillUnload()&#123;</span><br><span class="line"><span class="comment">//从DOM中移除时候执行的生命周期，不常用</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">""</span>)</span><br><span class="line">&#125;</span><br><span class="line">onPageDidUnload()&#123;</span><br><span class="line"><span class="comment">//DOM中移除执行完成的时候，不常用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="2-实现日期时间选择器的方法"><a href="#2-实现日期时间选择器的方法" class="headerlink" title="2. 实现日期时间选择器的方法"></a>2. 实现日期时间选择器的方法</h4><h5 id="1-input"><a href="#1-input" class="headerlink" title="1. input"></a>1. input</h5><p>input标签 体验不太好。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"time"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="2-datetime"><a href="#2-datetime" class="headerlink" title="2. datetime"></a>2. datetime</h5><p>日期选择器</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-label</span>&gt;</span>Date<span class="tag">&lt;/<span class="name">ion-label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-datetime</span> <span class="attr">displayFormat</span>=<span class="string">"MMM DD YYYY"</span> [(<span class="attr">ngModel</span>)]=<span class="string">"event.month"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-datetime</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>时间选择器</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ion-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-label</span>&gt;</span>Start Time<span class="tag">&lt;/<span class="name">ion-label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-datetime</span> <span class="attr">displayFormat</span>=<span class="string">"h:mm A"</span> <span class="attr">pickerFormat</span>=<span class="string">"h mm A"</span> [(<span class="attr">ngModel</span>)]=<span class="string">"event.timeStarts"</span>&gt;</span><span class="tag">&lt;/<span class="name">ion-datetime</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ion-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="3-进入app跳转登录界面"><a href="#3-进入app跳转登录界面" class="headerlink" title="3. 进入app跳转登录界面"></a>3. 进入app跳转登录界面</h4><p>通过<code>localStorage</code>来判断是否已经登录，若未登录则跳转登录界面。</p>
 <p>不能使用创建<code>Modal</code>的方法进行跳转，而要使用<code>NavController</code>的<code>push</code>方法把登录页面<code>push</code>出来。</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> navCtrl: NavController,</span></span><br><span class="line"><span class="params">              <span class="keyword">public</span> modalCtrl: ModalController</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(localStorage.getItem(<span class="string">'isLogined'</span>)==<span class="literal">null</span>)&#123;</span><br><span class="line">      <span class="keyword">this</span>.navCtrl.push(LoginPage);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(localStorage.getItem(<span class="string">'isLogined'</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="8-28"><a href="#8-28" class="headerlink" title="8.28"></a>8.28</h3><h4 id="1-loading-和-Modal-一起dismiss-的问题"><a href="#1-loading-和-Modal-一起dismiss-的问题" class="headerlink" title="1. loading 和 Modal 一起dismiss()的问题"></a>1. <em>loading</em> 和 <em>Modal</em> 一起<code>dismiss()</code>的问题</h4><p>如果 <em>lodaing</em> 组件和 <em>Modal</em> 一起<code>dismiss()</code>，会出现Modal无法消失的情况。但是Modal依然可以向原页面传值。</p>
 <p>而且即使Modal不<code>dismiss()</code>，Modal也会自动消失</p>
 <p><img src="ionic3.png" alt="img"></p>
@@ -373,14 +397,17 @@
 ![img](ionic4.png)
 
 > 因为ionic更新太快，而且官方文档也不是特别的完善，多个组件同时出现的时候，也可能会发生意想不到的事，还是要去多尝试，多去看看每个版本更新的博客。 -->
+
 <h3 id="8-25"><a href="#8-25" class="headerlink" title="8.25"></a>8.25</h3><h4 id="1-配置node环境"><a href="#1-配置node环境" class="headerlink" title="1. 配置node环境"></a>1. 配置node环境</h4><p>ionic需要node环境，但是不建议安装node v6.0.0 以上版本，有很多包会不支持。</p>
 <h4 id="2-本地安装ionic"><a href="#2-本地安装ionic" class="headerlink" title="2. 本地安装ionic"></a>2. 本地安装ionic</h4><p>ionic安装需要翻墙，国内可以使用淘宝镜像cnpm，通过以下命令安装</p>
 <p><code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
 <p>然后window在<code>C:\Program Files\nodejs\node_modules\npm</code>路径下加入的<code>.npmrc</code>中加入</p>
 <p><img src="ionic1.jpg" alt="img"> </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry = http://registry.cnpmjs.org</span><br></pre></td></tr></table></figure>
+
 <p><img src="ionic2.jpg" alt="img"><br>Mac的<code>.npmrc</code>则加入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">registry = http://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
 <p>然后就可以用cnpm代替npm进行包的下载，默认从国内源下载包</p>
 <p>但本人的Mac未在翻墙的情况下就成功安装了 <em>ionic</em>。</p>
 
@@ -451,6 +478,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -513,14 +541,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -531,13 +559,9 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tangliangdong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -576,7 +600,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">318k</span>
+    <span title="站点总字数">320k</span>
 </div>
 
         
@@ -749,6 +773,15 @@
         
 
         
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
 
         
           $('#footer').wobbleWindow({
@@ -817,5 +850,35 @@
 
 <script type="text/javascript" src="/js/clipboard.min.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('[object Object]', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: true,
+      appId: 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+      appKey: 'AJ3paOnlxYMTA5dQejavW0MO',
+      placeholder: "Just go go",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>

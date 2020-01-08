@@ -26,7 +26,7 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -211,7 +211,7 @@
 </div>
     </header>
     <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1000" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
   <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
       </svg>
@@ -290,6 +290,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/05/23/2017-05-24-php-CodeIgniter/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/05/23/2017-05-24-php-CodeIgniter/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -324,40 +338,53 @@
 <p><img src="1.png" alt></p>
 <p>里面的base_url是自带的，这是在引入静态文件时用的，我们还可以再加入一个<code>site_url</code>配置，用来在提交表单或者ajax异步提交数据时url的根路径。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$config[<span class="string">'base_url'</span>] = <span class="string">'http://localhost/bikeShare'</span>;</span><br><span class="line">$config[<span class="string">'site_url'</span>] = <span class="string">'http://localhost/bikeShare/index.php'</span>;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p>当然如果我们要在页面上使用 <strong>site_url</strong>或 <strong>base_url</strong>，我们需要在使用这两个的地方的控制器里先通过 <code>$this-&gt;load-&gt;helper(array(&#39;url&#39;))</code> 引入。如下：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// controllers/Login.php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Login</span> <span class="keyword">extends</span> <span class="title">CI_Controller</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">login</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;load-&gt;helper(<span class="keyword">array</span>(<span class="string">'url'</span>));</span><br><span class="line">        <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'login/login'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>登录页面</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- login/login.php --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"form"</span> <span class="attr">method</span>=<span class="string">"post"</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">action</span>=<span class="string">"&lt;?=site_url('login/getLogin') ?&gt;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">id</span>=<span class="string">"passwd"</span> <span class="attr">name</span>=<span class="string">"passwd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">id</span>=<span class="string">"submit_btn"</span> <span class="attr">name</span>=<span class="string">"action"</span>&gt;</span>Submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>处理登录的界面</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// controllers/Login.php</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getLogin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">$this</span>-&gt;load-&gt;helper(<span class="string">'url'</span>);</span><br><span class="line">    <span class="keyword">$this</span>-&gt;load-&gt;model(<span class="string">'userModel'</span>);</span><br><span class="line">    $username = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'username'</span>);</span><br><span class="line">    $passwd = <span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'passwd'</span>);</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">$this</span>-&gt;userModel-&gt;checkLogin($username,$passwd)===<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'home/index'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'login/login'</span>,<span class="keyword">array</span>(<span class="string">'error'</span>=&gt;<span class="string">'用户名或密码错误'</span>));</span><br><span class="line">        <span class="comment">// redirect('/', 'refresh');</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="获取表单传值"><a href="#获取表单传值" class="headerlink" title="获取表单传值"></a>获取表单传值</h4><p>获取表单项的值可以通过如下的方法，根据 提交的类型是 <em>post</em> 或是 <em>get</em> 来进行选择。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">$this</span>-&gt;input-&gt;post(<span class="string">'name'</span>);</span><br><span class="line"><span class="keyword">$this</span>-&gt;input-&gt;get(<span class="string">'name'</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="使用model类里的方法"><a href="#使用model类里的方法" class="headerlink" title="使用model类里的方法"></a>使用model类里的方法</h4><p>对数据库的操作都放在 <strong>models</strong>文件夹下，假如需要调用 <strong>UserModel.php</strong>里的方法时，可以通过</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">$this</span>-&gt;load-&gt;model(<span class="string">'userModel'</span>);</span><br><span class="line"><span class="keyword">$this</span>-&gt;userModel-&gt;getUser();</span><br></pre></td></tr></table></figure>
+
 <hr>
 <h4 id="给页面传入数据"><a href="#给页面传入数据" class="headerlink" title="给页面传入数据"></a>给页面传入数据</h4><p>显示 <strong>views</strong>文件夹下的页面，</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$this-&gt;load-&gt;view('user/list');</span><br></pre></td></tr></table></figure>
+
 <p>若是想在页面里面传入数据，类似java的Model，可以在<code>view()</code>方法里加入第二个参数,如下，这样就可以将关联数组data传入页面。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$data = <span class="keyword">array</span>(<span class="string">'username'</span>=&gt;<span class="string">'小唐'</span>,<span class="string">'studio'</span>=&gt;<span class="string">'betahouse'</span>);</span><br><span class="line"><span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">'user/list'</span>,$data);</span><br></pre></td></tr></table></figure>
+
 <h4 id="生成json字符串-json-encode"><a href="#生成json字符串-json-encode" class="headerlink" title="生成json字符串 json_encode"></a>生成json字符串 <code>json_encode</code></h4><blockquote>
 <p>由于json只接受utf-8编码的字符，所以json_encode()的参数必须是utf-8编码，否则会得到空字符或者null。当中文使用GB2312编码，或者外文使用ISO-8859-1编码的时候，这一点要特别注意。</p>
 </blockquote>
 <p>若是需要返回json的字符串，则需要用 <code>json_encode()</code>方法，该方法可以将数组或对象转成json字符串。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接向前端输出json字符串就行</span></span><br><span class="line"><span class="keyword">echo</span> json_encode(<span class="keyword">array</span>(<span class="string">'status'</span>=&gt;<span class="number">1</span>,<span class="string">'num'</span>=&gt;$num));</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>由于javascript不支持关联数组，所以json_encode()只将索引数组（indexed array）转为数组格式，而将关联数组（associative array）转为对象格式。</p>
 </blockquote>
 <p>1.若是传入索引数组，则 <code>json_encode()</code>会将索引数组转成数组格式。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$arr = <span class="keyword">Array</span>(<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>);　　 </span><br><span class="line"><span class="keyword">echo</span> json_encode($arr);　</span><br><span class="line"><span class="comment">// 输出： ["one","two","three"]</span></span><br></pre></td></tr></table></figure>
+
 <p>2.若是传入的是关联数组，则 <code>json_encode()</code>会将关联数组转成对象格式。</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$arr = <span class="keyword">Array</span>(<span class="string">'1'</span>=&gt;<span class="string">'one'</span>, <span class="string">'2'</span>=&gt;<span class="string">'two'</span>, <span class="string">'3'</span>=&gt;<span class="string">'three'</span>); </span><br><span class="line"><span class="keyword">echo</span> json_encode($arr);</span><br><span class="line"><span class="comment">// 输出： &#123;"1":"one","2":"two","3":"three"&#125;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="解析json字符串-json-decode"><a href="#解析json字符串-json-decode" class="headerlink" title="解析json字符串 json_decode()"></a>解析json字符串 <code>json_decode()</code></h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$json = json_decode(<span class="string">'&#123;"info": "nice"&#125;'</span>;)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>通常情况下，json_decode()总是返回一个PHP对象，而不是数组。</p>
 </blockquote>
 <p>如果想要强制生成PHP关联数组，json_decode()需要加一个参数true：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$json = &#123;<span class="string">"1"</span>:<span class="string">"one"</span>,<span class="string">"2"</span>:<span class="string">"two"</span>,<span class="string">"3"</span>:<span class="string">"three"</span>&#125;;</span><br><span class="line">json_decode($json,<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+
 
 
       <div>
@@ -427,6 +454,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -489,14 +517,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -507,13 +535,9 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tangliangdong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -552,7 +576,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">318k</span>
+    <span title="站点总字数">320k</span>
 </div>
 
         
@@ -725,6 +749,15 @@
         
 
         
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
 
         
           $('#footer').wobbleWindow({
@@ -793,5 +826,35 @@
 
 <script type="text/javascript" src="/js/clipboard.min.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('[object Object]', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: true,
+      appId: 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+      appKey: 'AJ3paOnlxYMTA5dQejavW0MO',
+      placeholder: "Just go go",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>

@@ -26,7 +26,7 @@
     scheme: 'Muse',
     version: '7.6.0',
     exturl: false,
-    sidebar: {"position":"left","avatar":"/images/avatar.jpg","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":true,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -207,7 +207,7 @@
 </div>
     </header>
     <a href="https://github.com/tangliangdong" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub">
-      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+      <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 1000" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
   <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
       </svg>
@@ -229,6 +229,131 @@
             
 
   <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2016/12/19/2016-12-19-JQuery-memo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/12/19/2016-12-19-JQuery-memo/" class="post-title-link" itemprop="url">jQuery给服务端生成的DOM绑定事件</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016年12月19日 18:10:00" itemprop="dateCreated datePublished" datetime="2016-12-19T18:10:00+08:00">2016年12月19日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2016/12/19/2016-12-19-JQuery-memo/" class="post-meta-item leancloud_visitors" data-flag-title="jQuery给服务端生成的DOM绑定事件" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/12/19/2016-12-19-JQuery-memo/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/19/2016-12-19-JQuery-memo/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>通过服务端传过来的Model生成的DOM元素，因为可能会有多个按钮，如果通过设置id值来获取按钮，则只会有第一个带这个id值的按钮绑上指定的事件，其他按钮则没有。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2016/12/19/2016-12-19-JQuery-memo/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+
+      <div>
+        
+      </div>
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
         
   
   
@@ -287,6 +412,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/12/17/2016-12-17-JQuery-ajax/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/17/2016-12-17-JQuery-ajax/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -399,6 +538,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/12/17/2016-12-17-mybatis-sql/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/17/2016-12-17-mybatis-sql/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -427,7 +580,9 @@
 <p>因为这个是xml格式的，所以不允许出现类似“&gt;”这样的字符，但是都可以使用<code>&lt;![CDATA[ ]]&gt;</code>符号进行说明，将此类符号不进行解析</p>
 </blockquote>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;![CDATA[ when min(starttime)&lt;='12:00' and max(endtime)&lt;='12:00' ]]&gt;</span><br></pre></td></tr></table></figure>
+
 <h4 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 小于号 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUser"</span> <span class="attr">resultMap</span>=<span class="string">"BaseResultMap"</span>&gt;</span></span><br><span class="line">    select username,showname,id,power </span><br><span class="line">    from user </span><br><span class="line">    where &lt;![CDATA[ power &lt; 2 ]]&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 不等于号 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUser"</span> <span class="attr">resultMap</span>=<span class="string">"BaseResultMap"</span>&gt;</span></span><br><span class="line">    select username,showname,id,power</span><br><span class="line">    from user </span><br><span class="line">    where &lt;![CDATA[ power &lt;&gt; 2 ]]&gt;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -507,6 +662,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/12/12/2016-12-12-spring-static/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/12/2016-12-12-spring-static/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -533,17 +702,21 @@
       
           <p>当我们使用视图解析器，将所有的url都分配到<code>dispatcher-servlet</code>处理，因此连<code>.css,.js.jpg</code>等文件都一并分配到这里去了，自然就获取不到这些静态资源。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- web.xml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="配置dispatcher-servlet-xml"><a href="#配置dispatcher-servlet-xml" class="headerlink" title="配置dispatcher-servlet.xml"></a>配置dispatcher-servlet.xml</h3><p>效率比较高的就是在<code>dispatcher-servlet.xml</code>配置资源。</p>
 <h4 id="lt-mvc-default-servlet-handler-gt"><a href="#lt-mvc-default-servlet-handler-gt" class="headerlink" title="&lt;mvc:default-servlet-handler/&gt;"></a><code>&lt;mvc:default-servlet-handler/&gt;</code></h4><p>对进入DispatcherServlet的URL进行筛查，如果发现是静态资源的请求，就将该请求转由Web应用服务器默认的Servlet处理，如果不是静态资源的请求，才由DispatcherServlet继续处理。</p>
 <p>一般Web应用服务器默认的Servlet名称是”default”，因此<code>DefaultServletHttpRequestHandler</code>可以找到它。如果你所有的Web应用服务器的默认Servlet名称不是”default”，则需要通过<code>default-servlet-name</code>属性显示指定：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- dispatcher-servlet.xml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:default-servlet-handler</span> <span class="attr">default-servlet-name</span>=<span class="string">"所使用的Web服务器默认使用的Servlet名称"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="lt-mvc-resources-gt"><a href="#lt-mvc-resources-gt" class="headerlink" title="&lt;mvc:resources /&gt;"></a>&lt;mvc:resources /&gt;</h4><blockquote>
 <p>允许静态资源放在任何地方，如WEB-INF目录下、类路径下等</p>
 </blockquote>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- dispatcher-servlet.xml --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- location是工程路径地址，mapping是映射后的访问地址 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mvc:resources</span> <span class="attr">location</span>=<span class="string">"/resources/"</span> <span class="attr">mapping</span>=<span class="string">"/resources/**"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><img src="spring_static.jpg" alt="img"></p>
 <h3 id="jsp页面引入静态资源"><a href="#jsp页面引入静态资源" class="headerlink" title="jsp页面引入静态资源"></a>jsp页面引入静态资源</h3><p>因为映射的缘故，直接这样引入<code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;resources/bootstrap/css/bootstrap.css&quot;&gt;</code>，并不能在所有页面都成功，我们有两种方式。</p>
 <h4 id="lt-gt"><a href="#lt-gt" class="headerlink" title="&lt;% %&gt;"></a>&lt;% %&gt;</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span></span></span><br><span class="line"><span class="tag"><span class="attr">String</span> <span class="attr">path</span> = <span class="string">request.getContextPath();</span></span></span><br><span class="line"><span class="tag"><span class="attr">String</span> <span class="attr">basePath</span> = <span class="string">request.getScheme()+</span>"<span class="attr">:</span>//"+</span></span><br><span class="line"><span class="tag">            <span class="attr">request.getServerName</span>()+"<span class="attr">:</span>"+<span class="attr">request.getServerPort</span>()+<span class="attr">path</span>+"/";</span></span><br><span class="line"><span class="tag">%&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">href</span>=<span class="string">"&lt;%=path%&gt;/resources/bootstrap/css/bootstrap.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><em>path</em> 是带项目名的路径。</li>
 <li><code>href=&quot;/ActivityDemo/resources/bootstrap/css/bootstrap.css&quot;</code></li>
@@ -559,6 +732,7 @@
 <li>standard.jar</li>
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用jstl需在jsp页面顶部引入这句代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">taglib</span> <span class="attr">uri</span>=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> <span class="attr">prefix</span>=<span class="string">"c"</span> %&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">href</span>=<span class="string">"&lt;c:url value='/resources/bootstrap/css/bootstrap.css'/&gt;"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"&lt;c:url value='/resources/js/jquery-2.2.4.min.js'/&gt;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><code>value</code>属性最前面必须是<code>/</code>。</p>
 <h6 id="注意引入-css-文件是-lt-link-gt-的-href属性，引入-js-文件是-lt-script-gt-lt-script-gt-的-src属性"><a href="#注意引入-css-文件是-lt-link-gt-的-href属性，引入-js-文件是-lt-script-gt-lt-script-gt-的-src属性" class="headerlink" title="注意引入 css 文件是&lt;link&gt; 的 href属性，引入 js 文件是&lt;script&gt;&lt;/script&gt; 的 src属性"></a>注意引入 css 文件是<code>&lt;link&gt;</code> 的 <code>href</code>属性，引入 js 文件是<code>&lt;script&gt;&lt;/script&gt;</code> 的 <code>src</code>属性</h6><p>显示的地址是带项目名的地址。<code>href=&quot;/ActivityDemo/resources/bootstrap/css/bootstrap.css&quot;</code></p>
 <p><strong>建议在jsp页面不要使用&lt;% %&gt;，学习使用jstl标准标签库。</strong></p>
@@ -641,6 +815,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/12/09/2016-12-09-spring-generator/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/09/2016-12-09-spring-generator/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -752,6 +940,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/12/08/2016-11-23-jQuery/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/08/2016-11-23-jQuery/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -784,60 +986,59 @@
 <p>该对象主要用于获取事件的相关信息，或对该事件进行处理。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//触发事件时的event对象</span></span><br><span class="line">$(<span class="string">'selector'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* Act on the event */</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h4 id="event属性"><a href="#event属性" class="headerlink" title="event属性"></a>event属性</h4><table>
 <thead>
 <tr>
 <th>属性</th>
-<th style="text-align:center">描述</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>currentTarget</td>
-<td style="text-align:center">返回事件冒泡阶段中的当前DOM元素</td>
+<td align="center">返回事件冒泡阶段中的当前DOM元素</td>
 </tr>
 <tr>
 <td>data</td>
-<td style="text-align:center">返回绑定事件时传入的附加数据</td>
+<td align="center">返回绑定事件时传入的附加数据</td>
 </tr>
 <tr>
 <td>delegateTarget</td>
-<td style="text-align:center">返回”受委托”调用当前事件处理函数的DOM元素</td>
+<td align="center">返回”受委托”调用当前事件处理函数的DOM元素</td>
 </tr>
 <tr>
 <td>namespace</td>
-<td style="text-align:center">返回触发事件时指定的命名空间</td>
+<td align="center">返回触发事件时指定的命名空间</td>
 </tr>
 <tr>
 <td>pageX</td>
-<td style="text-align:center">返回鼠标相对于当前文档的x坐标</td>
+<td align="center">返回鼠标相对于当前文档的x坐标</td>
 </tr>
 <tr>
 <td>pageY</td>
-<td style="text-align:center">返回鼠标相对于当前文档的y坐标</td>
+<td align="center">返回鼠标相对于当前文档的y坐标</td>
 </tr>
 <tr>
 <td>result</td>
-<td style="text-align:center">返回当前事件绑定的上一个事件处理函数的返回值。</td>
+<td align="center">返回当前事件绑定的上一个事件处理函数的返回值。</td>
 </tr>
 <tr>
 <td>target</td>
-<td style="text-align:center">最初触发该事件的DOM元素</td>
+<td align="center">最初触发该事件的DOM元素</td>
 </tr>
 <tr>
 <td>timeStamp</td>
-<td style="text-align:center">返回事件触发的当前时间与1970年1月1日午夜之间的毫秒数</td>
+<td align="center">返回事件触发的当前时间与1970年1月1日午夜之间的毫秒数</td>
 </tr>
 <tr>
 <td>type</td>
-<td style="text-align:center">返回事件的类型。例如:”click”、”focus”等</td>
+<td align="center">返回事件的类型。例如:”click”、”focus”等</td>
 </tr>
 <tr>
 <td>which</td>
-<td style="text-align:center">返回触发事件时按下的鼠标按钮或键盘按键</td>
+<td align="center">返回触发事件时按下的鼠标按钮或键盘按键</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="event方法"><a href="#event方法" class="headerlink" title="event方法"></a>event方法</h4><p>|方法|描述|<br>|isDefaultPrevented()|是否调用了preventDefault()方法。|<br>|isImmediatePropagationStopped()|是否调用了stopImmediatePropagation()方法。|<br>|isPropagationStopped()|是否调用了stopPropagation()方法。(阻止当前事件在DOM树上冒泡。)|<br>|preventDefault()|阻止触发事件的默认行为。|<br>|stopImmediatePropagation()|阻止该元素当前触发事件剩余的事件处理函数的执行，并停止事件的冒泡传递。|<br>|stopPropagation()|停止事件的冒泡传递。|</p>
 <h4 id="event-which属性"><a href="#event-which属性" class="headerlink" title="event.which属性"></a>event.which属性</h4><h5 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h5><table>
 <thead>
@@ -846,8 +1047,7 @@
 <th>对应的鼠标按钮</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>1</td>
 <td>鼠标左键</td>
 </tr>
@@ -859,8 +1059,7 @@
 <td>3</td>
 <td>鼠标右键</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h5 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h5><table>
 <thead>
 <tr>
@@ -868,8 +1067,7 @@
 <th>对应的键盘按键</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>8</td>
 <td>Backspace键</td>
 </tr>
@@ -937,8 +1135,7 @@
 <td>112 - 123</td>
 <td>对应按键 F1 - F12</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="JQuery-选择器"><a href="#JQuery-选择器" class="headerlink" title="JQuery $()选择器"></a>JQuery $()选择器</h3><p>…</p>
 <h3 id="JQuery-添加DOM元素"><a href="#JQuery-添加DOM元素" class="headerlink" title="JQuery 添加DOM元素"></a>JQuery 添加DOM元素</h3><ul>
 <li>append() - 在被选元素内部的结尾插入内容</li>
@@ -948,8 +1145,10 @@
 </ul>
 <h3 id="如何取出下拉框select标签选中的项"><a href="#如何取出下拉框select标签选中的项" class="headerlink" title="如何取出下拉框select标签选中的项"></a>如何取出下拉框select标签选中的项</h3><p><strong>html</strong></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- option的value是传到服务器端的值 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- option通过 selected="selected" 设置预选值--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"select-box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Tom"</span>&gt;</span>Tom~~~<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Jack"</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>Jack~~~<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Ann"</span>&gt;</span>Ann~~~<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>javascript</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .change()在下拉框内容选项改变时触发。</span></span><br><span class="line"><span class="comment">// .children('selector')选择器只能选择直接子元素，不能选择孙子元素。</span></span><br><span class="line">$(<span class="string">'#select-box'</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $selectBox = $(<span class="keyword">this</span>).children(<span class="string">'option:selected'</span>), <span class="comment">//JQuery对象</span></span><br><span class="line">        value = $(<span class="keyword">this</span>).children(<span class="string">'option:selected'</span>).val(), <span class="comment">//选中项的value值  Tom</span></span><br><span class="line">        text = $(<span class="keyword">this</span>).children(<span class="string">'option:selected'</span>).text(); <span class="comment">//选中项显示的值  Tom~~~</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <h3 id="关于jQuery-attr-和prop"><a href="#关于jQuery-attr-和prop" class="headerlink" title="关于jQuery attr()和prop()"></a>关于jQuery <code>attr()</code>和<code>prop()</code></h3><p>如果要获取元素只有 <strong>true</strong> 和 <strong>false</strong> 属性的<code>attribute</code>值，例如<code>checked</code>, <code>selected</code> 或者 <code>disabled</code> 使用<code>prop()</code>，其他则用<code>attr()</code>，具体见下表。</p>
 <p><img src="attr_prop.png" alt="image"></p>
 <h3 id="on-bind-live-和delegate-的差异"><a href="#on-bind-live-和delegate-的差异" class="headerlink" title="on(),bind(),live()和delegate()的差异"></a><code>on()</code>,<code>bind()</code>,<code>live()</code>和<code>delegate()</code>的差异</h3><p><code>bind()</code>方法只能给当前存在的元素绑定事件。对于后来通过操作js动态添加的DOM元素，则不起作用。</p>
@@ -961,11 +1160,13 @@
 <li>用delegate()绑定事件处理函数，可以使用undelegate()取消事件绑定。</li>
 </ul>
 <h4 id="delegate"><a href="#delegate" class="headerlink" title=".delegate()"></a><code>.delegate()</code></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.delegate(<span class="string">'selector'</span>, <span class="string">'eventType'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    selector</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>selector</code> 选择器字符串，用于过滤器触发事件的元素。</li>
 <li><code>eventType</code>一个包含一个或多个用空格隔开的JavaScript事件类型的字符串，比如”click”或”keydown,”或自定义事件的名称。</li>
 </ul>
 <h4 id="on"><a href="#on" class="headerlink" title=".on()"></a><code>.on()</code></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.on( events [, selector ] [, data ], handler(eventObject) )&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>event</code> 一个或多个空格分隔的事件类型和可选的命名空间，或仅仅是命名空间，比如”click”, “keydown.myPlugin”, 或者 “.myPlugin”。</li>
 <li><code>selector</code> 一个选择器字符串</li>
@@ -979,17 +1180,20 @@
 <p>元素的事件添加处理函数。处理函数在每个元素上每种事件类型最多执行一次。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.one( events [, selector ] [, data ], handler(eventObject) )&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>.one()</code>和<code>.on()</code>是相同的， 不同之处在于，对于给定的元素和事件类型，处理程序在第一次触发事件后会被立即解除绑定</li>
 <li>如果该方法的第一个参数包含多个用空格分隔的事件类型的话，那么每种类型的事件被触发时，处理函数仅会被每个事件类型调用一次。 </li>
 </ul>
 <h4 id="trigger"><a href="#trigger" class="headerlink" title=".trigger()"></a><code>.trigger()</code></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.trigger( eventType [, extraParameters ] )&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><p><code>extraParameters</code> 传递给事件处理程序的额外参数。</p>
 </li>
 <li><p>当相应的事件发生时，任何通过<code>.on()</code>或一个快捷方法绑定的事件处理程序将被触发。它们也可以用<code>.trigger()</code>方法手动触发。调用<code>.trigger()</code>执行处理程序和用户自然的触发该事件，他们的执行顺序时相同的：</p>
 </li>
-<li><code>.trigger()</code>事件会在DOM树上冒泡;在事件处理程序中返回<code>false</code>或调用事件对象中的<code>.stopPropagation()</code>方法可以使事件停止冒泡。</li>
+<li><p><code>.trigger()</code>事件会在DOM树上冒泡;在事件处理程序中返回<code>false</code>或调用事件对象中的<code>.stopPropagation()</code>方法可以使事件停止冒泡。</p>
+</li>
 </ul>
 <blockquote>
 <p>若要触发通过 jQuery 绑定的事件处理函数，而不触发原生的事件，使用.triggerHandler() 来代替。</p>
@@ -998,6 +1202,7 @@
 <p>为一个事件执行附加到元素的所有处理程序。</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.triggerHandler( eventType [, extraParameters ] )&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>.triggerHandler( &quot;event&quot; )</code>方法被触发时不会调用元素上的 <code>.event()</code>。 这意味着在表单上触发 <code>.triggerHandler( &quot;submit&quot; )</code>将不会调用表单上的<code>.submit()</code>。</li>
 <li>使用 <code>.triggerHandler()</code> 触发的事件，并不会在 DOM 树中向上冒泡。</li>
@@ -1010,16 +1215,20 @@
 <li><strong>disabled</strong> 对于所有的表单元素都有效，包括 <strong>select</strong>, <strong>radio</strong> , <strong>checkbox</strong> , <strong>button</strong> 等</li>
 </ul>
 <ul>
-<li>表单元素在使用了disabled后，当我们将表单以 <em>POST</em>或 <em>GET</em> 的方式提交的话，这个元素的值不会被传递出去</li>
+<li>表单元素在使用了disabled后，当我们将表单以 <em>POST*或 *GET</em> 的方式提交的话，这个元素的值不会被传递出去</li>
 <li><strong>readonly</strong> 会将该值传递出去</li>
 </ul>
 <blockquote>
 <p>在某个表单中为用户预填了某个唯一识别代码，不允许用户改动，但是在提交时需要传递该值，此时应该将它的属性设置为 readonly。</p>
 </blockquote>
 <h4 id="设置disabled属性的方式"><a href="#设置disabled属性的方式" class="headerlink" title="设置disabled属性的方式"></a>设置<code>disabled</code>属性的方式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">daisbaled</span>=<span class="string">"disabled"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'input'</span>).attr(<span class="string">"disabled"</span>,<span class="literal">true</span>)<span class="comment">//将input元素设置为disabled</span></span><br><span class="line">$(<span class="string">'input'</span>).attr(<span class="string">"disabled"</span>,<span class="literal">false</span>)<span class="comment">//去除input元素的disabled属性</span></span><br><span class="line">$(<span class="string">'input'</span>).removeAttr(<span class="string">"disabled"</span>);<span class="comment">//去除input元素的disabled属性</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($(<span class="string">'input'</span>).attr(<span class="string">"disabled"</span>)==<span class="literal">true</span>)&#123;&#125;<span class="comment">//判断input元素是否已经设置了disabled属性</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="设置readonly属性的方式"><a href="#设置readonly属性的方式" class="headerlink" title="设置readonly属性的方式"></a>设置<code>readonly</code>属性的方式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">readonly</span>=<span class="string">"readonly"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'input'</span>).removeAttr(<span class="string">"readonly"</span>);<span class="comment">//去除input元素的readonly属性</span></span><br><span class="line">$(<span class="string">'input'</span>).attr(<span class="string">"readonly"</span>,<span class="literal">true</span>)<span class="comment">//将input元素设置为readonly</span></span><br><span class="line">$(<span class="string">'input'</span>).attr(<span class="string">"readonly"</span>,<span class="literal">false</span>)<span class="comment">//去除input元素的readonly属性</span></span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span>($(<span class="string">'input'</span>).attr(<span class="string">"readonly"</span>)==<span class="literal">true</span>)&#123;&#125;<span class="comment">//判断input元素是否已经设置了readonly属性</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -1099,6 +1308,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/12/07/2016-12-7-spring-messy/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/07/2016-12-7-spring-messy/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -1124,6 +1347,7 @@
 
       
           <h3 id="request-getParameter-乱码问题"><a href="#request-getParameter-乱码问题" class="headerlink" title="request.getParameter()乱码问题"></a>request.getParameter()乱码问题</h3><h4 id="通过form表单提交的字段"><a href="#通过form表单提交的字段" class="headerlink" title="通过form表单提交的字段"></a>通过form表单提交的字段</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> String(req.getParameter(<span class="string">"参数名"</span>).getBytes(<span class="string">"ISO-8859-1"</span>),<span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
+
 <h4 id="通过url-获取的字段"><a href="#通过url-获取的字段" class="headerlink" title="通过url 获取的字段"></a>通过url 获取的字段</h4><p><code>http://127.0.0.1:8080/prjdm-main/list?projectId=1&amp;content=团队组织架构&quot;</code></p>
 <blockquote>
 <p>因为直接http请求方式的话，使用的编码是iso-8859-1格式的，所以应该先以这种方式获取流然后转为utf-8格式，这样的话就直接可以显示正确的汉字了</p>
@@ -1207,6 +1431,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/12/04/2016-12-5-css-selector/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/04/2016-12-5-css-selector/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -1313,6 +1551,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/11/26/2016-11-26-springmvc-mapper/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/11/26/2016-11-26-springmvc-mapper/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -1347,12 +1599,15 @@
 <p>你写程序不应该仅仅为实现功能考虑，更多的还是应该为将来的维护考虑，因为大部分的时间还是在维护上的。</p>
 </blockquote>
 <h3 id="BlogMapper-xml"><a href="#BlogMapper-xml" class="headerlink" title="BlogMapper.xml"></a><code>BlogMapper.xml</code></h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> <span class="meta">?&gt;</span></span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper</span></span><br><span class="line"><span class="meta">  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"</span></span><br><span class="line"><span class="meta">  "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 映射到接口 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"edu.hziee.mappers.BlogMapper"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 设置返回结果集的映射 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"blogResultMap"</span> <span class="attr">type</span>=<span class="string">"edu.hziee.models.Blog"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"content"</span> <span class="attr">column</span>=<span class="string">"content"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"author"</span> <span class="attr">column</span>=<span class="string">"author"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"title"</span> <span class="attr">column</span>=<span class="string">"title"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlog"</span> <span class="attr">resultMap</span>=<span class="string">"blogResultMap"</span>&gt;</span></span><br><span class="line">        select id, content,author,title from Blog where id = #&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectBlogs"</span> <span class="attr">resultMap</span>=<span class="string">"blogResultMap"</span>&gt;</span></span><br><span class="line">        select id, content,author,title from Blog</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 自动生成 自增的id，设置 useGeneratedKeys="true" keyProperty="id" --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"insertBlog"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">        insert into Blog(content,author,title) values (#&#123;content&#125;, #&#123;author&#125;,#&#123;title&#125;)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">update</span> <span class="attr">id</span>=<span class="string">"updateBlog"</span> <span class="attr">parameterType</span>=<span class="string">"edu.hziee.models.Blog"</span>&gt;</span></span><br><span class="line">        update Blog set</span><br><span class="line">        content = #&#123;content&#125;,</span><br><span class="line">        title = #&#123;title&#125;,</span><br><span class="line">        author = #&#123;author&#125;</span><br><span class="line">        where id=#&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">update</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">delete</span> <span class="attr">id</span>=<span class="string">"deleteBlog"</span>&gt;</span></span><br><span class="line">        delete from Blog where id=#&#123;id&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">delete</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="blogMapper-java接口"><a href="#blogMapper-java接口" class="headerlink" title="blogMapper.java接口"></a><code>blogMapper.java</code>接口</h3><p><code>blogMapper.java</code>中的抽象方法要和xml文件中的sql语句对应。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> edu.hziee.mappers;</span><br><span class="line"><span class="comment">//只能是接口，不能是具体的类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BlogMapper</span> </span>&#123;</span><br><span class="line">    <span class="function">Blog <span class="title">selectBlog</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">    <span class="function">List&lt;Blog&gt; <span class="title">selectBlogs</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">insertBlog</span><span class="params">(Blog blog)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">updateBlog</span><span class="params">(Blog blog)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">deleteBlog</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="BlogDao-java-DAO层"><a href="#BlogDao-java-DAO层" class="headerlink" title="BlogDao.java DAO层"></a><code>BlogDao.java</code> DAO层</h3><blockquote>
 <p>(Data Access Object)是用于访问数据的对象<br>DAO层（数据库操作层）：负责对数据向数据库增删改查的操作。</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> edu.hziee.dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> edu.hziee.mappers.BlogMapper;</span><br><span class="line"><span class="keyword">import</span> edu.hziee.models.Blog;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BlogDao</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//注解驱动，自动装配</span></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> BlogMapper blogMapper;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//增加</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertBlog</span><span class="params">(Blog blog)</span></span>&#123;</span><br><span class="line">        blogMapper.insertBlog(blog);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//查询</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Blog <span class="title">selectBlog</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> blogMapper.selectBlog(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//查询</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Blog&gt; <span class="title">selectBlogs</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> blogMapper.selectBlogs();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//删除</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteBlog</span><span class="params">(<span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">        blogMapper.deleteBlog(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//更新</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateBlog</span><span class="params">(Blog blog)</span></span>&#123;</span><br><span class="line">        blogMapper.updateBlog(blog);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="BlogController-java-controller控制层"><a href="#BlogController-java-controller控制层" class="headerlink" title="BlogController.java controller控制层"></a><code>BlogController.java</code> controller控制层</h3><blockquote>
 <p>把用户请求的数据经过业务处理层处理之后封装成一个Model ，然后再把该Model 返回给对应的View 进行展示</p>
 </blockquote>
@@ -1435,6 +1690,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/11/25/2016-11-25-springmvc-configuration/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/11/25/2016-11-25-springmvc-configuration/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -1464,8 +1733,10 @@
 </blockquote>
 <p><code>web.xml</code>在<code>WEB-INF</code>目录下</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://xmlns.jcp.org/xml/ns/javaee </span></span></span><br><span class="line"><span class="tag"><span class="string">    http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 项目名称 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>myspring<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 项目默认的首页 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.html<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.htm<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>default.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 配置spring的字符集过滤，解决中文插入数据库的乱码问题 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>characterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;<span class="name">init-param</span>&gt;</span>  </span><br><span class="line">          <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span>  </span><br><span class="line">          <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;<span class="name">init-param</span>&gt;</span>  </span><br><span class="line">          <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>forceEncoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span>  </span><br><span class="line">          <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>characterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 配置spring的前端控制器 --&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- spring默认配置文件是/WEB-INF/[servlet名字]-servlet.xml --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 或者通过增加这段配置来指定要初始化的dispatcher。 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;init-param&gt;</span></span><br><span class="line"><span class="comment">      &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span></span><br><span class="line"><span class="comment">      &lt;param-value&gt;/WEB-INF/dispatcher-servlet.xml&lt;/param-value&gt;</span></span><br><span class="line"><span class="comment">    &lt;/init-param&gt; --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>dispatcher<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="配置dispatcher-servlet-xml"><a href="#配置dispatcher-servlet-xml" class="headerlink" title="配置dispatcher-servlet.xml"></a>配置<code>dispatcher-servlet.xml</code></h3><p><code>dispatcher-servlet.xml</code>在<code>WEB-INF</code>目录下</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns:mvc</span>=<span class="string">"http://www.springframework.org/schema/mvc"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/mvc</span></span></span><br><span class="line"><span class="tag"><span class="string">    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">    http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="tag"><span class="string">    http://www.springframework.org/schema/context/spring-context-3.0.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">    http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 注解驱动 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:annotation-driven</span> /&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 第三方的库，如bootstrap --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mvc:resources</span> <span class="attr">location</span>=<span class="string">"/resources/"</span> <span class="attr">mapping</span>=<span class="string">"/resources/**"</span>/&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 在指定包下 扫描组件bean --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"edu.hziee.controllers"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"edu.hziee.dao"</span> /&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&lt;!-- 连接数据库 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DriverManagerDataSource"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"com.mysql.jdbc.Driver"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://127.0.0.1:3306/javaee2016?characterEncoding=utf8"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"root"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlSessionFactory"</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 在spring中加入数据映射器接口 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.mapper.MapperScannerConfigurer"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"basePackage"</span> <span class="attr">value</span>=<span class="string">"edu.hziee.mappers"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"sqlSessionFactory"</span> <span class="attr">ref</span>=<span class="string">"sqlSessionFactory"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 视图解析器 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 将jsp页面放在 WEB-INF/views 目录下 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"prefix"</span> <span class="attr">value</span>=<span class="string">"/WEB-INF/views/"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suffix"</span> <span class="attr">value</span>=<span class="string">".jsp"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>还需要导入jar包，mybatis-3.4.1.jar</p>
 <ul>
 <li>spring依赖包</li>
@@ -1556,6 +1827,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/11/24/2016-11-24-spring-mvc-mapper/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/11/24/2016-11-24-spring-mvc-mapper/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -1581,7 +1866,9 @@
 
       
           <h3 id="spring映射"><a href="#spring映射" class="headerlink" title="spring映射"></a>spring映射</h3><h4 id="简单的页面跳转"><a href="#简单的页面跳转" class="headerlink" title="简单的页面跳转"></a>简单的页面跳转</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"blog"</span>&gt;</span>blogs页面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/blog"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BlogController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(method=RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">getBlogs</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ModelAndView mav = <span class="keyword">new</span> ModelAndView(<span class="string">"blog/blogs"</span>);</span><br><span class="line">        <span class="comment">//从数据库取得数据</span></span><br><span class="line">        List&lt;Blog&gt; blogs = blogDao.selectBlogs();</span><br><span class="line">        <span class="comment">//将数据存在model里</span></span><br><span class="line">        mav.addObject(<span class="string">"blogs"</span>,blogs);</span><br><span class="line">        <span class="keyword">return</span> mav;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>超链接地址<code>href</code>要对应控制器的映射地址<code>@RequestMapping(&quot;/blog&quot;)</code>，这样才会调用映射的方法。</li>
 <li><code>ModelAndView mav = new ModelAndView(&quot;blog/blogs&quot;)</code>或者<code>mav.setViewName(&quot;blog/blogs&quot;)</code>都能用来设置显示 <strong>blog文件夹</strong> 下的<code>blogs.jsp</code>页面。</li>
@@ -1589,6 +1876,7 @@
 <p><img src="springmvc1.jpg" alt="image"></p>
 <p>因为在<code>dispatcher-servlet.xml</code>中配置过视图解析器如下</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"prefix"</span> <span class="attr">value</span>=<span class="string">"/WEB-INF/views/"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suffix"</span> <span class="attr">value</span>=<span class="string">".jsp"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>InternalResourceViewResolver</code>会把返回的视图名称都解析为<code>InternalResourceView</code>对象，</li>
 <li><code>InternalResourceView</code>会把<code>Controller</code>处理器方法返回的模型属性都存放到对应的request属性中</li>
@@ -1600,8 +1888,10 @@
 <p>如下图，如果我要点击删除一条记录，然后再跳回这个页面。就需要用到请求重定向。</p>
 <p><img src="springmvc2.jpg" alt="image"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"delete/&#123;id&#125;"</span>,method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">deleteBlog</span><span class="params">(@PathVariable <span class="keyword">int</span> id)</span></span>&#123;</span><br><span class="line">    ModelAndView mav = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">    <span class="comment">//根据id从数据库删除对应数据</span></span><br><span class="line">    blogDao.deleteBlog(id);</span><br><span class="line">    <span class="comment">//从数据库重新取数据</span></span><br><span class="line">    List&lt;Blog&gt; blogs = blogDao.selectBlogs();</span><br><span class="line">    <span class="comment">//设置视图名称</span></span><br><span class="line">    mav.setViewName(<span class="string">"redirect:/blog"</span>);</span><br><span class="line">    <span class="keyword">return</span> mav.addObject(<span class="string">"blogs"</span>,blogs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>因为我们需要返回到原来的页面，但是需要重新获取、显示数据，我们就不能只是简单的通过<code>mav.setViewName(&quot;blog/blogs&quot;)</code>显示这个视图，而是要调用映射到这个页面的方法，在通过这个方法获取数据，再显示到<code>blogs.jsp</code>页面上，也就是如下的方法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/blog"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BlogController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(method=RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">getBlogs</span><span class="params">()</span></span>&#123;</span><br><span class="line">        ModelAndView mav = <span class="keyword">new</span> ModelAndView(<span class="string">"blog/blogs"</span>);</span><br><span class="line">        <span class="comment">//从数据库取得数据</span></span><br><span class="line">        List&lt;Blog&gt; blogs = blogDao.selectBlogs();</span><br><span class="line">        <span class="comment">//将数据存在model里</span></span><br><span class="line">        mav.addObject(<span class="string">"blogs"</span>,blogs);</span><br><span class="line">        <span class="keyword">return</span> mav;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>现在页面的URL是<code>http://localhost:8080/myspring/blog</code>，如果不使用<code>redirect</code> (即<code>mav.setViewName(&quot;blog/blogs&quot;)</code>) ，点击超链接，则URL变成<code>http://localhost:8080/myspring/blog/delete/36</code>,会显示没有映射的警告且不会有页面显示。</p>
 
       
@@ -1682,6 +1972,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/09/16/2016-08-28-ionic/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/09/16/2016-08-28-ionic/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -1793,6 +2097,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/09/13/2016-09-13-segment/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/09/13/2016-09-13-segment/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -1904,6 +2222,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/09/09/2016-09-09-port-occupy/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/09/09/2016-09-09-port-occupy/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -2020,6 +2352,20 @@
               <span class="leancloud-visitors-count"></span>
               <span>℃</span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2016/08/30/2016-08-30-ionic-side-menu/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2016/08/30/2016-08-30-ionic-side-menu/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
@@ -2048,122 +2394,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2016/08/30/2016-08-30-ionic-side-menu/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-
-      <div>
-        
-      </div>
-    </div>
-
-    
-    
-    
-
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2016/08/10/2016-08-10-self-adaption/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="XiaoTang">
-      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XiaoTang' Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/08/10/2016-08-10-self-adaption/" class="post-title-link" itemprop="url">浅谈响应式</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016年08月10日 11:00:00" itemprop="dateCreated datePublished" datetime="2016-08-10T11:00:00+08:00">2016年08月10日</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Learn/" itemprop="url" rel="index">
-                    <span itemprop="name">Learn</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/08/10/2016-08-10-self-adaption/" class="post-meta-item leancloud_visitors" data-flag-title="浅谈响应式" title="热度">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">热度</span>
-              <span class="leancloud-visitors-count"></span>
-              <span>℃</span>
-            </span>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="响应式网站概念"><a href="#响应式网站概念" class="headerlink" title="响应式网站概念"></a>响应式网站概念</h2><ol>
-<li><p>flexible grid layout 弹性网格布局</p>
-</li>
-<li><p>flexible image 弹性图片</p>
-</li>
-<li><p>media queries 媒体查询</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/08/10/2016-08-10-self-adaption/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2261,14 +2491,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-count">113</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -2279,13 +2509,9 @@
       </div>
   </nav>
 </div>
-  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tangliangdong" title="GitHub → https://github.com/tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tangliangdong" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;tangliangdong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
         <a href="mailto:xiaotang188@gmail.com" title="E-Mail → mailto:xiaotang188@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
@@ -2324,7 +2550,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">318k</span>
+    <span title="站点总字数">320k</span>
 </div>
 
         
@@ -2497,6 +2723,15 @@
         
 
         
+          $('#sidebar').wobbleWindow({
+            radius: 50,
+            movementLeft: false,
+            movementTop: false,
+            movementBottom: false,
+            position: 'fixed',
+            debug: false,
+          });
+        
 
         
           $('#footer').wobbleWindow({
@@ -2565,5 +2800,35 @@
 
 <script type="text/javascript" src="/js/clipboard.min.js"></script>  
 <script type="text/javascript" src="/js/custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.min.js"></script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('[object Object]', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: true,
+      appId: 'es3tC97u1gwqYCpsdPqXvpVA-gzGzoHsz',
+      appKey: 'AJ3paOnlxYMTA5dQejavW0MO',
+      placeholder: "Just go go",
+      avatar: 'mm',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":false,"react":{"opacity":0.7}}});</script></body>
 </html>
