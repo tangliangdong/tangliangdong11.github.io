@@ -61,7 +61,7 @@
 <meta property="og:image" content="http://zhizhi.tangliangdong.me/2020/01/08/2020-1-8-nginx-reverse-Proxy/3.png">
 <meta property="og:image" content="http://zhizhi.tangliangdong.me/2020/01/08/2020-1-8-nginx-reverse-Proxy/4.png">
 <meta property="og:image" content="http://zhizhi.tangliangdong.me/2020/01/08/2020-1-8-nginx-reverse-Proxy/5.png">
-<meta property="og:updated_time" content="2020-01-08T06:39:41.869Z">
+<meta property="og:updated_time" content="2020-01-08T07:08:11.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx反向代理(Reverse Proxy)">
 <meta name="twitter:description" content="反向代理（Reverse Proxy）方式是指以代理服务器来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。">
@@ -265,7 +265,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020年01月08日 13:38:06 / 修改时间：14:39:41" itemprop="dateCreated datePublished" datetime="2020-01-08T13:38:06+08:00">2020年01月08日</time>
+              <time title="创建时间：2020年01月08日 13:38:06 / 修改时间：15:08:11" itemprop="dateCreated datePublished" datetime="2020-01-08T13:38:06+08:00">2020年01月08日</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -362,7 +362,11 @@
     server 127.0.0.1:9002 backup;
     server 127.0.0.1:9003 weight=2;
     server 127.0.0.1:9004 max_fails=2 fail_timeout=60s;   
-}</code></pre><p>负载均衡分配策略：</p>
+}</code></pre><div class="note danger">
+            <p>注意 “=” 前后不能有空格</p>
+          </div>
+
+<p>负载均衡分配策略：</p>
 <ul>
 <li><p>nano（轮询）：upstream按照轮询（默认）方式进行负载，每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。虽然这种方式简便、成本低廉。但缺点是：可靠性低和负载分配不均衡。</p>
 </li>
@@ -379,8 +383,6 @@
 <ul>
 <li><p>fair（第三方）：按后端服务器的响应时间来分配请求，响应时间短的优先分配。与weight分配策略类似。</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcats &#123;</span><br><span class="line">     <span class="built_in"> server </span>127.0.0.1:9001;</span><br><span class="line">     <span class="built_in"> server </span>127.0.0.1:9002;</span><br><span class="line">      fair;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 
 </li>
 </ul>
@@ -450,7 +452,10 @@
     <a href="/2020/01/07/2020-1-7-mybatis-interceptor/" rel="prev" title="springboot mybatis拦截器interceptor配置">
       <i class="fa fa-chevron-left"></i> springboot mybatis拦截器interceptor配置
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/08/2020-1-8-vim-config/" rel="next" title="vim 配置">
+      vim 配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -527,20 +532,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">113</span>
+          <span class="site-state-item-count">114</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-count">97</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -586,7 +591,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">320k</span>
+    <span title="站点总字数">322k</span>
 </div>
 
         

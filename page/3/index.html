@@ -233,6 +233,191 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2019/08/14/2019-8-14-navicat完成离线激活/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/08/14/2019-8-14-navicat%E5%AE%8C%E6%88%90%E7%A6%BB%E7%BA%BF%E6%BF%80%E6%B4%BB/" class="post-title-link" itemprop="url">2019-8-14-navicat完成离线激活</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019年08月14日 15:45:43" itemprop="dateCreated datePublished" datetime="2019-08-14T15:45:43+08:00">2019年08月14日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:34" itemprop="dateModified" datetime="2019-11-18T11:38:34+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/learn/" itemprop="url" rel="index">
+                    <span itemprop="name">learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/08/14/2019-8-14-navicat完成离线激活/" class="post-meta-item leancloud_visitors" data-flag-title="2019-8-14-navicat完成离线激活" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/08/14/2019-8-14-navicat完成离线激活/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/08/14/2019-8-14-navicat完成离线激活/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这份repo将会告诉你Navicat是怎么完成离线激活的。</p>
+<p><a href="https://blog.csdn.net/wqq1027/article/details/86677079" target="_blank" rel="noopener">注册机是怎么工作的?</a></p>
+<h2 id="如何使用这个注册机"><a href="#如何使用这个注册机" class="headerlink" title="如何使用这个注册机"></a>如何使用这个注册机</h2><ol>
+<li><p><a href="https://github.com/DoubleLabyrinth/navicat-keygen/releases" target="_blank" rel="noopener">从这里</a>下载最新的release。</p>
+</li>
+<li><p>使用<code>navicat-patcher.exe</code>替换掉<code>navicat.exe</code>和<code>libcc.dll</code>里的Navicat激活公钥。</p>
+</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">navicat-patcher</span><span class="selector-class">.exe</span> &lt;<span class="selector-tag">Navicat</span> <span class="selector-tag">installation</span> <span class="selector-tag">path</span>&gt; <span class="selector-attr">[RSA-2048 PEM file]</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>&lt;Navicat installation path&gt;</code>: Navicat的完整安装路径。</li>
+</ul>
+<p><strong>这个参数必须指定。</strong></p>
+<ul>
+<li><code>[RSA-2048 PEM file]</code>: RSA-2048私钥文件的完整路径或相对路径。</li>
+</ul>
+<p><strong>这个参数是可选的。</strong> 如果未指定，<code>navicat-patcher.exe</code>将会在当前目录生成一个新的RSA-2048私钥文件。</p>
+<p><strong>例如：(在cmd.exe中)</strong> </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navicat-patcher<span class="selector-class">.exe</span> <span class="string">"C:\Program Files\PremiumSoft\Navicat Premium 12"</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>地址字符串必须用双引号，使用单引号会报错</p>
+</blockquote>
+<p><img src="3.png" alt></p>
+<hr>
+<p><strong>Navicat Premium 12.1.12 简体中文版已通过测试</strong>。下面将是一份样例输出。</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">***************************************************</span><br><span class="line">*       Navicat Patcher by @DoubleLabyrinth       *</span><br><span class="line">*           Release date: Jan<span class="number"> 19 </span>2019             *</span><br><span class="line">***************************************************</span><br><span class="line"> </span><br><span class="line">Press Enter to continue or Ctrl + C to abort.</span><br><span class="line"> </span><br><span class="line">MESSAGE: PatchSolution0 will be omitted.</span><br><span class="line"> </span><br><span class="line">MESSAGE: PatchSolution3: Keywords[0] has been found:</span><br><span class="line">         Relative Machine Code Offset = +0x0000000001644a08</span><br><span class="line">         Relative Machine Code RVA    = +0x0000000001645608</span><br><span class="line">         Patch Offset                 = +0x00000000023d56e4</span><br><span class="line">         Patch Size                   =<span class="number"> 3 </span>byte(s)</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">MESSAGE: PatchSolution3: Keywords[110] has been found:</span><br><span class="line">         Relative Machine Code Offset = +0x000000000165155e</span><br><span class="line">         Relative Machine Code RVA    = +0x000000000165215e</span><br><span class="line">         Patch Offset                 = +0x0000000001651561</span><br><span class="line">         Patch Size                   =<span class="number"> 1 </span>byte(s)</span><br><span class="line"> </span><br><span class="line">MESSAGE: PatchSolution2 will be omitted.</span><br><span class="line"> </span><br><span class="line">MESSAGE: PatchSolution1: Keywords[0] has been found: offset = +0x021f7390.</span><br><span class="line">MESSAGE: PatchSolution1: Keywords[1] has been found: offset = +0x0074bd39.</span><br><span class="line">MESSAGE: PatchSolution1: Keywords[2] has been found: offset = +0x021f70a0.</span><br><span class="line">MESSAGE: PatchSolution1: Keywords[3] has been found: offset = +0x0074bd1f.</span><br><span class="line">MESSAGE: PatchSolution1: Keywords[4] has been found: offset = +0x021f708c.</span><br><span class="line"> </span><br><span class="line">MESSAGE: Generating new RSA private key, it may take a long time.</span><br><span class="line">MESSAGE: New RSA private key has been saved to RegPrivateKey.pem.</span><br><span class="line"> </span><br><span class="line">Your RSA public key:</span><br><span class="line">-----BEGIN PUBLIC KEY--<span class="yaml"><span class="meta">---</span></span></span><br><span class="line"><span class="yaml"><span class="string">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsWnV5hQxlXvDA3Ad4k5N</span></span></span><br><span class="line"><span class="yaml"><span class="string">ZLz4cO+iGEPegSovIDcwTo097I+0pXYKPTVl+0iKC5JtJRObb4Xx9yK9gGwqkcxo</span></span></span><br><span class="line"><span class="yaml"><span class="string">o6WzKq0xY1jz7X6obxwlQCNse3Os1wr0rIY0UzP1dCpkW/5MwGbFxiB6PEVqkzmJ</span></span></span><br><span class="line"><span class="yaml"><span class="string">CmHBzZDRu/jAuL1nyoiGnUStqwENNYhyl4k7r8AiJkBZGMOCrj6v0JfgNna25Ce6</span></span></span><br><span class="line"><span class="yaml"><span class="string">QCFojlY4dkYQ5/7njQ3qpLwMeLEXEysMW3aUScSB68/vsHnB4C0fIkwfEPYZ/AC5</span></span></span><br><span class="line"><span class="yaml"><span class="string">AqbWHVbNmveB3rjV+tZZxXcLE8ArgKh1Gs+2VtnL09gwHm6WcpyPZ42G6tMDjWyw</span></span></span><br><span class="line"><span class="yaml"><span class="number">1</span><span class="string">wIDAQAB</span></span></span><br><span class="line"><span class="yaml"><span class="bullet">-</span><span class="bullet">----END</span> <span class="string">PUBLIC</span> <span class="string">KEY-----</span></span></span><br><span class="line"><span class="yaml"> </span></span><br><span class="line"><span class="yaml"><span class="string">******************************************</span></span></span><br><span class="line"><span class="yaml"><span class="string">*</span>            <span class="string">PatchSulution3</span>              <span class="string">*</span></span></span><br><span class="line"><span class="yaml"><span class="string">******************************************</span></span></span><br><span class="line"><span class="yaml"><span class="string">@</span> <span class="string">+023d56e4:</span> <span class="number">4</span><span class="string">D</span> <span class="number">49</span> <span class="number">49</span> <span class="bullet">---&gt;</span> <span class="number">4</span><span class="string">D</span> <span class="number">49</span> <span class="number">49</span></span></span><br><span class="line"><span class="yaml"><span class="string">@</span> <span class="string">+01644a63:</span> <span class="number">42</span> <span class="number">49</span> <span class="bullet">---&gt;</span> <span class="number">42</span> <span class="number">49</span></span></span><br><span class="line"><span class="yaml"><span class="string">@</span> <span class="string">+01644a68:</span> <span class="number">6</span><span class="string">A</span> <span class="bullet">---&gt;</span> <span class="number">6</span><span class="string">A</span></span></span><br><span class="line"><span class="yaml"><span class="string">@</span> <span class="string">+01644ace:</span> <span class="number">41</span> <span class="bullet">---&gt;</span> <span class="number">41</span></span></span><br><span class="line"><span class="yaml"><span class="string">...</span></span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">@ +023d58d4:<span class="number"> 36 </span>63 6A ---&gt;<span class="number"> 47 </span>36 74</span><br><span class="line">@ +023d58d8:<span class="number"> 78 </span>6C 6A<span class="number"> 75 </span>75<span class="number"> 51 </span>61 ---&gt; 4D<span class="number"> 44 </span>6A<span class="number"> 57 </span>79<span class="number"> 77 </span>31</span><br><span class="line">@ +023d58e8:<span class="number"> 77 </span>49<span class="number"> 44 </span>41 ---&gt;<span class="number"> 77 </span>49<span class="number"> 44 </span>41</span><br><span class="line">@ +0165155c:<span class="number"> 51 </span>41 ---&gt;<span class="number"> 51 </span>41</span><br><span class="line">@ +01651561:<span class="number"> 42 </span>---&gt; 42</span><br><span class="line"> </span><br><span class="line">******************************************</span><br><span class="line">*            PatchSulution1              *</span><br><span class="line">******************************************</span><br><span class="line">@ +0x021f7390</span><br><span class="line">Previous:</span><br><span class="line">+0x00000000021F7390 <span class="number"> 44 </span>37<span class="number"> 35 </span>31<span class="number"> 32 </span>35<span class="number"> 42 </span>37<span class="number"> 30 </span>37<span class="number"> 36 </span>37<span class="number"> 42 </span>39<span class="number"> 34 </span>31  D75125B70767B941</span><br><span class="line">+0x00000000021F73A0 <span class="number"> 34 </span>35<span class="number"> 42 </span>34<span class="number"> 37 </span>43<span class="number"> 31 </span>43<span class="number"> 42 </span>33<span class="number"> 43 </span>30<span class="number"> 37 </span>35<span class="number"> 35 </span>45  45B47C1CB3C0755E</span><br><span class="line">+0x00000000021F73B0 <span class="number"> 37 </span>43<span class="number"> 43 </span>42<span class="number"> 38 </span>38<span class="number"> 32 </span>35<span class="number"> 43 </span>35<span class="number"> 44 </span>43<span class="number"> 45 </span>30<span class="number"> 43 </span>35  7CCB8825C5DCE0C5</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line"> </span><br><span class="line">@ +0x021f708c</span><br><span class="line">Previous:</span><br><span class="line">+0x00000000021F7080 <span class="number"> 31 </span>32<span class="number"> 32 </span>35 4f<span class="number"> 45 </span>29 2e<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 39 </span>32<span class="number"> 39 </span>33  1225OE).....9293</span><br><span class="line">+0x00000000021F7090 <span class="number"> 33 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00  3...............</span><br><span class="line">After:</span><br><span class="line">+0x00000000021F7080 <span class="number"> 31 </span>32<span class="number"> 32 </span>35 4f<span class="number"> 45 </span>29 2e<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 32 </span>37<span class="number"> 45 </span>38  1225OE).....27E8</span><br><span class="line">+0x00000000021F7090 <span class="number"> 45 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00<span class="number"> 00 </span>00  E...............</span><br><span class="line"> </span><br><span class="line">MESSAGE: Patch has been done successfully.</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>接下来使用<code>navicat-keygen.exe</code>来生成序列号和激活码</li>
+</ol>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">navicat-keygen.exe &lt;-bin|-<span class="built_in">text</span>&gt; [-adv] &lt;RSA<span class="number">-2048</span> PrivateKey(PEM <span class="built_in">file</span>)&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>&lt;-bin|-text&gt;</code>: 必须是<code>-bin</code>或<code>-text</code>。</li>
+</ul>
+<p>如果指定了<code>-bin</code>，<code>navicat-keygen.exe</code>最终将生成<code>license_file</code>文件。这个选项是给Navicat旧激活方式使用的。</p>
+<p>如果指定了<code>-text</code>，<code>navicat-keygen.exe</code>最终将生成Base64样式的激活码。这个选项是给Navicat新激活方式使用的。</p>
+<p><strong>这个参数必须指定。</strong></p>
+<ul>
+<li><code>[-adv]</code>: 开启高级模式。</li>
+</ul>
+<p><strong>这个参数是可选的。</strong> 如果指定了这个参数，<code>navicat-keygen.exe</code>将会要求你手工填写产品ID号、语言标识号。这个选项一般是给以后用的。</p>
+<ul>
+<li><code>&lt;RSA-2048 PrivateKey(PEM file)&gt;</code>: RSA-2048私钥文件的完整路径或相对路径。</li>
+</ul>
+<p><strong>这个参数必须指定。</strong></p>
+<p><strong>例如：(在cmd.exe中)</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">navicat-keygen</span><span class="selector-class">.exe</span> <span class="selector-tag">-text</span> .\<span class="selector-tag">RegPrivateKey</span><span class="selector-class">.pem</span></span><br></pre></td></tr></table></figure>
+
+<p>你会被要求选择Navicat产品类别、语言以及输入主版本号。之后会随机生成一个序列号。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Select Navicat product:</span><br><span class="line"><span class="bullet">0. </span>DataModeler</span><br><span class="line"><span class="bullet">1. </span>Premium</span><br><span class="line"><span class="bullet">2. </span>MySQL</span><br><span class="line"><span class="bullet">3. </span>PostgreSQL</span><br><span class="line"><span class="bullet">4. </span>Oracle</span><br><span class="line"><span class="bullet">5. </span>SQLServer</span><br><span class="line"><span class="bullet">6. </span>SQLite</span><br><span class="line"><span class="bullet">7. </span>MariaDB</span><br><span class="line"><span class="bullet">8. </span>MongoDB</span><br><span class="line"><span class="bullet">9. </span>ReportViewer</span><br><span class="line"> </span><br><span class="line">(Input index)&gt; 1</span><br><span class="line"> </span><br><span class="line">Select product language:</span><br><span class="line"><span class="bullet">0. </span>English</span><br><span class="line"><span class="bullet">1. </span>Simplified Chinese</span><br><span class="line"><span class="bullet">2. </span>Traditional Chinese</span><br><span class="line"><span class="bullet">3. </span>Japanese</span><br><span class="line"><span class="bullet">4. </span>Polish</span><br><span class="line"><span class="bullet">5. </span>Spanish</span><br><span class="line"><span class="bullet">6. </span>French</span><br><span class="line"><span class="bullet">7. </span>German</span><br><span class="line"><span class="bullet">8. </span>Korean</span><br><span class="line"><span class="bullet">9. </span>Russian</span><br><span class="line"><span class="bullet">10. </span>Portuguese</span><br><span class="line"> </span><br><span class="line">(Input index)&gt; 1</span><br><span class="line"> </span><br><span class="line">(Input major version number, range: 0 ~ 15, default: 12)&gt; 12</span><br><span class="line"> </span><br><span class="line">Serial number:</span><br><span class="line">NAVO-2ORP-IN5A-GQEE</span><br><span class="line"> </span><br><span class="line">Your name:</span><br></pre></td></tr></table></figure>
+
+<p>你可以使用这个序列号暂时激活Navicat。</p>
+<p>接下来你会被要求输入<code>用户名</code>和<code>组织名</code>；请随便填写，但不要太长。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Your name: root</span><br><span class="line">Your organization: root</span><br><span class="line">Input request code (<span class="keyword">in</span> Base64), input <span class="literal">empty</span> <span class="built_in">line</span> <span class="built_in">to</span> <span class="keyword">end</span>:</span><br></pre></td></tr></table></figure>
+
+<p>之后你会被要求填入请求码，该请求码是在navicat中输入上方生成序列号进行离线激活后，会生成一段请求码，然后复制过来。注意 <strong>不要关闭命令行</strong>.</p>
+<p><strong>断开网络</strong> 并打开Navicat。找到<code>注册</code>窗口，并填入keygen给你的序列号。然后点击<code>激活</code>按钮。</p>
+<p><img src="1.png" alt></p>
+<p>一般来说在线激活肯定会失败，这时候Navicat会询问你是否<code>手动激活</code>，直接选吧。</p>
+<p>在<code>手动激活</code>窗口你会得到一个请求码，复制它并把它粘贴到keygen里。最后别忘了连按至少 <strong>两下回车</strong> 结束输入。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Your <span class="string">name:</span> root</span><br><span class="line">Your <span class="string">organization:</span> root</span><br><span class="line"></span><br><span class="line">Input request code (<span class="keyword">in</span> Base64), input empty line to <span class="string">end:</span></span><br><span class="line">EnoJQKOD5h08rGvcpxJ288YwA0e5AjIlu<span class="regexp">/WQUVde9rcnjC4RfYPQ83Rp047nohWBn02UELpAt9NAVWp6Nww+4gxQjgkXJ19wb6cRY+V68xLIJbZXmByXBQwWL4X4lB3RxpcS5y2fAk/</span>iipFaFu5XE8yhC1o129IVuuaCE3lwzAuB563BKSKmp4Xr1vSqW6EDeCtKp8PY91nSt4htHF11Sfx8v0ASfdbu75ePTB3Rf<span class="regexp">/nzkbCKv8E63E6mVSRWqDuQ8didqXQhci7qjPICvBD6ne5FZhDGEJi6hNSwdKeTbj/</span>ZUBxFScZYWsskFjVL5u5RcdLo0Gzp8H7YOTI7OfJarg==</span><br><span class="line"></span><br><span class="line">Request <span class="string">Info:</span></span><br><span class="line">&#123;<span class="string">"K"</span>:<span class="string">"NAVADD22GI4NXPU5"</span>, <span class="string">"DI"</span>:<span class="string">"DJym852txVo8XGZkDzPn"</span>, <span class="string">"P"</span>:<span class="string">"WIN"</span>&#125;</span><br><span class="line"></span><br><span class="line">Response <span class="string">Info:</span></span><br><span class="line">&#123;<span class="string">"K"</span>:<span class="string">"NAVADD22GI4NXPU5"</span>,<span class="string">"DI"</span>:<span class="string">"DJym852txVo8XGZkDzPn"</span>,<span class="string">"N"</span>:<span class="string">"root"</span>,<span class="string">"O"</span>:<span class="string">"root"</span>,<span class="string">"T"</span>:<span class="number">1565768523</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">License:</span></span><br><span class="line">GUk9coMkfoI2AtUiQ2PfDjlR6rybOrhY+q6azg5f7H+AwgIsVp6jWS1vb2NgkiXx</span><br><span class="line">u9NuoNeR8T2JiOqRC90umfdEqit0MGaGpDL/Wk6o+HNcKZmdbl9tImhGxxaj3Qib</span><br><span class="line">Yn3EzIQOz+hP7ipoG7kmIxzvmBOok0tDhrOhDzhzsPmAvFxTndQgU5hgCOIcHJVT</span><br><span class="line">PerF<span class="regexp">/SK/</span>lTMHSWqgwNyl2M3APBCxvCIjw6omFNwRXY3JD3zKUIiSWqsQT0mCBDby</span><br><span class="line"><span class="number">4</span>k1V7IhCBzOHpBTHLLbjSG8copp37rgcn8PK0FFL8yUCDCmYzDBvE8B1KTYgmNn6</span><br><span class="line">dWf7BT0jyOoRIoYwIApNmQ==</span><br></pre></td></tr></table></figure>
+
+<p><img src="2.png" alt></p>
+<p>如果不出意外，你会得到一个看似用Base64编码的激活码 <em>license</em>。直接复制它，并把它粘贴到Navicat的<code>手动激活</code>窗口，最后点<code>激活</code>按钮。如果没什么意外的话应该能成功激活。</p>
+<p>转载至 <a href="https://blog.csdn.net/weixin_43160151/article/details/82913382" target="_blank" rel="noopener">Navicat脱机激活(亲测Navicat for MySQL)</a></p>
+
+      
+
+      <div>
+        
+      </div>
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2019/08/09/2019-8-9-mysql主从复制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2142,130 +2327,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/11/16/2017-11-16-flask-cors/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="XiaoTang">
-      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XiaoTang' Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/11/16/2017-11-16-flask-cors/" class="post-title-link" itemprop="url">flask-cors实现CORS跨域请求</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017年11月16日 15:13:23" itemprop="dateCreated datePublished" datetime="2017-11-16T15:13:23+08:00">2017年11月16日</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Learn/" itemprop="url" rel="index">
-                    <span itemprop="name">Learn</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2017/11/16/2017-11-16-flask-cors/" class="post-meta-item leancloud_visitors" data-flag-title="flask-cors实现CORS跨域请求" title="热度">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">热度</span>
-              <span class="leancloud-visitors-count"></span>
-              <span>℃</span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2017/11/16/2017-11-16-flask-cors/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2017/11/16/2017-11-16-flask-cors/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>195</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>在做ionic登录的时候碰到的跨域请求的问题，因为缺少 <code>Access-Control-Allow-Origin</code>，</p>
-<p>可以通过安装 <code>flask-cors</code> 来解决问题</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 <span class="keyword">install</span> flask-cors</span><br></pre></td></tr></table></figure>
-
-<p>在出现 <code>app = Flask(__name__)</code> 这段的地方加上如下代码。即可实现跨域请求</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from flask_cors import CORS</span><br><span class="line">app = Flask(<span class="name">__name__</span>)</span><br><span class="line">CORS(<span class="name">app</span>)</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      <div>
-        
-      </div>
-    </div>
-
-    
-    
-    
-
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2338,20 +2399,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">113</span>
+          <span class="site-state-item-count">114</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">96</span>
+        <span class="site-state-item-count">97</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2397,7 +2458,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">320k</span>
+    <span title="站点总字数">322k</span>
 </div>
 
         
