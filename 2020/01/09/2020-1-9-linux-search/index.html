@@ -48,18 +48,20 @@
   };
 </script>
 
-  <meta name="description" content="你的指尖拥有改变世界的力量">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XiaoTang&#39; Blog">
-<meta property="og:url" content="http://zhizhi.tangliangdong.me/tags/Raspbian/index.html">
+  <meta name="description" content="筛查日志这件事，根据情况不同，采用的方法也会有所不同。比如日志很小，至多几千行这样的情况，我们完全可以使用一般的文本编辑器打开，直接查找所需内容即可。而像一些“大型”日志，尤其是长时间稳定性测试所产生的日志，动辄可能会有几个g，几十g，再用编辑器打开显然不够现实。">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日志文件查看搜索">
+<meta property="og:url" content="http://zhizhi.tangliangdong.me/2020/01/09/2020-1-9-linux-search/index.html">
 <meta property="og:site_name" content="XiaoTang&#39; Blog">
-<meta property="og:description" content="你的指尖拥有改变世界的力量">
+<meta property="og:description" content="筛查日志这件事，根据情况不同，采用的方法也会有所不同。比如日志很小，至多几千行这样的情况，我们完全可以使用一般的文本编辑器打开，直接查找所需内容即可。而像一些“大型”日志，尤其是长时间稳定性测试所产生的日志，动辄可能会有几个g，几十g，再用编辑器打开显然不够现实。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-09T09:52:11.609Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XiaoTang&#39; Blog">
-<meta name="twitter:description" content="你的指尖拥有改变世界的力量">
+<meta name="twitter:title" content="日志文件查看搜索">
+<meta name="twitter:description" content="筛查日志这件事，根据情况不同，采用的方法也会有所不同。比如日志很小，至多几千行这样的情况，我们完全可以使用一般的文本编辑器打开，直接查找所需内容即可。而像一些“大型”日志，尤其是长时间稳定性测试所产生的日志，动辄可能会有几个g，几十g，再用编辑器打开显然不够现实。">
 
-<link rel="canonical" href="http://zhizhi.tangliangdong.me/tags/Raspbian/">
+<link rel="canonical" href="http://zhizhi.tangliangdong.me/2020/01/09/2020-1-9-linux-search/">
 
 
 <script id="page-configurations">
@@ -67,11 +69,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>标签: Raspbian | XiaoTang' Blog</title>
+  <title>日志文件查看搜索 | XiaoTang' Blog</title>
   
 
 
@@ -228,54 +230,306 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">Raspbian
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2020/01/09/2020-1-9-linux-search/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          日志文件查看搜索
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020年01月09日 16:47:23 / 修改时间：17:52:11" itemprop="dateCreated datePublished" datetime="2020-01-09T16:47:23+08:00">2020年01月09日</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/01/09/2020-1-9-linux-search/" class="post-meta-item leancloud_visitors" data-flag-title="日志文件查看搜索" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/09/2020-1-9-linux-search/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/09/2020-1-9-linux-search/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
+        <p>筛查日志这件事，根据情况不同，采用的方法也会有所不同。比如日志很小，至多几千行这样的情况，我们完全可以使用一般的文本编辑器打开，直接查找所需内容即可。而像一些“大型”日志，尤其是长时间稳定性测试所产生的日志，动辄可能会有几个g，几十g，再用编辑器打开显然不够现实。</p>
+<a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<h2 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h2><blockquote>
+<p> grep命令是linux下最好用的命令之一。grep用来筛选内容的速度应该是最快的，这点没有之一，大到几个g的文件，几秒就可以完成对单一关键词的筛取，可谓是查找大文件的“神器”，而且grep命令格式十分简单，常用的搜索功能只需三个参数即可完成。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [option] patten file</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-14T09:55:51+08:00"
-              content="2019年11月14日">
-          11-14
-        </time>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>全称</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>–text</td>
+<td>不要忽略二进制的数据。</td>
+</tr>
+<tr>
+<td>-A &lt;显示行数&gt;</td>
+<td>–after-context=&lt;显示行数&gt;</td>
+<td>显示匹配行之<span class="label danger">后</span>的n行的内容</td>
+</tr>
+<tr>
+<td>-b</td>
+<td>–byte-offset</td>
+<td>在匹配行之前，标示出该行第一个字符的编号。</td>
+</tr>
+<tr>
+<td>-B &lt;显示行数&gt;</td>
+<td>–before-context=&lt;显示行数&gt;</td>
+<td>显示匹配行之<span class="label danger">前</span>的n行的内容</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>–count</td>
+<td>统计符合样式的列数</td>
+</tr>
+<tr>
+<td>-C &lt;显示行数&gt;</td>
+<td>–context=&lt;显示行数&gt;或 -&lt;显示行数&gt;</td>
+<td>显示匹配行<span class="label danger">前后</span>前后的n行的内容</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>–ignore-case</td>
+<td>忽略字符大小写差异</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>–line-number</td>
+<td>显示符合样式的行号</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>–recursive</td>
+<td>遍历文件夹查找</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>–file-with-matches</td>
+<td>列出文件内容符合指定的样式的文件名称</td>
+</tr>
+<tr>
+<td>-L</td>
+<td>–files-without-match</td>
+<td>列出文件内容<span class="label danger">不符合</span>指定的样式的文件名称。</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>–revert-match</td>
+<td>显示不包含匹配文本的所有行</td>
+</tr>
+</tbody></table>
+<div class="note danger">
+            <p>如果 grep 命令打印 Binary file catalina.out matches，则需要加上 -a 参数</p>
+          </div>
+
+
+
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>快速，可批量筛选出含有关键词的全部文本行。</em></td>
+<td><em>如果关键词在文本中出现较多，无法快速定位至某一次关键词出现的位置，依然会出现刷屏效果。</em></td>
+</tr>
+</tbody></table>
+<h2 id="more-less-命令"><a href="#more-less-命令" class="headerlink" title="more / less 命令"></a>more / less 命令</h2><blockquote>
+<p>more和less命令都是用分页查看文本的方式，每次只显示一定行的文本，避免像cat那样被大量的文字快速刷屏，同时支持搜索，可以在文件中搜索某个关键词并实现定位。</p>
+</blockquote>
+<ul>
+<li><strong>less</strong> 似乎更适合对于日志的筛查，可以进行向前或向后<strong>双方向的搜索</strong>，并且可以按方向键<strong>逐行前后滚动</strong></li>
+<li><strong>more</strong> 只支持向后查找和向后翻页或滚动。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more/less file</span><br></pre></td></tr></table></figure>
+
+<p><strong>搜索关键字：</strong>输入命令后按”/“，输入关键词后回车即可定位至关键词第一次出现的位置，此时按 <strong>n键</strong> 可切换至下一次出现的位置，使用less时，按 <strong>N键</strong> 返回上一次出现的位置。</p>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>可以自动定位关键词出现的位置，并显示关键词前后的文本内容，使用起来比较方便。</em></td>
+<td><em>搜索速度较慢，文件特别大的话要等很久才能搜索到。</em></td>
+</tr>
+</tbody></table>
+<h2 id="head-tail-命令"><a href="#head-tail-命令" class="headerlink" title="head / tail 命令"></a><strong>head / tail 命令</strong></h2><blockquote>
+<p>head和tail命令是功能近似而作用位置相反的两个命令，head命令用来从开头读取文本，tail命令则是从尾部读取文本。当我们不关注日志中间的一大坨内容，只关注开头或结尾的部分内容时，head和tail命令可以说是最好的解决方案。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head/tail -n file</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用方法：</strong>设置需要从文件开头/结尾查找的行数（n），即可显示对应结果。</p>
+<table>
+<thead>
+<tr>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>方便实用，尤其是tail，可以从尾部读取文件。</em></td>
+<td><em>单独使用不能查找关键词，需用管道结合 grep进行查找</em></td>
+</tr>
+</tbody></table>
+ <div class="note info">
+            <p><strong>head / tail和 grep 结合使用</strong></p>
+          </div>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head/tail -n file | grep pattern</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://cloud.tencent.com/developer/article/1484955" target="_blank" rel="noopener">大日志，看我如何对付你</a></li>
+</ul>
+
+
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束 <i class="fa fa-paw"></i> 感谢您的阅读-------------</div>
+    
+</div>
+
+        
       </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/14/2019-11-14-Raspbian-2k-resolution/" itemprop="url">
-            <span itemprop="name">树莓派外接2560x1440 2k屏设置</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
     </div>
+
+    
+    
+    
+
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>XiaoTang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://zhizhi.tangliangdong.me/2020/01/09/2020-1-9-linux-search/" title="日志文件查看搜索">http://zhizhi.tangliangdong.me/2020/01/09/2020-1-9-linux-search/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/08/2020-1-8-vim-config/" rel="prev" title="vim 配置">
+      <i class="fa fa-chevron-left"></i> vim 配置
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -322,6 +576,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#grep命令"><span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#more-less-命令"><span class="nav-text">more / less 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head-tail-命令"><span class="nav-text">head / tail 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
