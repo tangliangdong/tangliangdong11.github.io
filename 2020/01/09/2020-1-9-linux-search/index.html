@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="XiaoTang&#39; Blog">
 <meta property="og:description" content="筛查日志这件事，根据情况不同，采用的方法也会有所不同。比如日志很小，至多几千行这样的情况，我们完全可以使用一般的文本编辑器打开，直接查找所需内容即可。而像一些“大型”日志，尤其是长时间稳定性测试所产生的日志，动辄可能会有几个g，几十g，再用编辑器打开显然不够现实。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-09T09:52:11.609Z">
+<meta property="og:updated_time" content="2020-01-10T01:24:14.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日志文件查看搜索">
 <meta name="twitter:description" content="筛查日志这件事，根据情况不同，采用的方法也会有所不同。比如日志很小，至多几千行这样的情况，我们完全可以使用一般的文本编辑器打开，直接查找所需内容即可。而像一些“大型”日志，尤其是长时间稳定性测试所产生的日志，动辄可能会有几个g，几十g，再用编辑器打开显然不够现实。">
@@ -257,10 +257,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020年01月09日 16:47:23 / 修改时间：17:52:11" itemprop="dateCreated datePublished" datetime="2020-01-09T16:47:23+08:00">2020年01月09日</time>
+              <time title="创建时间：2020年01月09日 16:47:23" itemprop="dateCreated datePublished" datetime="2020-01-09T16:47:23+08:00">2020年01月09日</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020年01月10日 09:24:14" itemprop="dateModified" datetime="2020-01-10T09:24:14+08:00">2020年01月10日</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -301,7 +307,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -440,9 +446,9 @@
 <h2 id="head-tail-命令"><a href="#head-tail-命令" class="headerlink" title="head / tail 命令"></a><strong>head / tail 命令</strong></h2><blockquote>
 <p>head和tail命令是功能近似而作用位置相反的两个命令，head命令用来从开头读取文本，tail命令则是从尾部读取文本。当我们不关注日志中间的一大坨内容，只关注开头或结尾的部分内容时，head和tail命令可以说是最好的解决方案。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head/tail -n file</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示开头到第n行</span></span><br><span class="line">head -n file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从倒数第n行开始显示到末尾</span></span><br><span class="line">tail -n file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从文件开头第n行开始显示到末尾</span></span><br><span class="line">tail +n file</span><br></pre></td></tr></table></figure>
 
-<p><strong>使用方法：</strong>设置需要从文件开头/结尾查找的行数（n），即可显示对应结果。</p>
+<p><strong>使用方法：</strong>设置需要从文件开头 / 结尾查找的行数（n），即可显示对应结果。</p>
 <table>
 <thead>
 <tr>
@@ -455,7 +461,7 @@
 <td><em>单独使用不能查找关键词，需用管道结合 grep进行查找</em></td>
 </tr>
 </tbody></table>
- <div class="note info">
+<div class="note info">
             <p><strong>head / tail和 grep 结合使用</strong></p>
           </div>
 
@@ -515,7 +521,10 @@
     <a href="/2020/01/08/2020-1-8-vim-config/" rel="prev" title="vim 配置">
       <i class="fa fa-chevron-left"></i> vim 配置
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/10/2020-1-10-linux-buff-cache/" rel="next" title="linux-buff-cache">
+      linux-buff-cache <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -592,20 +601,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-count">118</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">97</span>
+        <span class="site-state-item-count">98</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -651,7 +660,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">323k</span>
+    <span title="站点总字数">326k</span>
 </div>
 
         
