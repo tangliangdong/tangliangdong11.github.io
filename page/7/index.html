@@ -233,6 +233,178 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/04/03/2017-04-04-java-poi-excel/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="XiaoTang">
+      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XiaoTang' Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/04/03/2017-04-04-java-poi-excel/" class="post-title-link" itemprop="url">java poi操作Excel</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017年04月03日 23:50:00" itemprop="dateCreated datePublished" datetime="2017-04-03T23:50:00+08:00">2017年04月03日</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn/" itemprop="url" rel="index">
+                    <span itemprop="name">Learn</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2017/04/03/2017-04-04-java-poi-excel/" class="post-meta-item leancloud_visitors" data-flag-title="java poi操作Excel" title="热度">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">热度</span>
+              <span class="leancloud-visitors-count"></span>
+              <span>℃</span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/04/03/2017-04-04-java-poi-excel/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/04/03/2017-04-04-java-poi-excel/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>poi 需要用到的jar包：</p>
+<ul>
+<li>poi-3.9.jar</li>
+<li>poi-ooxml-3.9.jar</li>
+<li>poi-ooxml-schemas-3.9.jar</li>
+<li>poi-scratchpad-3.9.jar</li>
+<li>xmlbeans.jar</li>
+<li>dom4j.jar</li>
+<li>commons-lang3-3.5.jar</li>
+</ul>
+<h3 id="读取Excel"><a href="#读取Excel" class="headerlink" title="读取Excel"></a>读取Excel</h3><h4 id="通过文件路径直接读取Excel"><a href="#通过文件路径直接读取Excel" class="headerlink" title="通过文件路径直接读取Excel"></a>通过文件路径直接读取Excel</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 因为2007年后的Excel格式都是 .xlsx，因此相关的类名前都是 XSSF，类似 XSSFWorkbook</span></span><br><span class="line"><span class="comment">// 而2007年前的是 .xls，相关类名前缀都是 HSSF，类似 HSSFWorkbook</span></span><br><span class="line">File file = <span class="keyword">new</span> File(<span class="string">"C:/Users/18072/Workspaces/数据.xlsx"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建流  </span></span><br><span class="line">InputStream input = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Workbook,一个Excel只有一个Workbook</span></span><br><span class="line">Workbook wb = <span class="keyword">null</span>;  </span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建sheet，一个Excel有多个sheet（工作表）</span></span><br><span class="line">Sheet sheet = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用读取的文件流来生成Workbook对象，以便我们访问里面的内容</span></span><br><span class="line">wb = <span class="keyword">new</span> XSSFWorkbook(input);</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"><span class="comment">// 循环sheet工作表来获取里面的内容</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sheetNumbers; i++) &#123;</span><br><span class="line">    sheet = wb.getSheetAt(i);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 循环sheet里每行的内容</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> rowNum = <span class="number">0</span>; rowNum &lt; sheet.getLastRowNum(); rowNum++) &#123;</span><br><span class="line">        Row row = sheet.getRow(rowNum);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 循环一行里面每个单元格的内容</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> cellNum = <span class="number">0</span>; cellNum &lt; row.getLastCellNum(); cellNum++) &#123;</span><br><span class="line">            Cell cell = row.getCell(cellNum);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 将每个单元格的内容存储到ArrayList中，方便以后读取</span></span><br><span class="line">            list.add(cell.getCell(cellNum).toString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>读取单元格内容的方式有多种：</p>
+<ul>
+<li>cell.getStringCellValue() 获取单元格内的字符串，</li>
+<li>cell.getNumericCellValue() 获取单元格内的数字</li>
+<li>cell.toString() 将单元格内的变成字符串后并返回</li>
+</ul>
+<blockquote>
+<p>第一次尝试着用了第一种，结果在单元格内是纯数字的情况下，报错了，无法获取，<br>第二种则是在单元格内是字符串的情况下报错了，<br>只有第三种是都适用的，我也默认使用这一种。</p>
+</blockquote>
+<h4 id="通过-input-type-39-file-39-的形式上传Excel文件"><a href="#通过-input-type-39-file-39-的形式上传Excel文件" class="headerlink" title="通过 input[type=&#39;file&#39;] 的形式上传Excel文件"></a>通过 <code>input[type=&#39;file&#39;]</code> 的形式上传Excel文件</h4><p>如果不知道怎么在spring MVC的Controller层获取文件的请戳 <a href="https://tangliangdong.github.io/2017/03/10/photo-upload/" target="_blank" rel="noopener">spring图片上传</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用的是spring MVC框架</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(value=<span class="string">"post"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">post</span><span class="params">(HttpServletRequest req,HttpServletResponse res,</span></span></span><br><span class="line"><span class="function"><span class="params">    @RequestParam(<span class="string">"data"</span>)</span> MultipartFile exceldata) <span class="keyword">throws</span> IOException</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!exceldata.isEmpty())&#123;</span><br><span class="line">        <span class="comment">// 创建流，MultipartFile也有获取字节数组byte[]和inputStream对象的方法</span></span><br><span class="line">        InputStream input = exceldata.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 用读取的文件流来生成Workbook对象，以便我们访问里面的内容</span></span><br><span class="line">        Workbook wb = <span class="keyword">new</span> XSSFWorkbook(input);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 后面都一样</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成新的Excel文件"><a href="#生成新的Excel文件" class="headerlink" title="生成新的Excel文件"></a>生成新的Excel文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 循环生成三个Excel文件</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> excelIndex = <span class="number">0</span> ; excelIndex &lt; <span class="number">3</span> ; excelIndex++ )&#123;</span><br><span class="line">    Workbook newWb = <span class="keyword">new</span> XSSFWorkbook();</span><br><span class="line"></span><br><span class="line">    Sheet sheet1 = newWb.createSheet(<span class="string">"封面"</span>);</span><br><span class="line">    Sheet sheet2 = newWb.createSheet(<span class="string">"问题分析页"</span>);</span><br><span class="line">    Sheet sheet3 = newWb.createSheet(<span class="string">"问题清单页"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 循环行</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">5</span> ; i++ )&#123;</span><br><span class="line">        Row row = sheet1.createRow(i);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 循环行内单元格</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; <span class="number">6</span> ; j++ )&#123;</span><br><span class="line">            Cell cell = row.createCell(j);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 往单元格内 写入内容</span></span><br><span class="line">            cell.setCellValue(<span class="string">"Betahouse, better again"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    String filePath = <span class="string">"C:"</span>+java.io.File.separator;</span><br><span class="line">    <span class="comment">// 输出Excel，设置输出Excel的文件名和文件路径</span></span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(filePath+excelIndex+<span class="string">".xlsx"</span>);  </span><br><span class="line">    newWb.write(out);</span><br><span class="line">    out.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>关于 行、单元格的创建、读取、修改有非常需要关注的几点：</strong></p>
+</blockquote>
+<ul>
+<li>在我们需要获取某Row对象时，如果之前没有<code>createRow(行号)</code>创建过改行，则需要先<code>sheet.createRow(行号)</code>，<code>不能先用getRow(行号)</code>。不然会报 <code>NullPointExpection</code> 。</li>
+<li>相反，若之前已经创建过Row对象，则我们必须用<code>getRow()</code>来获取Row对象，不然后一个<code>createRow(行号)</code>会覆盖所有之前在该行设置的属性以及内容</li>
+<li><code>Cell</code>【单元格】和<code>Row</code>【行】类似。同一个单元格只能<code>createCell(列号)</code> 一次，而且必须在所有<code>getCell(列号)</code>之前，</li>
+<li>同样获取<code>Cell</code>时，必须首先保证获取<code>Row</code>没错，不然也会出现报错或者覆盖的情况。</li>
+<li><strong><em>这个坑需要格外注意！！！</em></strong></li>
+</ul>
+<h3 id="修改Excel的样式（字体、背景色、合并单元格、单元格宽高）"><a href="#修改Excel的样式（字体、背景色、合并单元格、单元格宽高）" class="headerlink" title="修改Excel的样式（字体、背景色、合并单元格、单元格宽高）"></a>修改Excel的样式（字体、背景色、合并单元格、单元格宽高）</h3><h4 id="修改字体"><a href="#修改字体" class="headerlink" title="修改字体"></a>修改字体</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建单元格的属性对象CellStyle</span></span><br><span class="line"><span class="comment">// 注意需要用将要设置的单元格所在workbook来创建CellStyle对象</span></span><br><span class="line">CellStyle cellH1 = newWb.createCellStyle();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Font对象</span></span><br><span class="line">Font fontH1 = newWb.createFont();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置字体的大小，对应的就是Excel中的字体数值</span></span><br><span class="line">fontH1.setFontHeightInPoints((<span class="keyword">short</span>)<span class="number">22</span>);</span><br><span class="line"><span class="comment">// fontH1.setFontHeight((short)(256*10));</span></span><br><span class="line"><span class="comment">// 使用这个不太方便，数值在乘上256之后才是代表几个字符的大小。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置字体类型</span></span><br><span class="line">fontH1.setFontName(<span class="string">"微软雅黑"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置粗体</span></span><br><span class="line">fontH1.setBoldweight(XSSFFont.BOLDWEIGHT_BOLD);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将字体的样式添加到单元格样式上，</span></span><br><span class="line">cellH1.setFont(fontH1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将单元格的样式应用到指定单元格。</span></span><br><span class="line">sheet1.getRow(<span class="number">0</span>).getCell(<span class="number">0</span>).setCellStyle(cellH1);</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置背景色"><a href="#设置背景色" class="headerlink" title="设置背景色"></a>设置背景色</h4><blockquote>
+<p>通过<code>IndexedColors</code>来获取颜色，再通过<code>.getIndex()</code>来获取short类型的数据</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建单元格的属性对象CellStyle</span></span><br><span class="line">CellStyle cBackgound = newWb.createCellStyle();</span><br><span class="line"></span><br><span class="line"><span class="comment">//　设置背景色</span></span><br><span class="line">cBackgound.setFillForegroundColor(IndexedColors.SKY_BLUE.getIndex());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置填充方式</span></span><br><span class="line">cBackgound.setFillPattern(XSSFCellStyle.SOLID_FOREGROUND);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置边框</span></span><br><span class="line">cBackgound.setBorderLeft((<span class="keyword">short</span>)XSSFCellStyle.BORDER_THIN);</span><br><span class="line">cBackgound.setBorderRight((<span class="keyword">short</span>)XSSFCellStyle.BORDER_THIN);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置边框颜色</span></span><br><span class="line">cBackgound.setBottomBorderColor(IndexedColors.BLACK.getIndex());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将单元格的样式应用到指定单元格。</span></span><br><span class="line">sheet1.getRow(<span class="number">0</span>).getCell(<span class="number">0</span>).setCellStyle(cBackgound);</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置合并单元格"><a href="#设置合并单元格" class="headerlink" title="设置合并单元格"></a>设置合并单元格</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置 合并单元格 </span></span><br><span class="line"><span class="comment">// 合并第一行的第一个到第五个单元格</span></span><br><span class="line">CellRangeAddress region = <span class="keyword">new</span> CellRangeAddress(</span><br><span class="line">    <span class="number">0</span>, <span class="comment">// first row</span></span><br><span class="line">    <span class="number">0</span>, <span class="comment">// last row</span></span><br><span class="line">    <span class="number">0</span>, <span class="comment">// first column</span></span><br><span class="line">    <span class="number">4</span>  <span class="comment">// last column</span></span><br><span class="line">);</span><br><span class="line"><span class="comment">// 设置sheet1 合并单元格</span></span><br><span class="line">sheet1.addMergedRegion(region);</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置单元格宽、行高"><a href="#设置单元格宽、行高" class="headerlink" title="设置单元格宽、行高"></a>设置单元格宽、行高</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置默认的 单元格宽 和 行高</span></span><br><span class="line">sheet1.setDefaultColumnWidth(<span class="number">20</span>);</span><br><span class="line">sheet1.setDefaultRowHeight((<span class="keyword">short</span>)<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">Row r = sheet1.createRow(<span class="number">1</span>);</span><br><span class="line">Cell c = r.createCell(<span class="number">1</span>);</span><br><span class="line">c.setCellValue(<span class="string">"Hello Betahouse!"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置成6个字符的高度</span></span><br><span class="line">r.setHeight((<span class="keyword">short</span>)(<span class="number">256</span>*<span class="number">6</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置成10个字符的宽度</span></span><br><span class="line">sheet3.setColumnWidth(<span class="number">0</span>, (<span class="keyword">short</span>)(<span class="number">256</span>*<span class="number">10</span>)));</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置居中"><a href="#设置居中" class="headerlink" title="设置居中"></a>设置居中</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">XSSFCellStyle cCenter=(XSSFCellStyle) newWb.createCellStyle();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置自动换行</span></span><br><span class="line">cCenter.setWrapText(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置竖向居中</span></span><br><span class="line">cCenter.setVerticalAlignment(CellStyle.VERTICAL_CENTER);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置水平居中</span></span><br><span class="line">cCenter.setAlignment(CellStyle.ALIGN_CENTER);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将单元格的样式应用到指定单元格。</span></span><br><span class="line">sheet1.getRow(<span class="number">0</span>).getCell(<span class="number">0</span>).setCellStyle(cCenter);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查阅java文档可以有很全面的认识</p>
+</blockquote>
+<blockquote>
+<p>下次分享如何将Excel的图片插入到另一个Excel中。</p>
+</blockquote>
+
+      
+
+      <div>
+        
+      </div>
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2017/03/29/2017-03-30-feeling/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2011,131 +2183,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhizhi.tangliangdong.me/2016/12/27/2016-12-27-ajax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="XiaoTang">
-      <meta itemprop="description" content="你的指尖拥有改变世界的力量">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XiaoTang' Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/12/27/2016-12-27-ajax/" class="post-title-link" itemprop="url">ajax提交中文数据的乱码问题</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016年12月27日 09:40:00" itemprop="dateCreated datePublished" datetime="2016-12-27T09:40:00+08:00">2016年12月27日</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019年11月18日 11:38:33" itemprop="dateModified" datetime="2019-11-18T11:38:33+08:00">2019年11月18日</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Learn/" itemprop="url" rel="index">
-                    <span itemprop="name">Learn</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span id="/2016/12/27/2016-12-27-ajax/" class="post-meta-item leancloud_visitors" data-flag-title="ajax提交中文数据的乱码问题" title="热度">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">热度</span>
-              <span class="leancloud-visitors-count"></span>
-              <span>℃</span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2016/12/27/2016-12-27-ajax/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2016/12/27/2016-12-27-ajax/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>652</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          ajax带参数提交，如果直接拼在url后面，中文会出现乱码
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2016/12/27/2016-12-27-ajax/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-
-      <div>
-        
-      </div>
-    </div>
-
-    
-    
-    
-
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -2208,7 +2255,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">129</span>
+          <span class="site-state-item-count">130</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2221,7 +2268,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">99</span>
+        <span class="site-state-item-count">100</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -2267,7 +2314,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">363k</span>
+    <span title="站点总字数">368k</span>
 </div>
 
         
